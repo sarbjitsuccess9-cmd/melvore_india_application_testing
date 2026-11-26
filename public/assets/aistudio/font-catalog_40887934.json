@@ -1,0 +1,12 @@
+{
+  "fonts": [
+    { "key": "editorial_serif", "name": "Playfair Display", "asset_file": "playfair_display.ttf", "role": "Display headings & magazine mastheads" },
+    { "key": "clean_sans", "name": "Plus Jakarta Sans", "asset_file": "plus_jakarta_sans.ttf", "role": "Body copy, product titles & buttons" },
+    { "key": "editorial_sans", "name": "Jost", "asset_file": "jost.ttf", "role": "Geometric atelier navigation & labels" },
+    { "key": "minimal", "name": "Didact Gothic", "asset_file": "didact_gothic.ttf", "role": "Clean gallery captions & minimalist tabs" },
+    { "key": "futuristic", "name": "Space Grotesk", "asset_file": "space_grotesk.ttf", "role": "Y2K & progressive technical capsules" },
+    { "key": "gothic", "name": "Cinzel", "asset_file": "cinzel.ttf", "role": "Goth editorial & nocturnal titles" },
+    { "key": "pixel", "name": "Silkscreen", "asset_file": "silkscreen.ttf", "role": "Y2K arcade & retro UI stamps" },
+    { "key": "k_fashion", "name": "Jost", "asset_file": "jost.ttf", "role": "Seoul tonal minimalism" }
+  ]
+}

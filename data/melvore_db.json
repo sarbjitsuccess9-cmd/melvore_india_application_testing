@@ -1,0 +1,1023 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Aarav Sharma",
+      "email": "aarav@melvore.com",
+      "phone": "+91 98110 45210",
+      "gender": "Male",
+      "dob": "1997-08-14",
+      "authProvider": "email",
+      "passwordHash": "07372d932686ca88605cfd6416d95bc69c374e940ad5249163701178c7b1c1bd",
+      "settings": {
+        "theme": "light",
+        "orderNotifications": true,
+        "promoNotifications": true,
+        "priceDropAlerts": false,
+        "currency": "₹",
+        "biometricLock": false
+      },
+      "createdAt": "2026-09-10T08:00:00.000Z"
+    }
+  ],
+  "sessions": {},
+  "products": [
+    {
+      "id": 147,
+      "sku": "gbj-001",
+      "name": "Goth Biker Leather Jacket",
+      "slug": "korean-goth-biker-leather-jacket",
+      "category": "Jackets",
+      "categoryId": 1,
+      "collection": "winter-outerwear",
+      "regularPrice": 7599,
+      "salePrice": 6600,
+      "imageKey": "biker_jacket",
+      "galleryKeys": [
+        "biker_jacket",
+        "hero_atelier",
+        "studded_jacket"
+      ],
+      "description": "Heavyweight matte faux-leather moto silhouette featuring asymmetric brushed steel zippers, quilted shoulder paneling, and an adjustable belted hem tailored for sharp layering.",
+      "fabricCare": "100% Grade-A Vegan Pebbled Leather · Satin viscose lining · Spot clean with damp cloth.",
+      "colors": [
+        {
+          "name": "Obsidian Black",
+          "hex": "#0d0d0d"
+        },
+        {
+          "name": "Charcoal Slate",
+          "hex": "#383b42"
+        }
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "badge": "HOT",
+      "rating": 4.9,
+      "reviewCount": 128,
+      "stockQuantity": 249,
+      "inStock": true
+    },
+    {
+      "id": 142,
+      "sku": "ELEC-007",
+      "name": "Seoul Tri-Color Jacket",
+      "slug": "oversized-half-sleeve-racer-jacket",
+      "category": "Jackets",
+      "categoryId": 1,
+      "collection": "korean-street",
+      "regularPrice": 6499,
+      "salePrice": 5199,
+      "imageKey": "seoul_jacket",
+      "galleryKeys": [
+        "seoul_jacket",
+        "hero_seoul"
+      ],
+      "description": "Inspired by Seoul street ateliers, this color-blocked utility windbreaker pairs crisp ivory cotton-nylon panels with slate sleeves, chest zip pocket, and adjustable drawcord hem.",
+      "fabricCare": "65% Organic Cotton, 35% Technical Nylon · Water-repellent finish · Cold gentle machine wash.",
+      "colors": [
+        {
+          "name": "Cream & Slate",
+          "hex": "#ebe6dc"
+        },
+        {
+          "name": "Charcoal & Stone",
+          "hex": "#2c3038"
+        }
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "badge": "BESTSELLER",
+      "rating": 4.8,
+      "reviewCount": 789,
+      "stockQuantity": 25,
+      "inStock": true
+    },
+    {
+      "id": 149,
+      "sku": "SKU-5A08EFBC",
+      "name": "Nerdy Villain — Red & Black Jacket",
+      "slug": "nerdy-villain-red-black-leather-jacket",
+      "category": "Jackets",
+      "categoryId": 1,
+      "collection": "korean-street",
+      "regularPrice": 6899,
+      "salePrice": 4233,
+      "imageKey": "villain_jacket",
+      "galleryKeys": [
+        "villain_jacket",
+        "biker_jacket"
+      ],
+      "description": "Striking crimson and obsidian color-blocked moto jacket crafted with structured biker shoulders, ribbed elbow panels, and brushed silver zippers.",
+      "fabricCare": "Grade-A Pebbled Faux Leather · Breathable viscose lining · Spot clean only.",
+      "colors": [
+        {
+          "name": "Crimson & Black",
+          "hex": "#8b1e24"
+        },
+        {
+          "name": "Onyx",
+          "hex": "#1b1b1e"
+        }
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "badge": "HOT",
+      "rating": 4.8,
+      "reviewCount": 89,
+      "stockQuantity": 20,
+      "inStock": true
+    },
+    {
+      "id": 135,
+      "sku": "ELEC-002",
+      "name": "White Cropped Studio Jacket",
+      "slug": "white-cropped-jacket",
+      "category": "Jackets",
+      "categoryId": 1,
+      "collection": "korean-street",
+      "regularPrice": 4599,
+      "salePrice": 3299,
+      "imageKey": "white_cropped",
+      "galleryKeys": [
+        "white_cropped",
+        "hero_look"
+      ],
+      "description": "Clean cropped studio silhouette in chalk-white supple leather with tailored notch lapels, silver asymmetric hardware, and crisp cuffs.",
+      "fabricCare": "Structured Supple Leather · Gentle wipe clean inside and out.",
+      "colors": [
+        {
+          "name": "Chalk White",
+          "hex": "#f4f2ee"
+        },
+        {
+          "name": "Stone Grey",
+          "hex": "#9ca3af"
+        }
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "badge": "NEW",
+      "rating": 4.7,
+      "reviewCount": 189,
+      "stockQuantity": 50,
+      "inStock": true
+    },
+    {
+      "id": 144,
+      "sku": "HOME-004",
+      "name": "Leather + Jean Hybrid Jacket",
+      "slug": "leather-plus-jean-hybrid",
+      "category": "Jackets",
+      "categoryId": 1,
+      "collection": "winter-outerwear",
+      "regularPrice": 6200,
+      "salePrice": 4800,
+      "imageKey": "hybrid_jacket",
+      "galleryKeys": [
+        "hybrid_jacket",
+        "hero_atelier"
+      ],
+      "description": "Architectural contrast between supple black faux-leather yoke & sleeves and 13oz raw indigo selvedge denim body with twin flap chest pockets.",
+      "fabricCare": "13oz Raw Indigo Denim + Vegan Leather Trim · Dry clean recommended.",
+      "colors": [
+        {
+          "name": "Black & Indigo",
+          "hex": "#1d2d44"
+        },
+        {
+          "name": "Washed Ash",
+          "hex": "#4a4e54"
+        }
+      ],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "badge": "TREND",
+      "rating": 4.9,
+      "reviewCount": 145,
+      "stockQuantity": 25,
+      "inStock": true
+    },
+    {
+      "id": 148,
+      "sku": "SKU-DE49EB7D",
+      "name": "Neon Princess Studded Jacket",
+      "slug": "neon-princess",
+      "category": "Jackets",
+      "categoryId": 1,
+      "collection": "winter-outerwear",
+      "regularPrice": 5899,
+      "salePrice": 3999,
+      "imageKey": "studded_jacket",
+      "galleryKeys": [
+        "studded_jacket",
+        "biker_jacket"
+      ],
+      "description": "Alternative punk-luxe black biker jacket accented with micro silver dome studs along the lapel, heavy-duty chrome zippers, and quilted shoulder gussets.",
+      "fabricCare": "Heavyweight Faux Leather + Metal Hardware · Spot clean with soft cloth.",
+      "colors": [
+        {
+          "name": "Obsidian Stud",
+          "hex": "#141414"
+        },
+        {
+          "name": "Ice Tint",
+          "hex": "#7dd3e8"
+        }
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "badge": "EXCLUSIVE",
+      "rating": 4.8,
+      "reviewCount": 57,
+      "stockQuantity": 25,
+      "inStock": true
+    },
+    {
+      "id": 104,
+      "sku": "LOUNGE-001",
+      "name": "Forest Mist Zipless Lounge Set",
+      "slug": "forest-mist-zipless-lounge-set",
+      "category": "Loungewear",
+      "categoryId": 2,
+      "collection": "comfort-essentials",
+      "regularPrice": 899,
+      "salePrice": 549,
+      "imageKey": "loungewear",
+      "galleryKeys": [
+        "loungewear"
+      ],
+      "description": "Designed for hurdle-free comfort and all-day breathability. Features a relaxed crewneck top with hidden wrap construction and cloud-soft elasticated lounge pants.",
+      "fabricCare": "100% Combed Ring-Spun Cotton (220 GSM) · Pre-shrunk · Gentle machine wash.",
+      "colors": [
+        {
+          "name": "Forest Mist",
+          "hex": "#8fa189"
+        },
+        {
+          "name": "Warm Ivory",
+          "hex": "#f3ead8"
+        }
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "badge": "NEW",
+      "rating": 4.9,
+      "reviewCount": 215,
+      "stockQuantity": 64,
+      "inStock": true
+    },
+    {
+      "id": 136,
+      "sku": "HOME-001",
+      "name": "Black Gloss Leather Jacket",
+      "slug": "black-gloss-leather-jacket",
+      "category": "Jackets",
+      "categoryId": 1,
+      "collection": "winter-outerwear",
+      "regularPrice": 7289,
+      "salePrice": 4233,
+      "imageKey": "hero_look",
+      "galleryKeys": [
+        "hero_look",
+        "hero_atelier"
+      ],
+      "description": "High-sheen tailored cropped biker jacket designed for statement evening silhouettes. Pairs effortlessly with tailored trousers or relaxed denim.",
+      "fabricCare": "High-Gloss Vegan Leather · Breathable twill lining · Wipe clean.",
+      "colors": [
+        {
+          "name": "Jet Gloss",
+          "hex": "#0d0d0d"
+        },
+        {
+          "name": "Espresso",
+          "hex": "#3d2b24"
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "badge": "LUXURY",
+      "rating": 4.8,
+      "reviewCount": 89,
+      "stockQuantity": 25,
+      "inStock": true
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Jackets",
+      "slug": "jackets",
+      "emoji": "🧥",
+      "itemCount": 5
+    },
+    {
+      "id": 2,
+      "name": "Loungewear",
+      "slug": "loungewear",
+      "emoji": "☁️",
+      "itemCount": 2
+    },
+    {
+      "id": 3,
+      "name": "Hoodies & Tees",
+      "slug": "hoodies-tees",
+      "emoji": "👕",
+      "itemCount": 1
+    },
+    {
+      "id": 4,
+      "name": "Korean Street",
+      "slug": "korean-street",
+      "emoji": "✨",
+      "itemCount": 3
+    }
+  ],
+  "collections": [
+    {
+      "id": 1,
+      "name": "WINTER OUTERWEAR",
+      "subtitle": "Signature Collection",
+      "slug": "winter-outerwear",
+      "imageKey": "biker_jacket"
+    },
+    {
+      "id": 2,
+      "name": "SEOUL STREET EDIT",
+      "subtitle": "Korean Silhouettes",
+      "slug": "korean-street",
+      "imageKey": "seoul_jacket"
+    },
+    {
+      "id": 3,
+      "name": "ZIPLESS LOUNGEWEAR",
+      "subtitle": "Second-Skin Comfort",
+      "slug": "comfort-essentials",
+      "imageKey": "loungewear"
+    }
+  ],
+  "trendingTags": [
+    {
+      "id": 1,
+      "name": "Biker Jackets",
+      "imageKey": "biker_jacket",
+      "badge": "hot"
+    },
+    {
+      "id": 2,
+      "name": "Seoul Tri-Color",
+      "imageKey": "seoul_jacket",
+      "badge": "trend"
+    },
+    {
+      "id": 3,
+      "name": "Zipless Loungewear",
+      "imageKey": "loungewear",
+      "badge": "new"
+    },
+    {
+      "id": 4,
+      "name": "Hybrid Denim",
+      "imageKey": "hybrid_jacket",
+      "badge": "trend"
+    },
+    {
+      "id": 5,
+      "name": "Leather",
+      "imageKey": "hero_look",
+      "badge": "hot"
+    }
+  ],
+  "carts": {
+    "user:1": [
+      {
+        "cartId": 1,
+        "productId": 101,
+        "name": "Goth Biker Leather Jacket",
+        "price": 6600,
+        "imageKey": "biker_jacket",
+        "color": "Obsidian Black",
+        "colorHex": "#141414",
+        "size": "M",
+        "quantity": 1
+      }
+    ]
+  },
+  "wishlists": {
+    "1": [
+      103,
+      104
+    ]
+  },
+  "addresses": {
+    "1": [
+      {
+        "id": 1,
+        "label": "Home",
+        "fullName": "Aarav Sharma",
+        "phone": "+91 98110 45210",
+        "street": "A-8, Kewal Park, Azadpur",
+        "city": "New Delhi",
+        "state": "Delhi",
+        "pincode": "110033",
+        "isDefault": true
+      },
+      {
+        "id": 2,
+        "label": "Studio",
+        "fullName": "Aarav Sharma",
+        "phone": "+91 98110 45210",
+        "street": "SCO 42, Sector 17-E",
+        "city": "Chandigarh",
+        "state": "Chandigarh",
+        "pincode": "160017",
+        "isDefault": false
+      }
+    ]
+  },
+  "orders": [
+    {
+      "id": 1,
+      "orderNumber": "MLV-10482",
+      "userId": 1,
+      "customerEmail": "aarav@melvore.com",
+      "status": "shipped",
+      "paymentMethod": "UPI",
+      "paymentStatus": "Paid",
+      "subtotal": 5199,
+      "shippingFee": 0,
+      "discount": 0,
+      "total": 5199,
+      "shippingAddress": {
+        "id": 1,
+        "label": "Home",
+        "fullName": "Aarav Sharma",
+        "phone": "+91 98110 45210",
+        "street": "A-8, Kewal Park, Azadpur",
+        "city": "New Delhi",
+        "state": "Delhi",
+        "pincode": "110033",
+        "isDefault": true
+      },
+      "items": [
+        {
+          "productId": 102,
+          "name": "Seoul Tri-Color Jacket",
+          "imageKey": "seoul_jacket",
+          "price": 5199,
+          "quantity": 1,
+          "color": "Cream & Slate",
+          "size": "M"
+        }
+      ],
+      "trackingCourier": "Bluedart Express",
+      "trackingNumber": "BD784512093IN",
+      "estimatedDelivery": "Nov 16, 2026",
+      "createdAt": "2026-11-11T10:30:00.000Z",
+      "timeline": [
+        {
+          "status": "pending",
+          "title": "Order Placed",
+          "description": "Order #MLV-10482 received and confirmed via UPI.",
+          "timestamp": "Nov 11, 2026 · 04:00 PM",
+          "completed": true
+        },
+        {
+          "status": "processing",
+          "title": "Quality Check & Packed",
+          "description": "Inspected and dispatched from Melvore New Delhi studio.",
+          "timestamp": "Nov 12, 2026 · 11:20 AM",
+          "completed": true
+        },
+        {
+          "status": "shipped",
+          "title": "In Transit via Bluedart Express",
+          "description": "Departed Delhi Hub · AWB BD784512093IN.",
+          "timestamp": "Nov 13, 2026 · 08:15 AM",
+          "completed": true
+        },
+        {
+          "status": "out_for_delivery",
+          "title": "Out for Delivery",
+          "description": "Courier partner is on the way to Kewal Park, New Delhi.",
+          "timestamp": "Expected Nov 16, 2026",
+          "completed": false
+        },
+        {
+          "status": "delivered",
+          "title": "Delivered",
+          "description": "Package handed over safely.",
+          "timestamp": "Pending",
+          "completed": false
+        }
+      ]
+    }
+  ],
+  "tickets": {
+    "1": [
+      {
+        "id": 1,
+        "ticketNumber": "TKT-2091",
+        "subject": "Size exchange request for Seoul Tri-Color Jacket",
+        "orderNumber": "MLV-10482",
+        "priority": "Normal",
+        "status": "In Progress",
+        "createdAt": "2026-11-12T09:15:00.000Z",
+        "messages": [
+          {
+            "id": 1,
+            "sender": "user",
+            "text": "Hi Melvore team, if M feels slightly snug over hoodies, can I exchange for L under the 30-day policy?",
+            "createdAt": "2026-11-12T09:15:00.000Z"
+          },
+          {
+            "id": 2,
+            "sender": "support",
+            "text": "Hello Aarav! Yes, our 30-day free exchange covers size swaps as long as tags are intact. Just tap Request Exchange once delivered!",
+            "createdAt": "2026-11-12T10:02:00.000Z"
+          }
+        ]
+      }
+    ]
+  },
+  "contacts": [],
+  "blogs": [
+    {
+      "id": 1,
+      "slug": "art-of-hybrid-outerwear",
+      "title": "The Architecture of Hybrid Outerwear: Denim Meets Vegan Leather",
+      "category": "Style Journal",
+      "publishedAt": "November 10, 2026",
+      "readTime": "4 min read",
+      "excerpt": "How contrasting textures create structured silhouettes built for North Indian winters.",
+      "imageKey": "hybrid_jacket",
+      "content": [
+        "Modern outerwear is moving beyond single-fabric uniformity. At Melvore, our Leather + Jean Hybrid Jacket pairs 13oz raw indigo denim with supple pebble-grain vegan leather across the yoke and sleeves.",
+        "The result is a structured shoulder profile that holds its shape over heavyweight knitwear while remaining breathable through crisp Delhi evenings and Chandigarh mornings.",
+        "Pair tonal contrast pieces with relaxed straight-leg trousers and matte minimalist footwear to let the paneling act as the focal point of the outfit."
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "hurdle-free-cotton-loungewear",
+      "title": "Why Zipless Construction Changes Everyday Comfort Wear",
+      "category": "Materials",
+      "publishedAt": "November 4, 2026",
+      "readTime": "3 min read",
+      "excerpt": "Inside our 220 GSM combed cotton loungewear engineered without abrasive hardware.",
+      "imageKey": "loungewear",
+      "content": [
+        "Traditional sleepwear and maternity sets often rely on concealed zippers or stiff seams that irritate skin during extended wear.",
+        "Our Zipless Loungewear line uses overlapping wrap pleats and bio-washed ring-spun cotton so garments move fluidly with you from rest to morning errands.",
+        "Each batch is pre-shrunk and enzyme-washed in small runs to preserve softness across dozens of washes."
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "seoul-street-layering-guide",
+      "title": "Three Ways to Style Color-Blocked Windbreakers This Season",
+      "category": "Lookbook",
+      "publishedAt": "October 28, 2026",
+      "readTime": "5 min read",
+      "excerpt": "Balancing ivory, charcoal, and slate proportions for clean monochrome outfits.",
+      "imageKey": "seoul_jacket",
+      "content": [
+        "Color-blocking works best when the rest of the palette stays quiet. Start with an off-white heavyweight tee and relaxed charcoal trousers.",
+        "Use the adjustable drawcord at the hem of the Seoul Tri-Color Jacket to create a subtle cropped proportion that elongates the silhouette."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "id": 1,
+      "category": "Shipping & Delivery",
+      "question": "Do you offer free shipping across India?",
+      "answer": "Yes! Orders above ₹999 qualify for free express shipping across India. Orders under ₹999 carry a flat ₹79 shipping fee."
+    },
+    {
+      "id": 2,
+      "category": "Shipping & Delivery",
+      "question": "How long does delivery take?",
+      "answer": "Metro cities (New Delhi, Mumbai, Bengaluru, Chandigarh) receive deliveries within 2–4 business days. Rest of India typically arrives in 4–6 business days."
+    },
+    {
+      "id": 3,
+      "category": "Payments & COD",
+      "question": "Is Cash on Delivery (COD) available?",
+      "answer": "Yes, Cash on Delivery is available on all orders up to ₹15,000 across 19,000+ serviceable Indian pin codes, alongside instant UPI and Card checkout."
+    },
+    {
+      "id": 4,
+      "category": "Returns & Exchanges",
+      "question": "What is your 30-day return & exchange policy?",
+      "answer": "You can request a free size exchange or full refund within 30 days of delivery, provided the item is unworn with original tags attached."
+    },
+    {
+      "id": 5,
+      "category": "Care & Sizing",
+      "question": "How should I care for Melvore vegan leather jackets?",
+      "answer": "Wipe gently with a slightly damp microfiber cloth and store on a wide-shouldered hanger away from direct sunlight. Avoid machine washing or harsh detergents."
+    }
+  ],
+  "nextIds": {
+    "user": 2,
+    "cartItem": 2,
+    "address": 3,
+    "order": 2,
+    "ticket": 2,
+    "message": 3,
+    "contact": 1
+  },
+  "design": {
+    "siteName": "Melvore",
+    "currency": "₹",
+    "siteSettings": {
+      "brandName": "Melvore",
+      "siteName": "Melvore",
+      "siteNameHtml": "<span style=\"font-size: 38px; font-weight: 100; font-family: tw cen mt;\">Melv</span><span style=\"font-weight: Bolder; font-family: tw cen mt; font-size: 38px;\">ore</span>",
+      "siteUrl": "https://melvore.co.in",
+      "siteEmail": "connect@melvore.co.in",
+      "currency": "₹",
+      "subscriptionPrice": 299,
+      "shippingCharge": 0,
+      "freeShippingMinimum": 0,
+      "enableCod": true,
+      "enableOnlinePayment": true,
+      "maintenanceMode": false,
+      "siteLiveChat": true,
+      "siteLogo": "",
+      "siteTagline": "",
+      "enableDarkMode": true,
+      "enableSearch": true,
+      "enableCart": true,
+      "enableChat": true,
+      "contactEmail": "connect@melvore.co.in",
+      "contactPhone": "+91 70423 36155",
+      "siteAddress": "NCR, New Delhi 110033",
+      "socialFacebook": "https://facebook.com/melvore_india",
+      "socialInstagram": "https://instagram.com/melvore_india",
+      "socialTwitter": "https://twitter.com/melvore_india",
+      "footerCopyright": "© 2026 Melvore. All rights reserved.",
+      "enableAnimations": true,
+      "enableFloatingCartAnimation": true,
+      "heroAnimationSpeed": 0.8,
+      "enableProductHoverEffects": true,
+      "enablePulseOnAddToCart": true,
+      "showTrackingIdToCustomer": true,
+      "showCourierNameToCustomer": true,
+      "showCombinedOrders": true,
+      "trackingPageSupportText": "Facing issues with your order? Click the chat button at the bottom right to contact our live customer support.",
+      "orderTrackingHeroText": "Your order, every step of the way."
+    },
+    "heroSlides": [
+      {
+        "id": 1,
+        "eyebrow": "Seoul & New Delhi Atelier · Drop 04",
+        "title": "Curated for those who know.",
+        "subtitle": "Architectural vegan-leather outerwear, tri-color Korean street silhouettes, and second-skin 220 GSM cotton loungewear.",
+        "imageKey": "hero_seoul",
+        "ctaText": "Explore Drop 04",
+        "ctaTarget": "products",
+        "ctaFilter": {
+          "collection": "korean-street"
+        }
+      },
+      {
+        "id": 2,
+        "eyebrow": "Signature Leather Atelier",
+        "title": "Crafted in heavy pebble grain.",
+        "subtitle": "Hand-finished asymmetric moto jackets with brushed chrome hardware and breathable satin viscose linings built for Indian winters.",
+        "imageKey": "hero_atelier",
+        "ctaText": "Shop Leather Edit",
+        "ctaTarget": "products",
+        "ctaFilter": {
+          "category": "jackets"
+        }
+      },
+      {
+        "id": 3,
+        "eyebrow": "Autumn / Winter Campaign",
+        "title": "Wear your attitude effortlessly.",
+        "subtitle": "Contrast-paneled statement outerwear and hurdle-free everyday sets crafted with 30-day complimentary exchanges.",
+        "imageKey": "hero_look",
+        "ctaText": "Browse All Pieces",
+        "ctaTarget": "products"
+      }
+    ],
+    "promoBanners": [
+      {
+        "id": 1,
+        "title": "Winter Outerwear Edit",
+        "subtitle": "Up to 40% Off",
+        "tag": "Limited Time",
+        "imageKey": "villain_jacket",
+        "ctaText": "Shop Outerwear",
+        "position": "left",
+        "filterTag": "jackets"
+      },
+      {
+        "id": 2,
+        "title": "Seoul Street Arrivals",
+        "subtitle": "Just Dropped",
+        "tag": "New Season",
+        "imageKey": "white_cropped",
+        "ctaText": "Discover Edit",
+        "position": "right",
+        "filterTag": "korean-street"
+      }
+    ],
+    "marqueeItems": [
+      {
+        "id": 1,
+        "text": "Premium Quality",
+        "icon": "gem"
+      },
+      {
+        "id": 2,
+        "text": "Free Shipping Above ₹999",
+        "icon": "truck"
+      },
+      {
+        "id": 3,
+        "text": "30-Day Easy Returns",
+        "icon": "undo"
+      },
+      {
+        "id": 4,
+        "text": "New Arrivals Weekly",
+        "icon": "star"
+      },
+      {
+        "id": 5,
+        "text": "100% Authentic Craft",
+        "icon": "shield"
+      },
+      {
+        "id": 6,
+        "text": "COD & UPI Available",
+        "icon": "wallet"
+      },
+      {
+        "id": 7,
+        "text": "Designer Collections",
+        "icon": "crown"
+      },
+      {
+        "id": 8,
+        "text": "Made for Modern India",
+        "icon": "sparkles"
+      }
+    ],
+    "featureTiles": [
+      {
+        "id": 1,
+        "icon": "truck",
+        "title": "Free Express Delivery",
+        "description": "Complimentary tracked delivery on all orders above ₹999 across India."
+      },
+      {
+        "id": 2,
+        "icon": "shield",
+        "title": "100% Authentic Atelier",
+        "description": "Every piece is individually inspected for hardware & stitching precision."
+      },
+      {
+        "id": 3,
+        "icon": "rotate",
+        "title": "30-Day Easy Returns",
+        "description": "Complimentary doorstep exchanges and hassle-free returns."
+      },
+      {
+        "id": 4,
+        "icon": "headphones",
+        "title": "Concierge Support",
+        "description": "Direct assistance from our New Delhi studio Monday to Saturday."
+      }
+    ],
+    "testimonials": [
+      {
+        "id": 1,
+        "testimonialId": 1,
+        "sectionId": null,
+        "customerName": "Sarah Johnson",
+        "customerImage": "https://randomuser.me/api/portraits/women/32.jpg",
+        "customerTitle": "Verified Buyer",
+        "rating": 5,
+        "content": "Absolutely love my new jacket! The quality is exceptional and it fits perfectly. Will definitely be purchasing more items from this store.",
+        "isApproved": true,
+        "isFeatured": true,
+        "displayOrder": 1,
+        "createdAt": "2026-01-02 23:21:22"
+      },
+      {
+        "id": 2,
+        "testimonialId": 2,
+        "sectionId": null,
+        "customerName": "Michael Chen",
+        "customerImage": "https://randomuser.me/api/portraits/men/54.jpg",
+        "customerTitle": "Premium Member",
+        "rating": 5,
+        "content": "The customer service is outstanding and the products are exactly as described. Fast shipping and great communication throughout.",
+        "isApproved": true,
+        "isFeatured": true,
+        "displayOrder": 2,
+        "createdAt": "2026-01-02 23:21:22"
+      },
+      {
+        "id": 3,
+        "testimonialId": 3,
+        "sectionId": null,
+        "customerName": "Emma Wilson",
+        "customerImage": "https://randomuser.me/api/portraits/women/67.jpg",
+        "customerTitle": "Style Influencer",
+        "rating": 5,
+        "content": "I've purchased multiple items and have been impressed every time. The attention to detail and quality is remarkable. Highly recommend!",
+        "isApproved": true,
+        "isFeatured": true,
+        "displayOrder": 3,
+        "createdAt": "2026-01-02 23:21:22"
+      }
+    ],
+    "siteStats": [
+      {
+        "id": 1,
+        "label": "Curated Pieces",
+        "value": "4.8K"
+      },
+      {
+        "id": 2,
+        "label": "Design Editions",
+        "value": "120+"
+      },
+      {
+        "id": 3,
+        "label": "Client Satisfaction",
+        "value": "98%"
+      }
+    ],
+    "brands": [
+      {
+        "id": 1,
+        "name": "Melvore Atelier",
+        "slug": "melvore-atelier",
+        "description": "Signature vegan-leather & denim hybrids"
+      },
+      {
+        "id": 2,
+        "name": "Seoul Edition",
+        "slug": "seoul-edition",
+        "description": "Korean street color-block silhouettes"
+      },
+      {
+        "id": 3,
+        "name": "Melvore Comfort",
+        "slug": "melvore-comfort",
+        "description": "220 GSM zipless cotton loungewear"
+      }
+    ],
+    "teamMembers": [
+      {
+        "id": 1,
+        "name": "Karanveer Singh",
+        "position": "Creative Director · Outerwear",
+        "bio": "Leads silhouette architecture and vegan-leather hardware sourcing across New Delhi & Seoul."
+      },
+      {
+        "id": 2,
+        "name": "Meera Nair",
+        "position": "Head of Textile Engineering",
+        "bio": "Develops bio-washed 220 GSM ring-spun cotton and zipless loungewear pattern blocks."
+      },
+      {
+        "id": 3,
+        "name": "Rohan Khanna",
+        "position": "Client Concierge & Operations",
+        "bio": "Oversees studio quality inspection and 48-hour express dispatch from Kewal Park, New Delhi."
+      }
+    ],
+    "milestones": [
+      {
+        "id": 1,
+        "year": "2024",
+        "title": "New Delhi Studio Founded",
+        "description": "Started pattern testing moto silhouettes at Kewal Park, New Delhi."
+      },
+      {
+        "id": 2,
+        "year": "2025",
+        "title": "Zipless Comfort Line",
+        "description": "Introduced 220 GSM combed cotton loungewear with zero abrasive hardware."
+      },
+      {
+        "id": 3,
+        "year": "2026",
+        "title": "Seoul Street Drop 04",
+        "description": "Expanded nationwide across 19,000+ Indian pin codes with unified web & mobile atelier."
+      }
+    ],
+    "styleQuiz": {
+      "bodyTypes": [
+        {
+          "id": 1,
+          "name": "Structured Broad",
+          "slug": "structured-broad",
+          "gender": "unisex",
+          "tips": "Cropped moto hems and raglans sharpen shoulder lines."
+        },
+        {
+          "id": 2,
+          "name": "Lean Tall",
+          "slug": "lean-tall",
+          "gender": "unisex",
+          "tips": "Color-blocked tri-tone jackets add balanced horizontal volume."
+        },
+        {
+          "id": 3,
+          "name": "Relaxed Everyday",
+          "slug": "relaxed-everyday",
+          "gender": "unisex",
+          "tips": "Drop-shoulder hybrids and zipless 220 GSM sets drape effortlessly."
+        }
+      ],
+      "categories": [
+        {
+          "id": 1,
+          "name": "Outerwear Mood",
+          "slug": "outerwear-mood",
+          "options": [
+            {
+              "id": 1,
+              "name": "Matte Moto Edge",
+              "slug": "matte-moto",
+              "productTag": "biker"
+            },
+            {
+              "id": 2,
+              "name": "Seoul Color-Block",
+              "slug": "seoul-colorblock",
+              "productTag": "seoul"
+            },
+            {
+              "id": 3,
+              "name": "Denim + Leather Hybrid",
+              "slug": "denim-hybrid",
+              "productTag": "hybrid"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Off-Duty Comfort",
+          "slug": "off-duty",
+          "options": [
+            {
+              "id": 4,
+              "name": "Zipless Cotton Sets",
+              "slug": "zipless-sets",
+              "productTag": "lounge"
+            },
+            {
+              "id": 5,
+              "name": "Cropped Studio Layers",
+              "slug": "cropped-studio",
+              "productTag": "cropped"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "manifest_id": "melvore_default_issue_v1",
+  "slot": "default",
+  "design_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "min_app_schema_version": "1.0.0",
+  "release_notes": "Stable Melvore Magazine Storefront — Classic Editorial Ivory & Obsidian baseline.",
+  "published_at": "2026-11-17T00:00:00Z",
+  "tokens": {
+    "colors": {
+      "mode": "light",
+      "background": "#FFFFFF",
+      "surface": "#F7F7FA",
+      "surface_elevated": "#EFEFF5",
+      "surface_variant": "#F1F1F5",
+      "primary": "#09090B",
+      "on_primary": "#FFFFFF",
+      "accent": "#C9A24B",
+      "secondary_accent": "#9CA3AF",
+      "text_primary": "#09090B",
+      "text_secondary": "#52525B",
+      "border": "#E4E4E7",
+      "badge_bg": "#09090B",
+      "badge_text": "#FFFFFF",
+      "sale_accent": "#B91C1C",
+      "success_accent": "#15803D"
+    },
+    "typography": {
+      "display_font": "editorial_serif",
+      "body_font": "clean_sans",
+      "heading_scale": 1.0,
+      "body_scale": 1.0,
+      "letter_spacing_eyebrow": 1.8
+    },
+    "spacing": {
+      "screen_horizontal_dp": 14,
+      "section_gap_dp": 24,
+      "card_padding_dp": 10,
+      "grid_gutter_dp": 12
+    },
+    "radii": {
+      "card_dp": 6,
+      "button_dp": 4,
+      "chip_dp": 999,
+      "search_bar_dp": 999,
+      "hero_dp": 4,
+      "sheet_dp": 16,
+      "border_width_dp": 1
+    },
+    "motion": {
+      "intensity": "subtle",
+      "hero_parallax": true,
+      "card_entrance": "fade_slide",
+      "carousel_interval_ms": 4800
+    }
+  },
+  "navigation": {
+    "top_bar_style": "editorial_masthead",
+    "top_bar_title": "MELVORE",
+    "top_bar_subtitle": "FASHION HOUSE",
+    "show_search_icon": true,
+    "show_bag_badge": true,
+    "bottom_bar_variant": "flat_editorial",
+    "bottom_bar_radius_dp": 0,
+    "bottom_bar_elevation_dp": 0,
+    "tabs": [
+      { "route": "home", "label": "Home", "icon_key": "home", "active_icon_key": "home_filled", "visible": true, "order": 1, "badge_text": "" },
+      { "route": "discover", "label": "Discover", "icon_key": "explore", "active_icon_key": "explore_filled", "visible": true, "order": 2, "badge_text": "" },
+      { "route": "videos", "label": "Reels", "icon_key": "play", "active_icon_key": "play_filled", "visible": true, "order": 3, "badge_text": "" },
+      { "route": "elite", "label": "Luxe", "icon_key": "diamond", "active_icon_key": "diamond_filled", "visible": true, "order": 4, "badge_text": "" },
+      { "route": "bag", "label": "Bag", "icon_key": "bag", "active_icon_key": "bag_filled", "visible": true, "order": 5, "badge_text": "" }
+    ]
+  },
+  "components": {
+    "button": {
+      "primary_variant": "editorial_sharp",
+      "corner_radius_dp": 4,
+      "min_height_dp": 48,
+      "uppercase_labels": true,
+      "show_trailing_arrow": false,
+      "border_width_dp": 1
+    },
+    "search_bar": {
+      "variant": "pill_elevated",
+      "placeholder": "Search silhouettes, worlds, or houses…",
+      "corner_radius_dp": 999,
+      "height_dp": 50,
+      "leading_icon_key": "search",
+      "show_visual_hint_icon": true
+    },
+    "product_card": {
+      "variant": "editorial_portrait",
+      "image_aspect_ratio": 0.78,
+      "corner_radius_dp": 6,
+      "show_brand": true,
+      "show_rating": true,
+      "show_quick_add": true,
+      "badge_position": "top_left",
+      "price_alignment": "start"
+    },
+    "category_strip": {
+      "variant": "circular_story",
+      "columns": 4,
+      "show_eyebrow": true,
+      "tile_radius_dp": 999
+    },
+    "section_header": {
+      "variant": "magazine_serif",
+      "show_eyebrow": true,
+      "show_divider": false
+    },
+    "states": {
+      "loading_variant": "shimmer_editorial",
+      "empty_variant": "framed_editorial",
+      "error_variant": "outlined_retry_card",
+      "empty_title": "Nothing Curated Here Yet",
+      "empty_subtitle": "Explore seasonal drops or clear active filters to continue browsing.",
+      "error_cta_label": "Retry"
+    }
+  },
+  "media": {
+    "hero_fallback_image": "/design-system/assets/images/default-editorial-hero.svg",
+    "occasion_overlay_opacity": 0.14,
+    "video_autoplay_default": true,
+    "brand_wordmark_url": ""
+  },
+  "pages": {
+    "home": {
+      "page_key": "home",
+      "layout_template": "editorial_magazine",
+      "hero_height_dp": 420,
+      "grid_columns": 2,
+      "show_floating_world_strip": true,
+      "sections": [
+        { "id": "search_bar", "type": "search_bar", "visible": true, "order": 1, "layout_variant": "pill_elevated", "eyebrow": "", "title": "", "subtitle": "", "cta_label": "", "columns": 1 },
+        { "id": "category_strip", "type": "category_strip", "visible": true, "order": 2, "layout_variant": "circular_story", "eyebrow": "DEPARTMENTS", "title": "Shop by Category", "subtitle": "", "cta_label": "View All", "columns": 4 },
+        { "id": "occasion_banner", "type": "occasion_banner", "visible": true, "order": 3, "layout_variant": "festive_masthead", "eyebrow": "SEASONAL CELEBRATION", "title": "", "subtitle": "", "cta_label": "Shop Edit", "columns": 1 },
+        { "id": "hero_carousel", "type": "hero_carousel", "visible": true, "order": 4, "layout_variant": "full_bleed_editorial", "eyebrow": "THE COVER STORY", "title": "Seasonal Campaigns", "subtitle": "", "cta_label": "Explore", "columns": 1 },
+        { "id": "style_worlds", "type": "style_worlds", "visible": true, "order": 5, "layout_variant": "editorial_cards", "eyebrow": "AESTHETIC MOVEMENTS", "title": "Enter a Fashion World", "subtitle": "Full sensory worlds sculpted around distinct subcultures.", "cta_label": "Explore Worlds", "columns": 2 },
+        { "id": "trending_rail", "type": "trending_rail", "visible": true, "order": 6, "layout_variant": "horizontal_cards", "eyebrow": "MOST WANTED", "title": "Trending Now", "subtitle": "", "cta_label": "See All", "columns": 2 },
+        { "id": "world_atelier_map", "type": "world_atelier_map", "visible": true, "order": 7, "layout_variant": "interactive_pins", "eyebrow": "GLOBAL ATELIERS", "title": "Origin Houses", "subtitle": "", "cta_label": "All Houses", "columns": 1 },
+        { "id": "elite_teaser", "type": "elite_teaser", "visible": true, "order": 8, "layout_variant": "obsidian_callout", "eyebrow": "MELVORE LUXE", "title": "Private Archive Packs", "subtitle": "", "cta_label": "Enter Luxe", "columns": 1 },
+        { "id": "curated_grid", "type": "curated_grid", "visible": true, "order": 9, "layout_variant": "editorial_2col", "eyebrow": "CURATED DROPS", "title": "Selected For You", "subtitle": "", "cta_label": "Shop All", "columns": 2 }
+      ]
+    },
+    "style_worlds": {
+      "page_key": "style_worlds",
+      "layout_template": "world_editorial_story",
+      "hero_height_dp": 440,
+      "grid_columns": 2,
+      "show_floating_world_strip": false,
+      "sections": [
+        { "id": "world_hero", "type": "world_hero", "visible": true, "order": 1, "layout_variant": "full_bleed_poster", "eyebrow": "", "title": "", "subtitle": "", "cta_label": "", "columns": 1 },
+        { "id": "world_promo_film", "type": "world_promo_film", "visible": true, "order": 2, "layout_variant": "inline_lookbook_reel", "eyebrow": "RUNWAY FILM", "title": "In Motion", "subtitle": "", "cta_label": "", "columns": 1 },
+        { "id": "vibe_satisfaction", "type": "vibe_satisfaction", "visible": true, "order": 3, "layout_variant": "emoji_slider", "eyebrow": "ONE-TIME REWARD", "title": "LIKING THE VIBE?", "subtitle": "Tell us how much you're feeling this world.", "cta_label": "Unlock Reward", "columns": 1 },
+        { "id": "world_subcultures", "type": "world_subcultures", "visible": true, "order": 4, "layout_variant": "pills_filter", "eyebrow": "SILHOUETTES", "title": "World Edits", "subtitle": "", "cta_label": "", "columns": 1 },
+        { "id": "world_products", "type": "world_products", "visible": true, "order": 5, "layout_variant": "editorial_2col", "eyebrow": "CURATED PIECES", "title": "Shop the World", "subtitle": "", "cta_label": "", "columns": 2 },
+        { "id": "world_brands", "type": "world_brands", "visible": true, "order": 6, "layout_variant": "house_cards", "eyebrow": "PARTICIPATING HOUSES", "title": "Houses in This World", "subtitle": "", "cta_label": "", "columns": 1 }
+      ]
+    },
+    "categories": {
+      "page_key": "categories",
+      "layout_template": "structured_departments",
+      "hero_height_dp": 260,
+      "grid_columns": 2,
+      "sections": [
+        { "id": "department_chips", "type": "department_chips", "visible": true, "order": 1, "layout_variant": "filter_bar", "eyebrow": "FILTERS", "title": "Refine Edit", "subtitle": "", "cta_label": "", "columns": 1 },
+        { "id": "product_grid", "type": "product_grid", "visible": true, "order": 2, "layout_variant": "editorial_2col", "eyebrow": "COLLECTION", "title": "Catalog Pieces", "subtitle": "", "cta_label": "", "columns": 2 }
+      ]
+    },
+    "search": {
+      "page_key": "search",
+      "layout_template": "editorial_finder",
+      "hero_height_dp": 180,
+      "grid_columns": 2,
+      "sections": [
+        { "id": "search_trending", "type": "search_trending", "visible": true, "order": 1, "layout_variant": "chips", "eyebrow": "TRENDING QUERIES", "title": "Popular Now", "subtitle": "", "cta_label": "", "columns": 1 },
+        { "id": "search_results", "type": "search_results", "visible": true, "order": 2, "layout_variant": "editorial_2col", "eyebrow": "RESULTS", "title": "Matched Pieces", "subtitle": "", "cta_label": "", "columns": 2 }
+      ]
+    },
+    "product_details": {
+      "page_key": "product_details",
+      "layout_template": "atelier_product_sheet",
+      "hero_height_dp": 460,
+      "grid_columns": 2,
+      "sections": [
+        { "id": "gallery", "type": "gallery", "visible": true, "order": 1, "layout_variant": "swipe_pager", "eyebrow": "", "title": "", "subtitle": "", "cta_label": "", "columns": 1 },
+        { "id": "buy_box", "type": "buy_box", "visible": true, "order": 2, "layout_variant": "sticky_split", "eyebrow": "", "title": "", "subtitle": "", "cta_label": "Add to Bag", "columns": 1 },
+        { "id": "delivery_check", "type": "delivery_check", "visible": true, "order": 3, "layout_variant": "pincode_inline", "eyebrow": "DISPATCH", "title": "Delivery & Returns", "subtitle": "", "cta_label": "Check", "columns": 1 },
+        { "id": "reviews", "type": "reviews", "visible": true, "order": 4, "layout_variant": "verified_list", "eyebrow": "CLIENT NOTES", "title": "Verified Reviews", "subtitle": "", "cta_label": "Write Review", "columns": 1 }
+      ]
+    },
+    "cart": {
+      "page_key": "cart",
+      "layout_template": "clean_tote_summary",
+      "hero_height_dp": 0,
+      "grid_columns": 1,
+      "sections": [
+        { "id": "shipping_progress", "type": "shipping_progress", "visible": true, "order": 1, "layout_variant": "linear_bar", "eyebrow": "DISPATCH", "title": "Complimentary Shipping", "subtitle": "", "cta_label": "", "columns": 1 },
+        { "id": "bag_items", "type": "bag_items", "visible": true, "order": 2, "layout_variant": "editorial_rows", "eyebrow": "", "title": "Items", "subtitle": "", "cta_label": "", "columns": 1 },
+        { "id": "order_summary", "type": "order_summary", "visible": true, "order": 3, "layout_variant": "clean_receipt", "eyebrow": "SUMMARY", "title": "Estimated Total", "subtitle": "", "cta_label": "Checkout", "columns": 1 }
+      ]
+    }
+  },
+  "worlds": {
+    "y2k": {
+      "template": "y2k_arcade_grid",
+      "hero_layout": "chrome_arcade_split",
+      "font_style": "futuristic",
+      "button_style": "metallic_pill",
+      "card_radius_dp": 16,
+      "grid_columns": 2,
+      "section_order": ["world_hero", "world_promo_film", "vibe_satisfaction", "world_subcultures", "world_products", "world_brands"]
+    },
+    "goth": {
+      "template": "goth_editorial_noir",
+      "hero_layout": "cathedral_full_bleed",
+      "font_style": "gothic",
+      "button_style": "sharp_hardware",
+      "card_radius_dp": 2,
+      "grid_columns": 2,
+      "section_order": ["world_hero", "vibe_satisfaction", "world_promo_film", "world_products", "world_brands"]
+    },
+    "coquette": {
+      "template": "coquette_storybook_masonry",
+      "hero_layout": "ribbon_framed_portrait",
+      "font_style": "editorial_serif",
+      "button_style": "ribbon_soft",
+      "card_radius_dp": 20,
+      "grid_columns": 2,
+      "section_order": ["world_hero", "world_promo_film", "vibe_satisfaction", "world_subcultures", "world_products", "world_brands"]
+    },
+    "streetwear": {
+      "template": "streetwear_utility_lookbook",
+      "hero_layout": "poster_cutout_split",
+      "font_style": "editorial_sans",
+      "button_style": "street_block",
+      "card_radius_dp": 4,
+      "grid_columns": 2,
+      "section_order": ["world_hero", "world_subcultures", "vibe_satisfaction", "world_products", "world_promo_film", "world_brands"]
+    },
+    "k-fashion": {
+      "template": "kfashion_minimal_lookbook",
+      "hero_layout": "seoul_clean_split",
+      "font_style": "k_fashion",
+      "button_style": "editorial_pill",
+      "card_radius_dp": 14,
+      "grid_columns": 2,
+      "section_order": ["world_hero", "vibe_satisfaction", "world_products", "world_promo_film", "world_brands"]
+    },
+    "quiet-luxury": {
+      "template": "editorial_magazine",
+      "hero_layout": "minimal_monogram_spread",
+      "font_style": "editorial_serif",
+      "button_style": "sharp_minimal",
+      "card_radius_dp": 2,
+      "grid_columns": 2,
+      "section_order": ["world_hero", "vibe_satisfaction", "world_products", "world_brands"]
+    }
+  },
+  "occasion_overrides": {
+    "default_activation_days_before": 8,
+    "default_timezone": "Asia/Kolkata",
+    "max_banner_elevation_dp": 4,
+    "preserve_world_layout": true
+  }
+}

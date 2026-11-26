@@ -1,0 +1,1687 @@
+# MELVORE — NEXT-GENERATION DYNAMIC FASHION WORLDS
+## Complete Android App Transformation | Kotlin + Jetpack Compose | PHP + MySQL | Database-Driven Experiences
+
+You are working on the existing Melvore Android application.
+
+Act as a combination of:
+- Principal Android architect.
+- Senior Kotlin and Jetpack Compose engineer.
+- Luxury fashion creative director.
+- Award-winning motion and interaction designer.
+- Premium e-commerce UX specialist.
+- Backend PHP and MySQL architect.
+- SVG and vector animation specialist.
+- Personalisation and merchandising engineer.
+
+Your mission is to transform Melvore into a highly immersive, dynamic fashion marketplace where the entire visual identity of the application can change according to the customer's selected fashion style, category, festival, season, campaign or occasion.
+
+**Do not produce another ordinary shopping application with different coloured cards.**
+
+I want the application to feel like multiple beautifully designed fashion applications combined into one intelligent shopping experience.
+
+The attached images are visual references, not layouts to copy literally.
+
+They represent:
+1. Premium fashion shopping with large image-led campaigns and product discovery.
+2. Cinematic black and red gothic artwork.
+3. Colourful pixel-art Y2K interfaces and retro widgets.
+4. Immersive world-map and travel-inspired visual experiences.
+5. Festive, occasion-based interfaces with animated artwork and themed shopping.
+
+Use these references to create original Melvore designs.
+
+---
+
+# 1. FIRST: AUDIT THE EXISTING PROJECT
+
+The supplied project is:
+
+`melvore_application (4).zip`
+
+It is an existing Kotlin + Jetpack Compose Android application with a PHP/MySQL backend.
+
+Important existing Android files include:
+
+- `MainActivity.kt`
+- `HomeScreen.kt`
+- `HomeEditorialComponents.kt`
+- `ShopAndCategoriesScreens.kt`
+- `StyleWorldScreen.kt`
+- `ProductDetailsScreen.kt`
+- `VideosScreen.kt`
+- `EliteScreen.kt`
+- `ElitePackDetailScreen.kt`
+- `MelvoreComponents.kt`
+- `Overlays.kt`
+- `Theme.kt`
+- `MelvoreAnimations.kt`, if present in the current project
+- `MelvoreRepository.kt`
+- `DiscoveryRepository.kt`
+- `MelvoreViewModel.kt`
+- `DiscoveryViewModelDelegate.kt`
+- `MelvoreApiService.kt`
+- `DiscoveryApiService.kt`
+- `MelvoreApiDtos.kt`
+- `DiscoveryDtos.kt`
+- `DiscoveryMappers.kt`
+- `MelvoreModels.kt`
+- `DiscoveryModels.kt`
+
+The supplied ZIP also includes:
+
+`php_api/`
+
+Existing API directories include:
+- `api/home/`
+- `api/categories/`
+- `api/brands/`
+- `api/products/`
+- `api/search/`
+- `api/styles/`
+- `api/videos/`
+- `api/elite/`
+- `api/personalization/`
+- `api/delivery/`
+- `api/reviews/`
+- `api/help/`
+- `api/support/`
+
+Existing SQL and documentation include:
+- `php_api/sql/melvore_customer_app_experience_migration.sql`
+- `php_api/sql/melvore_experience_companion_indexes.sql`
+- `php_api/sql/melvore_sample_editorial_seed.sql`
+- `php_api/CAMPAIGN_ASSET_SPEC.md`
+- `php_api/README.md`
+- `docs/DATABASE_AND_API_GUIDE.md`
+- `docs/INSTALLATION_BUILD_DEPLOYMENT.md`
+- `.env.example`
+
+Read these files before implementing anything.
+
+Do not assume the existing database is empty.
+
+Do not recreate existing APIs unnecessarily.
+
+Do not create duplicate products, brands, users, categories, orders or payments.
+
+Preserve the current authentication, cart, wishlist, product catalogue, checkout and payment architecture.
+
+The existing production API domain is:
+
+`https://app.melvore.co.in`
+
+The public website is:
+
+`https://melvore.co.in`
+
+Use the existing database as the single source of truth.
+
+---
+
+# 2. THE CENTRAL CONCEPT: MELVORE HAS MULTIPLE FASHION WORLDS
+
+The biggest change is that the application must no longer have one fixed visual design.
+
+The default experience should be premium white, black and Y2K-inspired.
+
+However, individual fashion sections must be capable of transforming the surrounding visual experience.
+
+Imagine the customer scrolling through the homepage.
+
+They see:
+
+- Normal Melvore premium storefront.
+- A large Y2K editorial world.
+- A transition into Gothic.
+- A Korean streetwear world.
+- A soft Coquette world.
+- A festive campaign.
+- A Winter Collection.
+- A Luxe editorial experience.
+
+These are not ordinary cards linking to different product categories.
+
+**They are immersive visual environments.**
+
+When a customer enters one of these worlds, the application should adapt its:
+
+- Background.
+- Typography.
+- Accent colours.
+- Buttons.
+- Icons.
+- Vector artwork.
+- SVG animations.
+- Decorative elements.
+- Product cards.
+- Navigation accents.
+- Campaign artwork.
+- Transitions.
+- Ambient sound effects.
+- Promotional elements.
+
+The entire visible section should feel like it belongs to that fashion world.
+
+## Important distinction
+
+Do not change the entire app theme permanently whenever the customer taps a category.
+
+The experience should be context-aware.
+
+For example:
+- Entering Goth changes the active shopping world to Goth.
+- Opening a Goth product preserves the Goth theme.
+- Opening a category from the Goth world preserves the Goth theme.
+- Returning to the homepage restores the normal theme when the user exits that world.
+- Scrolling back to the normal storefront restores its appearance smoothly.
+
+The context must be maintained throughout navigation.
+
+---
+
+# 3. CREATE A DYNAMIC THEME ENGINE
+
+Do not implement each fashion world as a separate hardcoded screen with unrelated styling.
+
+Build a reusable, data-driven theme engine.
+
+Suggested architecture:
+
+`FashionWorldThemeEngine`
+
+`FashionWorldTheme`
+
+`FashionWorldContext`
+
+`FashionWorldTransitionController`
+
+`OccasionThemeController`
+
+`AmbientEffectsController`
+
+`CampaignExperienceController`
+
+Use Compose state and navigation-aware context.
+
+Each world should define its own theme configuration.
+
+Example model:
+
+- `world_id`
+- `world_slug`
+- `world_name`
+- `background_color`
+- `surface_color`
+- `primary_text_color`
+- `secondary_text_color`
+- `accent_color`
+- `secondary_accent_color`
+- `button_style`
+- `button_radius`
+- `font_heading`
+- `font_body`
+- `hero_asset`
+- `background_asset`
+- `overlay_asset`
+- `animation_type`
+- `ambient_effect`
+- `sound_effect`
+- `transition_type`
+- `product_card_style`
+- `category_layout`
+- `decorative_asset_set`
+- `is_active`
+- `display_order`
+
+All configurable theme values should come from the database.
+
+Provide sensible local defaults if the API is temporarily unavailable.
+
+Do not hardcode the complete visual identity into individual screens.
+
+## Theme inheritance
+
+Implement a hierarchy:
+
+1. Default Melvore theme.
+2. Active occasion or festival theme.
+3. Selected fashion world.
+4. Current campaign styling.
+5. Individual component state.
+
+Define clear precedence rules.
+
+The selected fashion world must remain active while browsing products within it.
+
+An occasion may provide the overarching seasonal appearance while the fashion world provides its specific decorative personality.
+
+Example:
+
+A Halloween campaign with Goth fashion:
+- Halloween supplies orange-red seasonal lighting and subtle seasonal decoration.
+- Goth supplies black and burgundy surfaces, gothic typography and raven artwork.
+- The product page preserves both.
+
+A Christmas campaign with Coquette fashion:
+- Christmas supplies festive details.
+- Coquette supplies blush, cream, delicate typography and soft decorative elements.
+
+Never let one theme randomly overwrite another.
+
+---
+
+# 4. FULL-WIDTH EDITORIAL FASHION WORLDS
+
+This is one of the most important requirements.
+
+I do not want a small horizontal slider containing five different style cards.
+
+I want full-width, immersive sections that occupy the entire available screen width.
+
+Each world must have its own complete editorial design.
+
+The homepage should contain a continuous series of large visual experiences.
+
+## Example layout
+
+<escape>
+NORMAL PREMIUM HOME
+        ↓
+FULL-WIDTH Y2K WORLD
+        ↓
+FULL-WIDTH GOTH WORLD
+        ↓
+FULL-WIDTH K-FASHION WORLD
+        ↓
+FULL-WIDTH COQUETTE WORLD
+        ↓
+FULL-WIDTH STREETWEAR WORLD
+        ↓
+FESTIVAL / OCCASION CAMPAIGN
+        ↓
+LUXE WORLD
+</escape>
+
+Each section should feel like entering a different environment.
+
+Do not place all worlds inside identical rounded rectangles.
+
+Use full-width artwork, large photography, overlapping elements and carefully layered typography.
+
+## World section composition
+
+Every world should support:
+
+1. Large background or hero image.
+2. Distinctive world title.
+3. Editorial introduction.
+4. Animated decorative SVG artwork.
+5. Floating category labels.
+6. Large featured product images.
+7. Smaller overlapping product cards.
+8. Featured brands.
+9. Curated products.
+10. Collection CTA.
+11. View all products.
+12. Unique section exit transition.
+
+Use asymmetrical compositions.
+
+Products must be visually integrated into the world rather than displayed as an ordinary product grid.
+
+Use image compositions similar to fashion editorials, magazine layouts and premium campaign websites.
+
+The section should have enough content to feel like a destination, not a banner.
+
+---
+
+# 5. Y2K WORLD — PIXEL ART, CHROME AND RETRO DIGITAL FASHION
+
+Create an unmistakable Y2K experience.
+
+Visual direction:
+- Chrome.
+- Metallic silver.
+- Electric blue.
+- Purple.
+- Bubblegum pink.
+- Pixel textures.
+- Retro computer interfaces.
+- 2000s digital artwork.
+- Futuristic typography.
+- Glossy buttons.
+- Holographic gradients.
+
+Use animated elements:
+- Pixel stars.
+- Floating pixel hearts.
+- Chrome sparkles.
+- Animated stickers.
+- Retro loading indicators.
+- Pixel-art decorative characters.
+- Floating digital windows.
+- Moving vector objects.
+
+Create a layered design.
+
+Example:
+- A large Y2K background campaign.
+- Overlapping product images.
+- Floating chrome product labels.
+- A retro digital title panel.
+- Small product cards arranged like a magazine collage.
+- Animated CTA.
+
+The design should feel nostalgic but professionally art-directed.
+
+Do not make the entire screen look like an old low-quality website.
+
+Use pixel art as a visual accent within a premium interface.
+
+## Y2K interactions
+
+- Chrome buttons react to touch.
+- Pixel artwork has small idle animations.
+- Cards have subtle 3D movement.
+- Sparkles appear on important interactions.
+- Product images reveal alternate angles on interaction.
+
+---
+
+# 6. GOTH WORLD — CINEMATIC DARK RED AND BLACK EXPERIENCE
+
+This world must be dramatically different from the normal storefront.
+
+Visual direction:
+- Obsidian black.
+- Deep crimson.
+- Blood red.
+- Burgundy.
+- Dark silver.
+- Smoky grey.
+- Gothic textures.
+- Dark romantic fashion photography.
+- Gothic editorial typography.
+
+The section should transform the screen as the user enters it.
+
+## Transition
+
+When the Goth section becomes active:
+- Background transitions smoothly from white to near-black.
+- Red accents gradually appear.
+- The section artwork fades in.
+- Gothic typography animates into place.
+- Decorative SVG elements enter from different edges.
+- The normal storefront decorations disappear.
+
+## Animated artwork
+
+Create original animated SVG or vector assets:
+- Ravens.
+- Bats.
+- Crescent moons.
+- Gothic ornamental frames.
+- Floating particles.
+- Stars.
+- Smoke.
+- Thorn branches.
+- Subtle red glowing elements.
+- Animated chains.
+- Gothic decorative patterns.
+
+Bats can fly across the screen.
+
+Ravens can appear around the section title.
+
+Stars and small particles can drift slowly.
+
+Decorative elements can overlap the background and product imagery.
+
+Use depth:
+- Background decoration.
+- Midground particles.
+- Foreground typography.
+- Product artwork.
+
+Do not make the animations obscure product details or shopping controls.
+
+## Goth campaign design
+
+Create a large full-width Gothic editorial.
+
+Example campaign:
+- AFTER DARK.
+- THE DARK ROMANTIC EDIT.
+- NO RULES. NO LIGHT.
+- GOTHIC STREET.
+- DARKER THAN EVER.
+
+Below the hero:
+- Leather jackets.
+- Black oversized shirts.
+- Statement accessories.
+- Dark denim.
+- Gothic footwear.
+- Featured brands.
+- Curated products.
+
+Use image collages and overlapping cards.
+
+Do not reduce the entire section to black product cards.
+
+## Gothic sound
+
+Support optional atmospheric ambient audio.
+
+Use original or properly licensed ambient sound.
+
+Possible sound direction:
+- Low atmospheric drone.
+- Soft wind.
+- Subtle cinematic ambience.
+- Gentle gothic instrumental texture.
+
+Do not automatically play a copyrighted Dracula soundtrack.
+
+Audio must be:
+- Muted by default.
+- Activated only after user consent.
+- Controllable through an obvious sound toggle.
+- Stopped when the user exits the world or leaves the app.
+- Respectful of device audio settings.
+- Never played unexpectedly.
+
+Provide a mute option that persists.
+
+---
+
+# 7. K-FASHION WORLD — SEOUL STREET EDITORIAL
+
+Create a modern Korean fashion environment.
+
+Visual direction:
+- Cool grey.
+- Cream.
+- Black.
+- Muted blue.
+- Soft silver.
+- Minimalist layouts.
+- Korean editorial photography.
+- Street photography.
+- Oversized silhouettes.
+
+Animations:
+- Floating Korean-inspired graphic labels.
+- Soft moving typography.
+- Camera-frame transitions.
+- Moving editorial stickers.
+- Smooth product image reveals.
+
+Layout:
+- Full-width campaign photography.
+- Two-column asymmetric product compositions.
+- Oversized typography.
+- Featured streetwear collections.
+- Korean brand-origin storytelling.
+- Curated outfits.
+- Shop the look.
+
+Use premium magazine-style layouts.
+
+Do not use random Korean text as decoration if it has no meaning.
+
+---
+
+# 8. COQUETTE / PRETTY WORLD
+
+Create a completely different visual environment.
+
+Visual direction:
+- Blush.
+- Powder pink.
+- Ivory.
+- Cream.
+- Soft rose.
+- Delicate silver.
+- Elegant typography.
+- Romantic fashion photography.
+
+Animated elements:
+- Small floating hearts.
+- Ribbon SVGs.
+- Flower petals.
+- Sparkles.
+- Delicate bows.
+- Soft animated borders.
+- Gentle particle movement.
+
+Create:
+- Pretty Things.
+- Soft Girl Edit.
+- Romantic Wardrobe.
+- Party Looks.
+- Elegant Dresses.
+- Accessories.
+- Curated brands.
+
+Use a layered editorial design.
+
+Avoid making the experience childish.
+
+The goal is premium feminine fashion, not a toy interface.
+
+---
+
+# 9. STREETWEAR WORLD
+
+Visual direction:
+- Black.
+- White.
+- Concrete grey.
+- Acid green or electric blue accents.
+- Bold typography.
+- Urban photography.
+- Strong geometric layouts.
+
+Animations:
+- Moving stickers.
+- Typography slide transitions.
+- Subtle graffiti-inspired vector accents.
+- Camera flashes.
+- Layered product images.
+- Fast but smooth section transitions.
+
+Create:
+- Oversized Fashion.
+- Graphic Tees.
+- Street Jackets.
+- Cargo.
+- Sneakers.
+- Urban Accessories.
+- Limited Drops.
+
+Use asymmetric layouts and oversized campaign titles.
+
+---
+
+# 10. WORLD DISCOVERY — SHOW WHERE BRANDS COME FROM
+
+Use the supplied globe and travel-map references as inspiration.
+
+I want a unique brand discovery section that visually communicates the origins of fashion brands and styles.
+
+This should be a complete feature, not just a country filter.
+
+## Visual design
+
+Create a full-width immersive world map or 3D-inspired globe.
+
+The globe can use:
+- A dark ocean surface.
+- Glowing country markers.
+- Animated connection lines.
+- Floating brand image circles.
+- Country labels.
+- Regional filters.
+- Featured editorial cards.
+
+As the user scrolls into the section, the map gradually appears.
+
+Brand markers should be selectable.
+
+## Example regions
+
+- Seoul — K-Fashion.
+- Tokyo — Japanese streetwear.
+- Paris — Luxury fashion.
+- Milan — Italian fashion.
+- London — Alternative fashion.
+- New York — Urban streetwear.
+- Copenhagen — Scandinavian minimalism.
+- Mumbai — Indian contemporary fashion.
+
+Only show real and verified brand origins.
+
+Do not falsely assign brands to countries.
+
+## When a marker is selected
+
+Show:
+- Country.
+- City.
+- Brand names.
+- Brand logos.
+- Brand story.
+- Associated fashion styles.
+- Products.
+- Featured collections.
+
+Allow the user to shop products from that region.
+
+Use actual database brand records and origin metadata.
+
+If a globe/map library is unavailable, build a visually rich custom map using vector assets and Compose Canvas.
+
+Do not make a static image pretend to be interactive.
+
+---
+
+# 11. OCCASION AND FESTIVAL EXPERIENCE ENGINE
+
+This is another central feature.
+
+The application must automatically adapt its visual identity to the current occasion.
+
+Examples:
+- Diwali.
+- Christmas.
+- Halloween.
+- New Year.
+- Valentine's Day.
+- Holi.
+- Eid.
+- Wedding Season.
+- Black Friday.
+- Cyber Monday.
+- Independence Day.
+- Winter.
+- Summer.
+- Monsoon.
+- Back to College.
+- End of Season Sale.
+
+Occasion data must be controlled by the backend.
+
+Each occasion should have:
+
+- Name.
+- Slug.
+- Start date.
+- End date.
+- Region.
+- Priority.
+- Active status.
+- Hero artwork.
+- Background artwork.
+- Accent colours.
+- Typography configuration.
+- SVG asset references.
+- Animation configuration.
+- Sound configuration.
+- Campaign sections.
+- Product mappings.
+- Brand mappings.
+- Coupon mappings.
+- CTA.
+- Landing page.
+- Display order.
+
+## Example: Christmas
+
+When Christmas is active:
+- The normal premium storefront can receive subtle festive decoration.
+- Snowflakes can drift slowly.
+- Small lights can animate.
+- Campaign banners change.
+- Product recommendations change.
+- Seasonal buttons receive festive accents.
+- Christmas collections become visible.
+- Relevant offers are displayed.
+
+## Example: Halloween
+
+- Darker seasonal background details.
+- Orange and purple accents.
+- Floating bats.
+- Moon and star animations.
+- Halloween product campaigns.
+- Gothic fashion can be highlighted.
+
+## Example: Diwali
+
+- Gold.
+- Deep red.
+- Warm lighting.
+- Subtle animated diyas.
+- Decorative ornamental borders.
+- Wedding and festive collections.
+- Occasion-specific coupons.
+
+Occasion themes must never make the entire app unreadable.
+
+Keep product photographs prominent.
+
+## Priority system
+
+When multiple campaigns are active:
+- Respect backend priority.
+- Respect region.
+- Respect campaign start/end dates.
+- Avoid conflicting theme changes.
+- Allow a fashion world to coexist with an occasion.
+- Support manually scheduled campaigns.
+
+Do not activate old festival campaigns simply because their records exist.
+
+---
+
+# 12. PRODUCT DETAIL MUST PRESERVE THE ACTIVE EXPERIENCE
+
+This is mandatory.
+
+When a user opens a product from a fashion world, the product page must retain that world.
+
+Examples:
+
+### Goth jacket
+If the customer opens a jacket from Goth:
+- Keep the dark background.
+- Keep the Gothic typography.
+- Keep red accent colours.
+- Keep subtle Gothic artwork.
+- Keep the same CTA styling.
+- Preserve the Gothic navigation accent.
+
+### Y2K product
+If opened from Y2K:
+- Keep chrome details.
+- Keep pixel artwork.
+- Keep Y2K accent colours.
+- Keep the product page visually consistent with the Y2K collection.
+
+### Christmas product
+If opened during a Christmas campaign:
+- Preserve relevant Christmas details.
+- Keep the seasonal campaign context.
+- Show eligible festive offers.
+
+### K-Fashion product
+Keep the minimalist editorial design.
+
+The customer must never feel like they have left the fashion world simply because they opened a product.
+
+## Product page structure
+
+Use:
+- Large edge-to-edge product gallery.
+- Premium image transitions.
+- Full-screen image viewing.
+- Alternate angles.
+- Product video where available.
+- Brand identity.
+- Product name.
+- Price and discount.
+- Size selection.
+- Colour selection.
+- Size guide.
+- Stock information.
+- Delivery availability.
+- Add to Bag.
+- Buy Now.
+- Product description.
+- Fabric and care.
+- Reviews.
+- Similar products.
+- Shop the Look.
+
+Use the current real product APIs.
+
+Preserve existing cart, stock, size and checkout logic.
+
+## Navigation context
+
+Store a `FashionWorldContext` containing:
+- Active world ID.
+- Active occasion ID.
+- Source campaign ID.
+- Previous route.
+- Theme configuration.
+- Return destination.
+
+Pass this context through navigation.
+
+It must survive:
+- Product detail.
+- Category listing.
+- Brand page.
+- Wishlist.
+- Back navigation.
+- Related product navigation.
+
+If a customer enters a product from a different campaign, define clear context-switch behaviour.
+
+Do not randomly lose the original theme.
+
+---
+
+# 13. DEFAULT MELVORE DESIGN
+
+When no special world or occasion is active, the application must have a premium default identity.
+
+Visual direction:
+- White.
+- Black.
+- Warm ivory.
+- Chrome.
+- Silver.
+- Small electric-blue accents.
+- Selective metallic details.
+- Premium Y2K-inspired typography.
+
+It should feel like a modern fashion label.
+
+Do not make it look like a standard shopping template.
+
+Use:
+- Full-width editorial campaigns.
+- Premium image-led layouts.
+- Large product photography.
+- Distinct section compositions.
+- Asymmetric product displays.
+- Brand stories.
+- Curated outfits.
+- Moving visual accents.
+- Carefully animated vector icons.
+
+The normal theme should remain elegant and usable.
+
+Luxe remains a separate dark luxury destination.
+
+---
+
+# 14. CREATE AN ORIGINAL ANIMATED VECTOR LIBRARY
+
+I specifically want the application to use animated SVGs and vector illustrations as part of its identity.
+
+Create an asset library with original artwork.
+
+Examples:
+- Pixel hearts.
+- Pixel stars.
+- Chrome sparkles.
+- Animated ribbons.
+- Bats.
+- Ravens.
+- Crescent moons.
+- Snowflakes.
+- Diyas.
+- Fireworks.
+- Petals.
+- Confetti.
+- Glowing stars.
+- Animated arrows.
+- Seasonal badges.
+- Sale stickers.
+- Animated discount symbols.
+- Floating particles.
+
+Use:
+- AnimatedVectorDrawable.
+- Compose Canvas.
+- Lottie where suitable.
+- Rive where supported.
+- SVG-to-vector conversion.
+- Lightweight custom animation.
+
+Do not load large SVG files repeatedly during scrolling.
+
+Cache and reuse vector resources.
+
+Make artwork configurable by database asset IDs.
+
+Keep the animation system performant.
+
+Use separate foreground and background layers.
+
+Never allow decorative animation to cover product images, prices or buttons.
+
+---
+
+# 15. ANIMATED BUTTONS, ICONS AND INTERACTIONS
+
+Buttons must match the active world.
+
+### Default
+Premium white and black with subtle chrome details.
+
+### Goth
+Black buttons with red borders, dark red glow and restrained Gothic details.
+
+### Y2K
+Chrome gradients, pixel outlines, holographic accents.
+
+### Coquette
+Soft blush, delicate borders, elegant iconography.
+
+### Streetwear
+Bold geometric buttons and strong contrast.
+
+### Christmas
+Subtle festive lights and seasonal decoration.
+
+### Diwali
+Gold and warm red details.
+
+All buttons must have:
+- Press animation.
+- Clear touch feedback.
+- Loading state.
+- Disabled state.
+- Error state.
+- Success state.
+
+Use original vector icons wherever appropriate.
+
+Do not use random emoji as the primary interface icon system.
+
+---
+
+# 16. AUDIO AND SOUND EFFECTS
+
+Add optional sound design to make the experience immersive.
+
+Sound effects may include:
+- Soft button interaction.
+- Subtle notification.
+- Campaign entrance.
+- Collection transition.
+- Y2K digital sound.
+- Gothic ambient sound.
+- Seasonal ambient effects.
+
+However:
+
+- Sound must be off by default.
+- Ask for user permission before enabling audio.
+- Provide an obvious sound setting.
+- Provide separate ambient music and UI sound toggles.
+- Never play loud sounds unexpectedly.
+- Do not play copyrighted music without a proper licence.
+- Stop sounds when the user exits the relevant world.
+- Respect Android audio focus.
+- Stop or pause background audio when another app or call requires audio focus.
+- Provide reduced-motion and reduced-audio preferences.
+
+Create a small reusable audio controller rather than playing sounds independently in every component.
+
+---
+
+# 17. KEEP THE EXPERIENCE ALIVE WITHOUT AUTO-SCROLLING
+
+The application should feel active even when the customer pauses scrolling.
+
+But do not automatically move the customer's screen.
+
+Do not hijack scrolling.
+
+Do not unexpectedly switch categories.
+
+Instead, use subtle ambient interactions:
+- Slowly moving background particles.
+- Gentle hero image movement.
+- Animated SVG details.
+- Small campaign indicator motion.
+- Soft glowing sale indicators.
+- Occasional editorial text transitions.
+- Subtle floating artwork.
+- Dynamic campaign cards.
+- Live inventory indicators where genuine.
+
+When the user stops scrolling:
+- The current section can continue a subtle animation.
+- A relevant offer can appear if eligible.
+- A product recommendation can be shown.
+- A campaign can reveal a secondary message.
+
+Do not constantly throw popups at the customer.
+
+The application should feel alive, not irritating.
+
+Respect battery usage and pause decorative animations when the app is backgrounded.
+
+---
+
+# 18. SMART COUPONS AND CONTEXTUAL SALES
+
+The app should always make relevant sales and offers discoverable.
+
+Do not hardcode fake discounts.
+
+Use real backend coupon and campaign data.
+
+Examples:
+- First order offer.
+- Cart value offer.
+- Category discount.
+- Style-specific coupon.
+- Festival discount.
+- Winter campaign.
+- Limited-time offer.
+- Free shipping.
+- Brand promotion.
+- Bundle offer.
+
+## Behaviour examples
+
+When a customer:
+- Scrolls through a collection.
+- Views multiple products.
+- Adds a product to the bag.
+- Reaches a minimum cart value.
+- Returns to an eligible product.
+- Enters an active campaign.
+
+The app may show a contextual offer if the user is eligible.
+
+Example:
+- "A little something for your first order."
+- "Add ₹250 more to unlock free delivery."
+- "Your Gothic edit has a special offer."
+- "Your winter picks qualify for an extra discount."
+
+Only show offers that the backend confirms are valid.
+
+Never invent coupon codes.
+
+Never claim a discount is available when it is not.
+
+## Frequency control
+
+Implement:
+- Per-session frequency caps.
+- Per-user frequency caps.
+- Cooldowns.
+- Dismissal persistence.
+- Eligibility checks.
+- Campaign expiration.
+- Offer priority.
+
+Avoid interrupting checkout, payment or form entry.
+
+Use small premium floating offer notifications rather than full-screen interruptions.
+
+---
+
+# 19. DATABASE-DRIVEN LIVE EXPERIENCE
+
+Most of the visual experience must be controlled from the backend.
+
+The goal is to update campaigns, styles, occasions, artwork, banners, products and offers without releasing a new Android APK.
+
+Audit the existing migration and sample seed files first.
+
+Extend the current schema rather than duplicating it.
+
+Required data groups:
+
+### Fashion worlds
+- World identity.
+- Colours.
+- Fonts.
+- Layout presets.
+- Animations.
+- Asset references.
+- Product mappings.
+- Brand mappings.
+- Active dates.
+- Priority.
+
+### Occasions
+- Occasion identity.
+- Regions.
+- Dates.
+- Themes.
+- Asset references.
+- Campaign mappings.
+- Coupon mappings.
+
+### Campaigns
+- Hero images.
+- Video assets.
+- CTA.
+- Display position.
+- Start/end dates.
+- Target audience.
+- Target category.
+- Target world.
+- Target region.
+
+### World assets
+- SVG files.
+- Vector illustrations.
+- Lottie files.
+- Background images.
+- Foreground overlays.
+- Audio files.
+- Animation metadata.
+
+### World products
+- Product IDs.
+- World IDs.
+- Display position.
+- Editorial role.
+- Featured status.
+
+### Brand origins
+- Brand ID.
+- Country.
+- City.
+- Region.
+- Coordinates if verified.
+- Brand story.
+- Logo.
+- Editorial image.
+
+### Smart offers
+- Coupon ID.
+- Eligibility.
+- Minimum cart value.
+- Maximum discount.
+- Target world.
+- Target occasion.
+- User segment.
+- Start/end date.
+- Display frequency.
+
+### User preferences
+- Favourite styles.
+- Preferred brands.
+- Viewed worlds.
+- Selected categories.
+- Audio preference.
+- Motion preference.
+- Personalisation signals.
+
+Do not store passwords, API secrets or payment credentials in theme tables.
+
+---
+
+# 20. LIVE CONTENT REFRESH
+
+The Android app must be able to receive updates without a new app release.
+
+Implement:
+- API-driven content.
+- Campaign configuration refresh.
+- Theme configuration refresh.
+- Occasion refresh.
+- Coupon refresh.
+- Product merchandising refresh.
+- Asset versioning.
+- Image caching.
+- Cache invalidation.
+- Last updated timestamps.
+
+Use sensible caching.
+
+For example:
+- Fetch active occasion configuration at startup.
+- Refresh when returning to the foreground.
+- Refresh campaign data periodically while the app is active.
+- Refresh after a user enters a new world.
+- Use version numbers or ETags where supported.
+- Provide a fallback cached configuration when offline.
+
+Do not continuously poll the backend every few seconds.
+
+Make live updates reliable without wasting battery or server resources.
+
+---
+
+# 21. ENVIRONMENT CONFIGURATION AND SECURITY
+
+Use the existing `.env.example` and `php_api/config/env.php`.
+
+The PHP backend configuration must use a server-side environment file.
+
+Use this template as the basis:
+
+```dotenv
+APP_ENV=production
+APP_URL=https://melvore.co.in
+API_URL=https://app.melvore.co.in
+ASSET_BASE_URL=https://melvore.co.in
+REQUIRE_HTTPS=true
+
+MAIL_FROM=connect@melvore.co.in
+
+DB_HOST=
+DB_PORT=
+DB_NAME=
+DB_USER=
+DB_PASS=
+DB_CHARSET=utf8mb4
+
+API_TOKEN_SECRET=
+API_TOKEN_TTL_SECONDS=
+
+CORS_ALLOWED_ORIGINS=https://melvore.co.in,https://www.melvore.co.in,https://app.melvore.co.in
+
+RAZORPAY_ENV=production
+RAZORPAY_KEY_ID=
+RAZORPAY_KEY_SECRET=
+RAZORPAY_WEBHOOK_SECRET=
+
+GOOGLE_CLIENT_IDS=
+GOOGLE_WEB_CLIENT_ID=
+```
+
+IMPORTANT PAYMENT REQUIREMENT:
+
+Melvore uses Razorpay and Cash on Delivery only.
+
+Cashfree must not be introduced or reactivated.
+
+Remove Cashfree configuration and integration paths from the new implementation, while preserving historical payment and order records.
+
+## Security requirements
+
+- Never expose `.env` publicly.
+- Never commit production secrets.
+- Add `.env` to `.gitignore`.
+- Keep `.env.example` with blank placeholders.
+- Keep database credentials on the PHP server only.
+- Never embed DB credentials inside the Android application.
+- Never embed API token secrets inside the APK.
+- Use HTTPS.
+- Validate API requests.
+- Use prepared SQL statements.
+- Validate user permissions.
+- Protect administrative operations.
+- Rate-limit sensitive endpoints.
+
+The Android app should receive only public runtime configuration and authenticated API responses.
+
+Do not place the PHP `.env` file in the Android assets folder.
+
+---
+
+# 22. DATABASE CONTENT AND SAMPLE DATA
+
+The application must not appear empty after implementation.
+
+Inspect the existing:
+- `melvore_customer_app_experience_migration.sql`
+- `melvore_experience_companion_indexes.sql`
+- `melvore_sample_editorial_seed.sql`
+
+Check which tables exist in the live database.
+
+Prepare any missing additive migrations.
+
+Prepare separate seed SQL for:
+- Fashion worlds.
+- Occasion themes.
+- World assets.
+- Brand origins.
+- Editorial campaigns.
+- World product associations.
+- Active offers.
+- Seasonal campaign configuration.
+
+Use existing real product IDs and brand IDs.
+
+Never fabricate IDs.
+
+Never create fake product images or non-existent video URLs.
+
+If an asset is required, provide an asset specification and a clear placeholder state.
+
+The SQL must:
+- Be repeat-safe where possible.
+- Avoid destructive operations.
+- Preserve existing data.
+- Use transactions where appropriate.
+- Include comments.
+- Validate foreign references.
+- Include rollback guidance where feasible.
+
+---
+
+# 23. FULL PRODUCT AND SHOPPING FUNCTIONALITY MUST REMAIN WORKING
+
+This is still a real e-commerce application.
+
+Preserve:
+- Login.
+- Registration.
+- Google Sign-In.
+- User profile.
+- Product listing.
+- Product detail.
+- Search.
+- Categories.
+- Filters.
+- Wishlist.
+- Cart.
+- Address management.
+- Delivery checking.
+- Checkout.
+- Razorpay.
+- COD.
+- Order history.
+- Order tracking.
+- Reviews.
+- Support.
+- Notifications.
+
+Every new editorial card must lead to a real destination.
+
+Every product card must open a real product.
+
+Every CTA must work.
+
+Every coupon must be validated.
+
+Do not sacrifice the business logic to create a visual prototype.
+
+---
+
+# 24. VIDEO EXPERIENCE
+
+Build a visually rich fashion Reels destination.
+
+Use the existing Media3 implementation and PHP video endpoints.
+
+The feed must:
+- Load real videos.
+- Display portrait thumbnails.
+- Play the selected video.
+- Support vertical swipe.
+- Handle buffering.
+- Handle errors.
+- Retry failed playback.
+- Load subsequent pages.
+- Record views.
+- Support likes and saves where implemented.
+- Link videos to products.
+- Support Shop This Look.
+
+Do not display fake download buttons.
+
+If offline video downloads are required, implement actual authorised downloads and progress handling.
+
+The video screen should also inherit the current fashion-world theme when entered from a world-specific video.
+
+---
+
+# 25. LUXE REMAINS A SEPARATE DARK WORLD
+
+Luxe is different from the style worlds described above.
+
+It should retain a premium dark identity:
+- Obsidian.
+- Champagne gold.
+- White.
+- Silver.
+- Luxury typography.
+- Full-bleed fashion editorials.
+- Cinematic transitions.
+
+It must have its own editorial collections, brand showcases, product curation and dedicated pack pages.
+
+Do not turn every normal page dark.
+
+Do not make Luxe a simple list of black product cards.
+
+---
+
+# 26. PERFORMANCE AND ACCESSIBILITY
+
+These visual experiences can become heavy, so implement them intelligently.
+
+Requirements:
+- Lazy-load offscreen images.
+- Lazy-load video.
+- Pause offscreen animations.
+- Pause animations when the app is backgrounded.
+- Reuse vector resources.
+- Cache theme configuration.
+- Avoid excessive recomposition.
+- Use stable Compose keys.
+- Avoid large continuously running particle systems.
+- Avoid expensive full-screen blur.
+- Use hardware-accelerated effects selectively.
+- Provide reduced-motion settings.
+- Provide audio controls.
+- Maintain readable text contrast.
+- Keep buttons accessible.
+- Keep touch targets usable.
+
+The application should run smoothly on normal Android phones, not only flagship devices.
+
+---
+
+# 27. IMPLEMENTATION PHASES
+
+Do not try to implement every feature in one uncontrolled code-generation pass.
+
+Work in these phases, but actually modify the project at each phase.
+
+### Phase 1 — Architecture and theme engine
+- Audit existing source.
+- Create the theme models.
+- Create world context.
+- Create occasion context.
+- Create transition controller.
+- Create configuration API.
+- Verify light default and dark Luxe behaviour.
+
+### Phase 2 — Full-width homepage
+- Rebuild editorial layouts.
+- Create full-width world sections.
+- Add image-led product compositions.
+- Add campaign layouts.
+- Add brand discovery.
+- Add world-map experience.
+
+### Phase 3 — Fashion worlds
+- Y2K.
+- Goth.
+- K-Fashion.
+- Coquette.
+- Streetwear.
+- World-specific buttons, icons and vectors.
+- Scroll-triggered transitions.
+
+### Phase 4 — Persistent product context
+- Product details inherit the active world.
+- Category listings inherit the active world.
+- Brand pages preserve campaign context.
+- Back navigation restores the previous context.
+
+### Phase 5 — Occasion engine
+- Seasonal configuration.
+- Festival campaigns.
+- Dynamic visual themes.
+- Asset loading.
+- Campaign priority.
+- Region targeting.
+
+### Phase 6 — Ambient effects and audio
+- SVG library.
+- Lottie or vector animations.
+- Sound effects.
+- Ambient audio consent.
+- Reduced-motion controls.
+
+### Phase 7 — Smart offers
+- Coupon API.
+- Eligibility.
+- Cart thresholds.
+- Contextual offer notifications.
+- Frequency control.
+
+### Phase 8 — Database and admin content
+- Migrations.
+- Seed data.
+- Asset references.
+- Brand origin records.
+- Campaign management.
+- Live configuration refresh.
+
+### Phase 9 — Testing
+- Android build.
+- Real API tests.
+- Theme transition tests.
+- Navigation context tests.
+- Product context tests.
+- Coupon tests.
+- Offline tests.
+- Performance tests.
+
+---
+
+# 28. REQUIRED FINAL DELIVERABLES
+
+Return:
+
+1. Updated Android source project.
+2. All new Kotlin files.
+3. Updated existing Compose screens.
+4. New animated vector assets.
+5. New theme engine.
+6. New occasion engine.
+7. Updated PHP APIs.
+8. Updated `.env.example`.
+9. SQL migration files.
+10. Separate sample-data SQL.
+11. Asset specification.
+12. API documentation.
+13. Build and deployment instructions.
+14. APK if the environment supports building it.
+15. A detailed implementation report.
+
+The report must clearly state:
+- Which features are completed.
+- Which APIs were modified.
+- Which database tables are required.
+- Which SQL files must be run.
+- Which assets are still needed.
+- Which features were tested.
+- Which features are not yet functional.
+
+Do not claim something works if it has not been tested.
+
+---
+
+# 29. FINAL DESIGN ACCEPTANCE TEST
+
+The final application must demonstrate these exact experiences:
+
+**Test A — Normal storefront**
+
+Open the app.
+
+The default interface is premium white, black and Y2K-inspired.
+
+It has rich full-width fashion photography, editorial sections, products, brands and animated details.
+
+**Test B — Enter Y2K**
+
+Scroll into the Y2K world.
+
+The interface transitions into chrome, silver, pink and electric blue.
+
+Pixel stars, hearts and digital decorations animate.
+
+Products and buttons adopt the Y2K identity.
+
+**Test C — Open a Y2K product**
+
+Open a product from Y2K.
+
+The product page retains the Y2K experience.
+
+It does not return to a generic white layout.
+
+**Test D — Enter Goth**
+
+Scroll into the Goth world.
+
+The page gradually transforms into black and crimson.
+
+Ravens, bats and stars animate.
+
+Gothic artwork overlaps the section.
+
+The typography, buttons and product cards change.
+
+Optional gothic ambience plays only if the user has enabled sound.
+
+**Test E — Exit Goth**
+
+Scroll back out.
+
+The gothic environment disappears smoothly.
+
+The normal Melvore appearance returns.
+
+**Test F — Christmas**
+
+Activate a Christmas occasion from the database.
+
+The relevant seasonal campaign, artwork, products, decorations and offers appear without an APK update.
+
+**Test G — Live content**
+
+Change a campaign or theme configuration in the backend.
+
+Refresh the app.
+
+The updated content appears without rebuilding the APK.
+
+**Test H — Product and checkout**
+
+Open products from different worlds.
+
+Add them to the bag.
+
+Complete checkout using the existing Razorpay or COD flow.
+
+Verify that theme context does not interfere with shopping or payment.
+
+---
+
+# THE MOST IMPORTANT INSTRUCTION
+
+I am not asking for a standard shopping application with a new colour palette.
+
+I am asking for a fashion experience where scrolling itself feels like travelling between different creative universes.
+
+The Goth world should feel Gothic.
+
+The Y2K world should feel Y2K.
+
+The Coquette world should feel delicate and pretty.
+
+The K-Fashion world should feel like a Korean fashion editorial.
+
+The Streetwear world should feel urban and bold.
+
+The festive world should feel like the occasion.
+
+The normal Melvore storefront should remain premium, modern, white, black and Y2K-inspired.
+
+**Every world must be visually distinct, full-width, immersive, animated and connected to real products.**
+
+The product page must preserve the experience from which the customer entered.
+
+The content must be database-driven.
+
+The animations must be real.
+
+The buttons must work.
+
+The campaigns must be live.
+
+The app must remain a fully functional shopping application.
+
+Do not repeat the same layout with different colours.
+
+Do not simplify the visual design.
+
+Do not return a design description without implementing it.
+
+Build the actual experience.

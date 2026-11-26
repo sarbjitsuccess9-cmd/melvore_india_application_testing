@@ -1,0 +1,2744 @@
+{
+  "manifest_id": "melvore_live_worlds_v2",
+  "slot": "live",
+  "design_version": "1.2.0",
+  "schema_version": "1.0.0",
+  "min_app_schema_version": "1.0.0",
+  "release_notes": "Worlds & Occasions Edition: 12 fully-skinned fashion worlds (new Pixel Arcade) and 12 occasion kits, each with its own SVG buttons, navbar, range slider, carousel pager, divider, card frame, loader and 10 tab icons. Per-world typography, copy, motion preset and performance budget.",
+  "published_at": "2026-11-19T00:00:00Z",
+  "tokens": {
+    "colors": {
+      "mode": "light",
+      "background": "#FAF7F2",
+      "surface": "#F2ECE1",
+      "surface_elevated": "#FFFFFF",
+      "surface_variant": "#EAE2D3",
+      "primary": "#1A1715",
+      "on_primary": "#FAF7F2",
+      "accent": "#B86B35",
+      "secondary_accent": "#7C6F63",
+      "text_primary": "#1A1715",
+      "text_secondary": "#5E544C",
+      "border": "#DDD2C2",
+      "badge_bg": "#B86B35",
+      "badge_text": "#FFFFFF",
+      "sale_accent": "#9E2A2B",
+      "success_accent": "#2D6A4F"
+    },
+    "typography": {
+      "display_font": "editorial_serif",
+      "body_font": "minimal",
+      "heading_scale": 1.08,
+      "body_scale": 1.0,
+      "letter_spacing_eyebrow": 2.4
+    },
+    "spacing": {
+      "screen_horizontal_dp": 16,
+      "section_gap_dp": 28,
+      "card_padding_dp": 12,
+      "grid_gutter_dp": 14
+    },
+    "radii": {
+      "card_dp": 14,
+      "button_dp": 999,
+      "chip_dp": 10,
+      "search_bar_dp": 12,
+      "hero_dp": 12,
+      "sheet_dp": 24,
+      "border_width_dp": 1
+    },
+    "motion": {
+      "intensity": "expressive",
+      "hero_parallax": true,
+      "card_entrance": "editorial_lift",
+      "carousel_interval_ms": 4200
+    }
+  },
+  "navigation": {
+    "top_bar_style": "centered_monogram",
+    "top_bar_title": "MELVORE ATELIER",
+    "top_bar_subtitle": "AUTUMN · WINTER EDITION",
+    "show_search_icon": true,
+    "show_bag_badge": true,
+    "bottom_bar_variant": "floating_dock",
+    "bottom_bar_radius_dp": 28,
+    "bottom_bar_elevation_dp": 10,
+    "tabs": [
+      {
+        "route": "home",
+        "label": "Issue",
+        "icon_key": "sparkle",
+        "active_icon_key": "sparkle_filled",
+        "visible": true,
+        "order": 1,
+        "badge_text": ""
+      },
+      {
+        "route": "discover",
+        "label": "Explore",
+        "icon_key": "compass",
+        "active_icon_key": "compass_filled",
+        "visible": true,
+        "order": 2,
+        "badge_text": ""
+      },
+      {
+        "route": "videos",
+        "label": "Runway",
+        "icon_key": "reel",
+        "active_icon_key": "reel_filled",
+        "visible": true,
+        "order": 3,
+        "badge_text": ""
+      },
+      {
+        "route": "elite",
+        "label": "Archive",
+        "icon_key": "crown",
+        "active_icon_key": "crown_filled",
+        "visible": true,
+        "order": 4,
+        "badge_text": "LUXE"
+      },
+      {
+        "route": "bag",
+        "label": "Tote",
+        "icon_key": "tote",
+        "active_icon_key": "tote_filled",
+        "visible": true,
+        "order": 5,
+        "badge_text": ""
+      }
+    ]
+  },
+  "components": {
+    "button": {
+      "primary_variant": "pill_luxe",
+      "corner_radius_dp": 999,
+      "min_height_dp": 50,
+      "uppercase_labels": false,
+      "show_trailing_arrow": true,
+      "border_width_dp": 1
+    },
+    "search_bar": {
+      "variant": "underlined_editorial",
+      "placeholder": "Find Atelier pieces, moods, or labels…",
+      "corner_radius_dp": 12,
+      "height_dp": 52,
+      "leading_icon_key": "search",
+      "show_visual_hint_icon": true
+    },
+    "product_card": {
+      "variant": "gallery_bordered",
+      "image_aspect_ratio": 0.72,
+      "corner_radius_dp": 14,
+      "show_brand": true,
+      "show_rating": false,
+      "show_quick_add": true,
+      "badge_position": "top_right",
+      "price_alignment": "split_row"
+    },
+    "category_strip": {
+      "variant": "portrait_tiles",
+      "columns": 3,
+      "show_eyebrow": true,
+      "tile_radius_dp": 14
+    },
+    "section_header": {
+      "variant": "tracked_mono",
+      "show_eyebrow": true,
+      "show_divider": true
+    },
+    "states": {
+      "loading_variant": "minimal_pulse",
+      "empty_variant": "centered_minimal",
+      "error_variant": "outlined_retry_card",
+      "empty_title": "No Pieces Matched This Issue",
+      "empty_subtitle": "Adjust your selection or step into one of our aesthetic worlds.",
+      "error_cta_label": "Refresh Issue"
+    }
+  },
+  "media": {
+    "hero_fallback_image": "/design-system/assets/images/default-editorial-hero.svg",
+    "occasion_overlay_opacity": 0.16,
+    "video_autoplay_default": true,
+    "brand_wordmark_url": ""
+  },
+  "pages": {
+    "home": {
+      "page_key": "home",
+      "layout_template": "lookbook_first",
+      "hero_height_dp": 470,
+      "grid_columns": 2,
+      "show_floating_world_strip": true,
+      "sections": [
+        {
+          "id": "occasion_banner",
+          "type": "occasion_banner",
+          "visible": true,
+          "order": 1,
+          "layout_variant": "festive_masthead",
+          "eyebrow": "CULTURAL EDITION",
+          "title": "",
+          "subtitle": "",
+          "cta_label": "Discover Edit",
+          "columns": 1
+        },
+        {
+          "id": "hero_carousel",
+          "type": "hero_carousel",
+          "visible": true,
+          "order": 2,
+          "layout_variant": "framed_gallery",
+          "eyebrow": "FEATURED ISSUE",
+          "title": "Atelier Cover Story",
+          "subtitle": "",
+          "cta_label": "Shop Issue",
+          "columns": 1
+        },
+        {
+          "id": "search_bar",
+          "type": "search_bar",
+          "visible": true,
+          "order": 3,
+          "layout_variant": "underlined_editorial",
+          "eyebrow": "",
+          "title": "",
+          "subtitle": "",
+          "cta_label": "",
+          "columns": 1
+        },
+        {
+          "id": "category_strip",
+          "type": "category_strip",
+          "visible": true,
+          "order": 4,
+          "layout_variant": "portrait_tiles",
+          "eyebrow": "THE DIRECTORY",
+          "title": "Silhouettes & Forms",
+          "subtitle": "",
+          "cta_label": "All Departments",
+          "columns": 3
+        },
+        {
+          "id": "style_worlds",
+          "type": "style_worlds",
+          "visible": true,
+          "order": 5,
+          "layout_variant": "editorial_cards",
+          "eyebrow": "WORLDS",
+          "title": "Aesthetic Movements",
+          "subtitle": "Step inside curated visual and sonic subcultures.",
+          "cta_label": "Enter Directory",
+          "columns": 2
+        },
+        {
+          "id": "elite_teaser",
+          "type": "elite_teaser",
+          "visible": true,
+          "order": 6,
+          "layout_variant": "obsidian_callout",
+          "eyebrow": "PRIVATE VAULT",
+          "title": "Melvore Luxe Packs",
+          "subtitle": "",
+          "cta_label": "View Vault",
+          "columns": 1
+        },
+        {
+          "id": "trending_rail",
+          "type": "trending_rail",
+          "visible": true,
+          "order": 7,
+          "layout_variant": "horizontal_cards",
+          "eyebrow": "EDITORS' OBSESSIONS",
+          "title": "Trending Pieces",
+          "subtitle": "",
+          "cta_label": "Explore",
+          "columns": 2
+        },
+        {
+          "id": "curated_grid",
+          "type": "curated_grid",
+          "visible": true,
+          "order": 8,
+          "layout_variant": "editorial_2col",
+          "eyebrow": "ARCHIVE ARRIVALS",
+          "title": "Curated For You",
+          "subtitle": "",
+          "cta_label": "View Catalog",
+          "columns": 2
+        },
+        {
+          "id": "world_atelier_map",
+          "type": "world_atelier_map",
+          "visible": true,
+          "order": 9,
+          "layout_variant": "interactive_pins",
+          "eyebrow": "ORIGIN MAP",
+          "title": "Design Houses Worldwide",
+          "subtitle": "",
+          "cta_label": "Houses",
+          "columns": 1
+        }
+      ]
+    },
+    "style_worlds": {
+      "page_key": "style_worlds",
+      "layout_template": "world_lookbook_gallery",
+      "hero_height_dp": 480,
+      "grid_columns": 2,
+      "show_floating_world_strip": false,
+      "sections": [
+        {
+          "id": "world_hero",
+          "type": "world_hero",
+          "visible": true,
+          "order": 1,
+          "layout_variant": "full_bleed_poster",
+          "eyebrow": "",
+          "title": "",
+          "subtitle": "",
+          "cta_label": "",
+          "columns": 1
+        },
+        {
+          "id": "vibe_satisfaction",
+          "type": "vibe_satisfaction",
+          "visible": true,
+          "order": 2,
+          "layout_variant": "emoji_slider",
+          "eyebrow": "PRIVATE REWARD",
+          "title": "LIKING THE VIBE?",
+          "subtitle": "Tell us how much you're feeling this world.",
+          "cta_label": "Claim Reward",
+          "columns": 1
+        },
+        {
+          "id": "world_promo_film",
+          "type": "world_promo_film",
+          "visible": true,
+          "order": 3,
+          "layout_variant": "inline_lookbook_reel",
+          "eyebrow": "FILMED ON 35MM",
+          "title": "Movement Study",
+          "subtitle": "",
+          "cta_label": "",
+          "columns": 1
+        },
+        {
+          "id": "world_subcultures",
+          "type": "world_subcultures",
+          "visible": true,
+          "order": 4,
+          "layout_variant": "pills_filter",
+          "eyebrow": "CURATIONS",
+          "title": "Mood Filter",
+          "subtitle": "",
+          "cta_label": "",
+          "columns": 1
+        },
+        {
+          "id": "world_products",
+          "type": "world_products",
+          "visible": true,
+          "order": 5,
+          "layout_variant": "editorial_2col",
+          "eyebrow": "LOOKBOOK PIECES",
+          "title": "Shop the Movement",
+          "subtitle": "",
+          "cta_label": "",
+          "columns": 2
+        },
+        {
+          "id": "world_brands",
+          "type": "world_brands",
+          "visible": true,
+          "order": 6,
+          "layout_variant": "house_cards",
+          "eyebrow": "PARTNER HOUSES",
+          "title": "featured Houses",
+          "subtitle": "",
+          "cta_label": "",
+          "columns": 1
+        }
+      ]
+    },
+    "categories": {
+      "page_key": "categories",
+      "layout_template": "structured_departments",
+      "hero_height_dp": 260,
+      "grid_columns": 2,
+      "sections": [
+        {
+          "id": "department_chips",
+          "type": "department_chips",
+          "visible": true,
+          "order": 1,
+          "layout_variant": "filter_bar",
+          "eyebrow": "FILTER",
+          "title": "Department Matrix",
+          "subtitle": "",
+          "cta_label": "",
+          "columns": 1
+        },
+        {
+          "id": "product_grid",
+          "type": "product_grid",
+          "visible": true,
+          "order": 2,
+          "layout_variant": "editorial_2col",
+          "eyebrow": "CATALOGUE",
+          "title": "Gallery Pieces",
+          "subtitle": "",
+          "cta_label": "",
+          "columns": 2
+        }
+      ]
+    },
+    "search": {
+      "page_key": "search",
+      "layout_template": "editorial_finder",
+      "hero_height_dp": 180,
+      "grid_columns": 2,
+      "sections": [
+        {
+          "id": "search_trending",
+          "type": "search_trending",
+          "visible": true,
+          "order": 1,
+          "layout_variant": "chips",
+          "eyebrow": "DESIRED NOW",
+          "title": "Trending Searches",
+          "subtitle": "",
+          "cta_label": "",
+          "columns": 1
+        },
+        {
+          "id": "search_results",
+          "type": "search_results",
+          "visible": true,
+          "order": 2,
+          "layout_variant": "editorial_2col",
+          "eyebrow": "DISCOVERED",
+          "title": "Curated Results",
+          "subtitle": "",
+          "cta_label": "",
+          "columns": 2
+        }
+      ]
+    },
+    "product_details": {
+      "page_key": "product_details",
+      "layout_template": "atelier_product_sheet",
+      "hero_height_dp": 480,
+      "grid_columns": 2,
+      "sections": [
+        {
+          "id": "gallery",
+          "type": "gallery",
+          "visible": true,
+          "order": 1,
+          "layout_variant": "swipe_pager",
+          "eyebrow": "",
+          "title": "",
+          "subtitle": "",
+          "cta_label": "",
+          "columns": 1
+        },
+        {
+          "id": "buy_box",
+          "type": "buy_box",
+          "visible": true,
+          "order": 2,
+          "layout_variant": "sticky_split",
+          "eyebrow": "",
+          "title": "",
+          "subtitle": "",
+          "cta_label": "Add to Tote",
+          "columns": 1
+        },
+        {
+          "id": "delivery_check",
+          "type": "delivery_check",
+          "visible": true,
+          "order": 3,
+          "layout_variant": "pincode_inline",
+          "eyebrow": "COURIER",
+          "title": "Delivery Availability",
+          "subtitle": "",
+          "cta_label": "Verify",
+          "columns": 1
+        },
+        {
+          "id": "reviews",
+          "type": "reviews",
+          "visible": true,
+          "order": 4,
+          "layout_variant": "verified_list",
+          "eyebrow": "ATELIER NOTES",
+          "title": "Client Impressions",
+          "subtitle": "",
+          "cta_label": "Share Impression",
+          "columns": 1
+        }
+      ]
+    },
+    "cart": {
+      "page_key": "cart",
+      "layout_template": "clean_tote_summary",
+      "hero_height_dp": 0,
+      "grid_columns": 1,
+      "sections": [
+        {
+          "id": "shipping_progress",
+          "type": "shipping_progress",
+          "visible": true,
+          "order": 1,
+          "layout_variant": "linear_bar",
+          "eyebrow": "SHIPPING",
+          "title": "Complimentary Dispatch",
+          "subtitle": "",
+          "cta_label": "",
+          "columns": 1
+        },
+        {
+          "id": "bag_items",
+          "type": "bag_items",
+          "visible": true,
+          "order": 2,
+          "layout_variant": "editorial_rows",
+          "eyebrow": "",
+          "title": "Selected Pieces",
+          "subtitle": "",
+          "cta_label": "",
+          "columns": 1
+        },
+        {
+          "id": "order_summary",
+          "type": "order_summary",
+          "visible": true,
+          "order": 3,
+          "layout_variant": "clean_receipt",
+          "eyebrow": "ORDER LEDGER",
+          "title": "Summary",
+          "subtitle": "",
+          "cta_label": "Proceed to Checkout",
+          "columns": 1
+        }
+      ]
+    }
+  },
+  "worlds": {
+    "y2k": {
+      "template": "y2k_arcade_grid",
+      "hero_layout": "chrome_arcade_split",
+      "font_style": "futuristic",
+      "button_style": "metallic_pill",
+      "card_radius_dp": 18,
+      "grid_columns": 2,
+      "section_order": [
+        "world_hero",
+        "vibe_satisfaction",
+        "world_promo_film",
+        "world_subcultures",
+        "world_products",
+        "world_brands"
+      ],
+      "kit": {
+        "version": "1.2.0",
+        "svg_base": "/design-system/assets/svg/worlds/y2k/",
+        "button_skin": "metallic_pill",
+        "svg": {
+          "button": "/design-system/assets/svg/worlds/y2k/button.svg",
+          "button_ghost": "/design-system/assets/svg/worlds/y2k/button_ghost.svg",
+          "navbar": "/design-system/assets/svg/worlds/y2k/navbar.svg",
+          "nav_indicator": "/design-system/assets/svg/worlds/y2k/nav_indicator.svg",
+          "slider": "/design-system/assets/svg/worlds/y2k/slider.svg",
+          "pager": "/design-system/assets/svg/worlds/y2k/pager.svg",
+          "divider": "/design-system/assets/svg/worlds/y2k/divider.svg",
+          "card_frame": "/design-system/assets/svg/worlds/y2k/card_frame.svg",
+          "loader": "/design-system/assets/svg/worlds/y2k/loader.svg"
+        },
+        "slices": {
+          "button": {
+            "left": 44,
+            "right": 44
+          },
+          "button_ghost": {
+            "left": 44,
+            "right": 44
+          },
+          "navbar": {
+            "top": 16
+          },
+          "card_frame": {
+            "all": 40
+          }
+        },
+        "label_slots": {
+          "button": {
+            "x": 52,
+            "w": 216
+          },
+          "navbar_tabs": 5
+        },
+        "icons": {
+          "home": {
+            "icon": "/design-system/assets/svg/worlds/y2k/icons/home.svg",
+            "active_icon": "/design-system/assets/svg/worlds/y2k/icons/home_active.svg"
+          },
+          "discover": {
+            "icon": "/design-system/assets/svg/worlds/y2k/icons/discover.svg",
+            "active_icon": "/design-system/assets/svg/worlds/y2k/icons/discover_active.svg"
+          },
+          "videos": {
+            "icon": "/design-system/assets/svg/worlds/y2k/icons/videos.svg",
+            "active_icon": "/design-system/assets/svg/worlds/y2k/icons/videos_active.svg"
+          },
+          "elite": {
+            "icon": "/design-system/assets/svg/worlds/y2k/icons/elite.svg",
+            "active_icon": "/design-system/assets/svg/worlds/y2k/icons/elite_active.svg"
+          },
+          "bag": {
+            "icon": "/design-system/assets/svg/worlds/y2k/icons/bag.svg",
+            "active_icon": "/design-system/assets/svg/worlds/y2k/icons/bag_active.svg"
+          }
+        },
+        "tab_labels": [
+          "Home",
+          "Scan",
+          "Clips",
+          "Chrome",
+          "Bag"
+        ],
+        "motion_preset": "chrome_shine",
+        "palette": {
+          "background": "#0E0D1B",
+          "surface": "#181632",
+          "text_primary": "#FFFFFF",
+          "text_secondary": "#D8D6F2",
+          "accent": "#FF2EA6",
+          "secondary_accent": "#38BDF8",
+          "border": "#47427A",
+          "mode": "dark"
+        },
+        "typography": {
+          "display_font": "futuristic",
+          "body_font": "clean_sans",
+          "heading_scale": 1.0,
+          "letter_spacing_eyebrow": 2.4,
+          "pixel_text": false
+        },
+        "components": {
+          "button": {
+            "primary_variant": "pill_luxe",
+            "corner_radius_dp": 999,
+            "min_height_dp": 52,
+            "uppercase_labels": false,
+            "show_trailing_arrow": true,
+            "border_width_dp": 1
+          },
+          "search_bar": {
+            "variant": "pill_elevated",
+            "placeholder": "Search the mainframe…",
+            "corner_radius_dp": 999,
+            "height_dp": 52,
+            "leading_icon_key": "search",
+            "show_visual_hint_icon": true
+          },
+          "product_card": {
+            "variant": "editorial_portrait",
+            "corner_radius_dp": 18,
+            "show_quick_add": true,
+            "badge_position": "top_right",
+            "price_alignment": "split_row"
+          },
+          "section_header": {
+            "variant": "tracked_mono",
+            "show_eyebrow": true,
+            "show_divider": true
+          },
+          "states": {
+            "empty_title": "Signal Lost",
+            "empty_subtitle": "No pieces in range. Re-scan or try another frequency.",
+            "error_cta_label": "Re-Scan",
+            "loading_variant": "minimal_pulse"
+          }
+        },
+        "navigation": {
+          "bottom_bar_variant": "floating_dock",
+          "bottom_bar_radius_dp": 28
+        },
+        "ambient": [
+          {
+            "asset_key": "y2k_pixel_heart",
+            "max_count": 6
+          },
+          {
+            "asset_key": "y2k_chrome_sparkle",
+            "max_count": 4
+          },
+          {
+            "asset_key": "y2k_pixel_star",
+            "max_count": 8
+          }
+        ],
+        "budget": {
+          "max_svg_kb": 12,
+          "max_ambient_particles": 8,
+          "fps_cap": 30,
+          "animate_properties": [
+            "transform",
+            "opacity"
+          ],
+          "filters": "none",
+          "pause_offscreen": true
+        },
+        "fonts": "Space Grotesk"
+      }
+    },
+    "goth": {
+      "template": "goth_editorial_noir",
+      "hero_layout": "cathedral_full_bleed",
+      "font_style": "gothic",
+      "button_style": "sharp_hardware",
+      "card_radius_dp": 2,
+      "grid_columns": 2,
+      "section_order": [
+        "world_hero",
+        "world_promo_film",
+        "vibe_satisfaction",
+        "world_products",
+        "world_brands"
+      ],
+      "kit": {
+        "version": "1.2.0",
+        "svg_base": "/design-system/assets/svg/worlds/goth/",
+        "button_skin": "bat_wing",
+        "svg": {
+          "button": "/design-system/assets/svg/worlds/goth/button.svg",
+          "button_ghost": "/design-system/assets/svg/worlds/goth/button_ghost.svg",
+          "navbar": "/design-system/assets/svg/worlds/goth/navbar.svg",
+          "nav_indicator": "/design-system/assets/svg/worlds/goth/nav_indicator.svg",
+          "slider": "/design-system/assets/svg/worlds/goth/slider.svg",
+          "pager": "/design-system/assets/svg/worlds/goth/pager.svg",
+          "divider": "/design-system/assets/svg/worlds/goth/divider.svg",
+          "card_frame": "/design-system/assets/svg/worlds/goth/card_frame.svg",
+          "loader": "/design-system/assets/svg/worlds/goth/loader.svg"
+        },
+        "slices": {
+          "button": {
+            "left": 44,
+            "right": 44
+          },
+          "button_ghost": {
+            "left": 44,
+            "right": 44
+          },
+          "navbar": {
+            "top": 16
+          },
+          "card_frame": {
+            "all": 40
+          }
+        },
+        "label_slots": {
+          "button": {
+            "x": 52,
+            "w": 216
+          },
+          "navbar_tabs": 5
+        },
+        "icons": {
+          "home": {
+            "icon": "/design-system/assets/svg/worlds/goth/icons/home.svg",
+            "active_icon": "/design-system/assets/svg/worlds/goth/icons/home_active.svg"
+          },
+          "discover": {
+            "icon": "/design-system/assets/svg/worlds/goth/icons/discover.svg",
+            "active_icon": "/design-system/assets/svg/worlds/goth/icons/discover_active.svg"
+          },
+          "videos": {
+            "icon": "/design-system/assets/svg/worlds/goth/icons/videos.svg",
+            "active_icon": "/design-system/assets/svg/worlds/goth/icons/videos_active.svg"
+          },
+          "elite": {
+            "icon": "/design-system/assets/svg/worlds/goth/icons/elite.svg",
+            "active_icon": "/design-system/assets/svg/worlds/goth/icons/elite_active.svg"
+          },
+          "bag": {
+            "icon": "/design-system/assets/svg/worlds/goth/icons/bag.svg",
+            "active_icon": "/design-system/assets/svg/worlds/goth/icons/bag_active.svg"
+          }
+        },
+        "tab_labels": [
+          "Nocturne",
+          "Wander",
+          "Séance",
+          "Crypt",
+          "Coffer"
+        ],
+        "motion_preset": "goth_flap",
+        "palette": {
+          "background": "#08070B",
+          "surface": "#121018",
+          "text_primary": "#F4F4F5",
+          "text_secondary": "#C4C2CF",
+          "accent": "#C02638",
+          "secondary_accent": "#A1A1AA",
+          "border": "#342E42",
+          "mode": "dark"
+        },
+        "typography": {
+          "display_font": "gothic",
+          "body_font": "minimal",
+          "heading_scale": 1.0,
+          "letter_spacing_eyebrow": 2.4,
+          "pixel_text": false
+        },
+        "components": {
+          "button": {
+            "primary_variant": "editorial_sharp",
+            "corner_radius_dp": 2,
+            "min_height_dp": 52,
+            "uppercase_labels": true,
+            "show_trailing_arrow": false,
+            "border_width_dp": 1
+          },
+          "search_bar": {
+            "variant": "underlined_editorial",
+            "placeholder": "Seek in the shadows…",
+            "corner_radius_dp": 2,
+            "height_dp": 52,
+            "leading_icon_key": "search",
+            "show_visual_hint_icon": true
+          },
+          "product_card": {
+            "variant": "editorial_portrait",
+            "corner_radius_dp": 2,
+            "show_quick_add": true,
+            "badge_position": "top_right",
+            "price_alignment": "split_row"
+          },
+          "section_header": {
+            "variant": "magazine_serif",
+            "show_eyebrow": true,
+            "show_divider": true
+          },
+          "states": {
+            "empty_title": "The Crypt Is Silent",
+            "empty_subtitle": "Nothing stirs here. Wander deeper into the dark.",
+            "error_cta_label": "Summon Again",
+            "loading_variant": "minimal_pulse"
+          }
+        },
+        "navigation": {
+          "bottom_bar_variant": "flat_editorial",
+          "bottom_bar_radius_dp": 0
+        },
+        "ambient": [
+          {
+            "asset_key": "goth_raven",
+            "max_count": 2
+          },
+          {
+            "asset_key": "goth_bat",
+            "max_count": 5
+          },
+          {
+            "asset_key": "goth_crescent",
+            "max_count": 1
+          },
+          {
+            "asset_key": "goth_mist",
+            "max_count": 2
+          }
+        ],
+        "budget": {
+          "max_svg_kb": 12,
+          "max_ambient_particles": 8,
+          "fps_cap": 30,
+          "animate_properties": [
+            "transform",
+            "opacity"
+          ],
+          "filters": "none",
+          "pause_offscreen": true
+        },
+        "fonts": "Cinzel",
+        "hero_image": "/design-system/assets/images/goth-nocturne-hero.svg"
+      }
+    },
+    "coquette": {
+      "template": "coquette_storybook_masonry",
+      "hero_layout": "ribbon_framed_portrait",
+      "font_style": "editorial_serif",
+      "button_style": "ribbon_soft",
+      "card_radius_dp": 22,
+      "grid_columns": 2,
+      "section_order": [
+        "world_hero",
+        "vibe_satisfaction",
+        "world_promo_film",
+        "world_subcultures",
+        "world_products",
+        "world_brands"
+      ],
+      "kit": {
+        "version": "1.2.0",
+        "svg_base": "/design-system/assets/svg/worlds/coquette/",
+        "button_skin": "ribbon_scallop",
+        "svg": {
+          "button": "/design-system/assets/svg/worlds/coquette/button.svg",
+          "button_ghost": "/design-system/assets/svg/worlds/coquette/button_ghost.svg",
+          "navbar": "/design-system/assets/svg/worlds/coquette/navbar.svg",
+          "nav_indicator": "/design-system/assets/svg/worlds/coquette/nav_indicator.svg",
+          "slider": "/design-system/assets/svg/worlds/coquette/slider.svg",
+          "pager": "/design-system/assets/svg/worlds/coquette/pager.svg",
+          "divider": "/design-system/assets/svg/worlds/coquette/divider.svg",
+          "card_frame": "/design-system/assets/svg/worlds/coquette/card_frame.svg",
+          "loader": "/design-system/assets/svg/worlds/coquette/loader.svg"
+        },
+        "slices": {
+          "button": {
+            "left": 44,
+            "right": 44
+          },
+          "button_ghost": {
+            "left": 44,
+            "right": 44
+          },
+          "navbar": {
+            "top": 16
+          },
+          "card_frame": {
+            "all": 40
+          }
+        },
+        "label_slots": {
+          "button": {
+            "x": 52,
+            "w": 216
+          },
+          "navbar_tabs": 5
+        },
+        "icons": {
+          "home": {
+            "icon": "/design-system/assets/svg/worlds/coquette/icons/home.svg",
+            "active_icon": "/design-system/assets/svg/worlds/coquette/icons/home_active.svg"
+          },
+          "discover": {
+            "icon": "/design-system/assets/svg/worlds/coquette/icons/discover.svg",
+            "active_icon": "/design-system/assets/svg/worlds/coquette/icons/discover_active.svg"
+          },
+          "videos": {
+            "icon": "/design-system/assets/svg/worlds/coquette/icons/videos.svg",
+            "active_icon": "/design-system/assets/svg/worlds/coquette/icons/videos_active.svg"
+          },
+          "elite": {
+            "icon": "/design-system/assets/svg/worlds/coquette/icons/elite.svg",
+            "active_icon": "/design-system/assets/svg/worlds/coquette/icons/elite_active.svg"
+          },
+          "bag": {
+            "icon": "/design-system/assets/svg/worlds/coquette/icons/bag.svg",
+            "active_icon": "/design-system/assets/svg/worlds/coquette/icons/bag_active.svg"
+          }
+        },
+        "tab_labels": [
+          "Home",
+          "Dream",
+          "Reels",
+          "Rosé",
+          "Basket"
+        ],
+        "motion_preset": "ribbon_sway",
+        "palette": {
+          "background": "#FFF6F9",
+          "surface": "#FFFFFF",
+          "text_primary": "#3B1824",
+          "text_secondary": "#7D4E5E",
+          "accent": "#D96588",
+          "secondary_accent": "#E8A5BA",
+          "border": "#F5CCD9",
+          "mode": "light"
+        },
+        "typography": {
+          "display_font": "editorial_serif",
+          "body_font": "minimal",
+          "heading_scale": 1.0,
+          "letter_spacing_eyebrow": 2.4,
+          "pixel_text": false
+        },
+        "components": {
+          "button": {
+            "primary_variant": "pill_luxe",
+            "corner_radius_dp": 999,
+            "min_height_dp": 52,
+            "uppercase_labels": false,
+            "show_trailing_arrow": false,
+            "border_width_dp": 1
+          },
+          "search_bar": {
+            "variant": "pill_elevated",
+            "placeholder": "Find something sweet…",
+            "corner_radius_dp": 999,
+            "height_dp": 52,
+            "leading_icon_key": "search",
+            "show_visual_hint_icon": true
+          },
+          "product_card": {
+            "variant": "editorial_portrait",
+            "corner_radius_dp": 22,
+            "show_quick_add": true,
+            "badge_position": "top_right",
+            "price_alignment": "split_row"
+          },
+          "section_header": {
+            "variant": "magazine_serif",
+            "show_eyebrow": true,
+            "show_divider": true
+          },
+          "states": {
+            "empty_title": "Nothing Tied Up Yet",
+            "empty_subtitle": "Wander through a little more softness.",
+            "error_cta_label": "Try Again, Darling",
+            "loading_variant": "minimal_pulse"
+          }
+        },
+        "navigation": {
+          "bottom_bar_variant": "floating_dock",
+          "bottom_bar_radius_dp": 28
+        },
+        "ambient": [
+          {
+            "asset_key": "coquette_bow",
+            "max_count": 3
+          },
+          {
+            "asset_key": "coquette_petal",
+            "max_count": 8
+          }
+        ],
+        "budget": {
+          "max_svg_kb": 12,
+          "max_ambient_particles": 8,
+          "fps_cap": 30,
+          "animate_properties": [
+            "transform",
+            "opacity"
+          ],
+          "filters": "none",
+          "pause_offscreen": true
+        },
+        "fonts": "Playfair Display"
+      }
+    },
+    "streetwear": {
+      "template": "streetwear_utility_lookbook",
+      "hero_layout": "poster_cutout_split",
+      "font_style": "editorial_sans",
+      "button_style": "street_block",
+      "card_radius_dp": 6,
+      "grid_columns": 2,
+      "section_order": [
+        "world_hero",
+        "world_subcultures",
+        "world_products",
+        "vibe_satisfaction",
+        "world_promo_film",
+        "world_brands"
+      ],
+      "kit": {
+        "version": "1.2.0",
+        "svg_base": "/design-system/assets/svg/worlds/streetwear/",
+        "button_skin": "street_block",
+        "svg": {
+          "button": "/design-system/assets/svg/worlds/streetwear/button.svg",
+          "button_ghost": "/design-system/assets/svg/worlds/streetwear/button_ghost.svg",
+          "navbar": "/design-system/assets/svg/worlds/streetwear/navbar.svg",
+          "nav_indicator": "/design-system/assets/svg/worlds/streetwear/nav_indicator.svg",
+          "slider": "/design-system/assets/svg/worlds/streetwear/slider.svg",
+          "pager": "/design-system/assets/svg/worlds/streetwear/pager.svg",
+          "divider": "/design-system/assets/svg/worlds/streetwear/divider.svg",
+          "card_frame": "/design-system/assets/svg/worlds/streetwear/card_frame.svg",
+          "loader": "/design-system/assets/svg/worlds/streetwear/loader.svg"
+        },
+        "slices": {
+          "button": {
+            "left": 44,
+            "right": 44
+          },
+          "button_ghost": {
+            "left": 44,
+            "right": 44
+          },
+          "navbar": {
+            "top": 16
+          },
+          "card_frame": {
+            "all": 40
+          }
+        },
+        "label_slots": {
+          "button": {
+            "x": 52,
+            "w": 216
+          },
+          "navbar_tabs": 5
+        },
+        "icons": {
+          "home": {
+            "icon": "/design-system/assets/svg/worlds/streetwear/icons/home.svg",
+            "active_icon": "/design-system/assets/svg/worlds/streetwear/icons/home_active.svg"
+          },
+          "discover": {
+            "icon": "/design-system/assets/svg/worlds/streetwear/icons/discover.svg",
+            "active_icon": "/design-system/assets/svg/worlds/streetwear/icons/discover_active.svg"
+          },
+          "videos": {
+            "icon": "/design-system/assets/svg/worlds/streetwear/icons/videos.svg",
+            "active_icon": "/design-system/assets/svg/worlds/streetwear/icons/videos_active.svg"
+          },
+          "elite": {
+            "icon": "/design-system/assets/svg/worlds/streetwear/icons/elite.svg",
+            "active_icon": "/design-system/assets/svg/worlds/streetwear/icons/elite_active.svg"
+          },
+          "bag": {
+            "icon": "/design-system/assets/svg/worlds/streetwear/icons/bag.svg",
+            "active_icon": "/design-system/assets/svg/worlds/streetwear/icons/bag_active.svg"
+          }
+        },
+        "tab_labels": [
+          "Drop",
+          "Blocks",
+          "Clips",
+          "Vault",
+          "Cart"
+        ],
+        "motion_preset": "street_slam",
+        "palette": {
+          "background": "#111215",
+          "surface": "#191B20",
+          "text_primary": "#FFFFFF",
+          "text_secondary": "#D1D5DB",
+          "accent": "#F97316",
+          "secondary_accent": "#38BDF8",
+          "border": "#323640",
+          "mode": "dark"
+        },
+        "typography": {
+          "display_font": "editorial_sans",
+          "body_font": "clean_sans",
+          "heading_scale": 1.0,
+          "letter_spacing_eyebrow": 2.4,
+          "pixel_text": false
+        },
+        "components": {
+          "button": {
+            "primary_variant": "editorial_sharp",
+            "corner_radius_dp": 0,
+            "min_height_dp": 52,
+            "uppercase_labels": true,
+            "show_trailing_arrow": true,
+            "border_width_dp": 2
+          },
+          "search_bar": {
+            "variant": "underlined_editorial",
+            "placeholder": "SEARCH THE BLOCK",
+            "corner_radius_dp": 0,
+            "height_dp": 52,
+            "leading_icon_key": "search",
+            "show_visual_hint_icon": true
+          },
+          "product_card": {
+            "variant": "gallery_bordered",
+            "corner_radius_dp": 6,
+            "show_quick_add": true,
+            "badge_position": "top_right",
+            "price_alignment": "split_row"
+          },
+          "section_header": {
+            "variant": "tracked_mono",
+            "show_eyebrow": true,
+            "show_divider": true
+          },
+          "states": {
+            "empty_title": "SOLD OUT. FOR NOW.",
+            "empty_subtitle": "Clear the filters or hit the next block.",
+            "error_cta_label": "RUN IT BACK",
+            "loading_variant": "minimal_pulse"
+          }
+        },
+        "navigation": {
+          "bottom_bar_variant": "flat_editorial",
+          "bottom_bar_radius_dp": 0
+        },
+        "ambient": [
+          {
+            "asset_key": "street_lightning",
+            "max_count": 4
+          },
+          {
+            "asset_key": "street_grid",
+            "max_count": 1
+          }
+        ],
+        "budget": {
+          "max_svg_kb": 12,
+          "max_ambient_particles": 8,
+          "fps_cap": 30,
+          "animate_properties": [
+            "transform",
+            "opacity"
+          ],
+          "filters": "none",
+          "pause_offscreen": true
+        },
+        "fonts": "Jost"
+      }
+    },
+    "k-fashion": {
+      "template": "kfashion_minimal_lookbook",
+      "hero_layout": "seoul_clean_split",
+      "font_style": "k_fashion",
+      "button_style": "editorial_pill",
+      "card_radius_dp": 16,
+      "grid_columns": 2,
+      "section_order": [
+        "world_hero",
+        "world_products",
+        "vibe_satisfaction",
+        "world_promo_film",
+        "world_brands"
+      ],
+      "kit": {
+        "version": "1.2.0",
+        "svg_base": "/design-system/assets/svg/worlds/k-fashion/",
+        "button_skin": "bracket_outline",
+        "svg": {
+          "button": "/design-system/assets/svg/worlds/k-fashion/button.svg",
+          "button_ghost": "/design-system/assets/svg/worlds/k-fashion/button_ghost.svg",
+          "navbar": "/design-system/assets/svg/worlds/k-fashion/navbar.svg",
+          "nav_indicator": "/design-system/assets/svg/worlds/k-fashion/nav_indicator.svg",
+          "slider": "/design-system/assets/svg/worlds/k-fashion/slider.svg",
+          "pager": "/design-system/assets/svg/worlds/k-fashion/pager.svg",
+          "divider": "/design-system/assets/svg/worlds/k-fashion/divider.svg",
+          "card_frame": "/design-system/assets/svg/worlds/k-fashion/card_frame.svg",
+          "loader": "/design-system/assets/svg/worlds/k-fashion/loader.svg"
+        },
+        "slices": {
+          "button": {
+            "left": 44,
+            "right": 44
+          },
+          "button_ghost": {
+            "left": 44,
+            "right": 44
+          },
+          "navbar": {
+            "top": 16
+          },
+          "card_frame": {
+            "all": 40
+          }
+        },
+        "label_slots": {
+          "button": {
+            "x": 52,
+            "w": 216
+          },
+          "navbar_tabs": 5
+        },
+        "icons": {
+          "home": {
+            "icon": "/design-system/assets/svg/worlds/k-fashion/icons/home.svg",
+            "active_icon": "/design-system/assets/svg/worlds/k-fashion/icons/home_active.svg"
+          },
+          "discover": {
+            "icon": "/design-system/assets/svg/worlds/k-fashion/icons/discover.svg",
+            "active_icon": "/design-system/assets/svg/worlds/k-fashion/icons/discover_active.svg"
+          },
+          "videos": {
+            "icon": "/design-system/assets/svg/worlds/k-fashion/icons/videos.svg",
+            "active_icon": "/design-system/assets/svg/worlds/k-fashion/icons/videos_active.svg"
+          },
+          "elite": {
+            "icon": "/design-system/assets/svg/worlds/k-fashion/icons/elite.svg",
+            "active_icon": "/design-system/assets/svg/worlds/k-fashion/icons/elite_active.svg"
+          },
+          "bag": {
+            "icon": "/design-system/assets/svg/worlds/k-fashion/icons/bag.svg",
+            "active_icon": "/design-system/assets/svg/worlds/k-fashion/icons/bag_active.svg"
+          }
+        },
+        "tab_labels": [
+          "Home",
+          "Seoul",
+          "Film",
+          "Atelier",
+          "Bag"
+        ],
+        "motion_preset": "hairline_fade",
+        "palette": {
+          "background": "#F5F6FA",
+          "surface": "#FFFFFF",
+          "text_primary": "#141519",
+          "text_secondary": "#525866",
+          "accent": "#4F6D8A",
+          "secondary_accent": "#94A3B8",
+          "border": "#D6DCE8",
+          "mode": "light"
+        },
+        "typography": {
+          "display_font": "k_fashion",
+          "body_font": "minimal",
+          "heading_scale": 1.0,
+          "letter_spacing_eyebrow": 2.4,
+          "pixel_text": false
+        },
+        "components": {
+          "button": {
+            "primary_variant": "editorial_sharp",
+            "corner_radius_dp": 2,
+            "min_height_dp": 52,
+            "uppercase_labels": false,
+            "show_trailing_arrow": true,
+            "border_width_dp": 1
+          },
+          "search_bar": {
+            "variant": "underlined_editorial",
+            "placeholder": "Search silhouettes",
+            "corner_radius_dp": 2,
+            "height_dp": 52,
+            "leading_icon_key": "search",
+            "show_visual_hint_icon": true
+          },
+          "product_card": {
+            "variant": "gallery_bordered",
+            "corner_radius_dp": 16,
+            "show_quick_add": true,
+            "badge_position": "top_right",
+            "price_alignment": "split_row"
+          },
+          "section_header": {
+            "variant": "tracked_mono",
+            "show_eyebrow": true,
+            "show_divider": true
+          },
+          "states": {
+            "empty_title": "Nothing Here",
+            "empty_subtitle": "Adjust the edit or step into another world.",
+            "error_cta_label": "Refresh",
+            "loading_variant": "minimal_pulse"
+          }
+        },
+        "navigation": {
+          "bottom_bar_variant": "flat_editorial",
+          "bottom_bar_radius_dp": 0
+        },
+        "ambient": [
+          {
+            "asset_key": "kfashion_origami",
+            "max_count": 2
+          }
+        ],
+        "budget": {
+          "max_svg_kb": 12,
+          "max_ambient_particles": 8,
+          "fps_cap": 30,
+          "animate_properties": [
+            "transform",
+            "opacity"
+          ],
+          "filters": "none",
+          "pause_offscreen": true
+        },
+        "fonts": "Jost"
+      }
+    },
+    "quiet-luxury": {
+      "template": "editorial_magazine",
+      "hero_layout": "minimal_monogram_spread",
+      "font_style": "editorial_serif",
+      "button_style": "sharp_minimal",
+      "card_radius_dp": 4,
+      "grid_columns": 2,
+      "section_order": [
+        "world_hero",
+        "vibe_satisfaction",
+        "world_products",
+        "world_brands"
+      ],
+      "kit": {
+        "version": "1.2.0",
+        "svg_base": "/design-system/assets/svg/worlds/quiet-luxury/",
+        "button_skin": "double_hairline",
+        "svg": {
+          "button": "/design-system/assets/svg/worlds/quiet-luxury/button.svg",
+          "button_ghost": "/design-system/assets/svg/worlds/quiet-luxury/button_ghost.svg",
+          "navbar": "/design-system/assets/svg/worlds/quiet-luxury/navbar.svg",
+          "nav_indicator": "/design-system/assets/svg/worlds/quiet-luxury/nav_indicator.svg",
+          "slider": "/design-system/assets/svg/worlds/quiet-luxury/slider.svg",
+          "pager": "/design-system/assets/svg/worlds/quiet-luxury/pager.svg",
+          "divider": "/design-system/assets/svg/worlds/quiet-luxury/divider.svg",
+          "card_frame": "/design-system/assets/svg/worlds/quiet-luxury/card_frame.svg",
+          "loader": "/design-system/assets/svg/worlds/quiet-luxury/loader.svg"
+        },
+        "slices": {
+          "button": {
+            "left": 44,
+            "right": 44
+          },
+          "button_ghost": {
+            "left": 44,
+            "right": 44
+          },
+          "navbar": {
+            "top": 16
+          },
+          "card_frame": {
+            "all": 40
+          }
+        },
+        "label_slots": {
+          "button": {
+            "x": 52,
+            "w": 216
+          },
+          "navbar_tabs": 5
+        },
+        "icons": {
+          "home": {
+            "icon": "/design-system/assets/svg/worlds/quiet-luxury/icons/home.svg",
+            "active_icon": "/design-system/assets/svg/worlds/quiet-luxury/icons/home_active.svg"
+          },
+          "discover": {
+            "icon": "/design-system/assets/svg/worlds/quiet-luxury/icons/discover.svg",
+            "active_icon": "/design-system/assets/svg/worlds/quiet-luxury/icons/discover_active.svg"
+          },
+          "videos": {
+            "icon": "/design-system/assets/svg/worlds/quiet-luxury/icons/videos.svg",
+            "active_icon": "/design-system/assets/svg/worlds/quiet-luxury/icons/videos_active.svg"
+          },
+          "elite": {
+            "icon": "/design-system/assets/svg/worlds/quiet-luxury/icons/elite.svg",
+            "active_icon": "/design-system/assets/svg/worlds/quiet-luxury/icons/elite_active.svg"
+          },
+          "bag": {
+            "icon": "/design-system/assets/svg/worlds/quiet-luxury/icons/bag.svg",
+            "active_icon": "/design-system/assets/svg/worlds/quiet-luxury/icons/bag_active.svg"
+          }
+        },
+        "tab_labels": [
+          "Edit",
+          "Explore",
+          "Film",
+          "Archive",
+          "Tote"
+        ],
+        "motion_preset": "hairline_fade",
+        "palette": {
+          "background": "#F7F4EF",
+          "surface": "#FFFFFF",
+          "text_primary": "#1C1917",
+          "text_secondary": "#57534E",
+          "accent": "#B48811",
+          "secondary_accent": "#78716C",
+          "border": "#E7E5E4",
+          "mode": "light"
+        },
+        "typography": {
+          "display_font": "editorial_serif",
+          "body_font": "minimal",
+          "heading_scale": 1.0,
+          "letter_spacing_eyebrow": 2.4,
+          "pixel_text": false
+        },
+        "components": {
+          "button": {
+            "primary_variant": "editorial_sharp",
+            "corner_radius_dp": 0,
+            "min_height_dp": 52,
+            "uppercase_labels": false,
+            "show_trailing_arrow": false,
+            "border_width_dp": 1
+          },
+          "search_bar": {
+            "variant": "underlined_editorial",
+            "placeholder": "Search the archive",
+            "corner_radius_dp": 0,
+            "height_dp": 52,
+            "leading_icon_key": "search",
+            "show_visual_hint_icon": true
+          },
+          "product_card": {
+            "variant": "editorial_portrait",
+            "corner_radius_dp": 4,
+            "show_quick_add": true,
+            "badge_position": "top_right",
+            "price_alignment": "split_row"
+          },
+          "section_header": {
+            "variant": "magazine_serif",
+            "show_eyebrow": true,
+            "show_divider": true
+          },
+          "states": {
+            "empty_title": "Nothing To Show",
+            "empty_subtitle": "Refine the selection to continue.",
+            "error_cta_label": "Reload",
+            "loading_variant": "minimal_pulse"
+          }
+        },
+        "navigation": {
+          "bottom_bar_variant": "flat_editorial",
+          "bottom_bar_radius_dp": 0
+        },
+        "ambient": [],
+        "budget": {
+          "max_svg_kb": 12,
+          "max_ambient_particles": 8,
+          "fps_cap": 30,
+          "animate_properties": [
+            "transform",
+            "opacity"
+          ],
+          "filters": "none",
+          "pause_offscreen": true
+        },
+        "fonts": "Playfair Display"
+      }
+    },
+    "pixel": {
+      "template": "pixel_arcade_grid",
+      "hero_layout": "arcade_marquee_split",
+      "font_style": "pixel",
+      "button_style": "pixel_block",
+      "card_radius_dp": 0,
+      "grid_columns": 2,
+      "section_order": [
+        "world_hero",
+        "vibe_satisfaction",
+        "world_promo_film",
+        "world_subcultures",
+        "world_products",
+        "world_brands"
+      ],
+      "kit": {
+        "version": "1.2.0",
+        "svg_base": "/design-system/assets/svg/worlds/pixel/",
+        "button_skin": "pixel_block",
+        "svg": {
+          "button": "/design-system/assets/svg/worlds/pixel/button.svg",
+          "button_ghost": "/design-system/assets/svg/worlds/pixel/button_ghost.svg",
+          "navbar": "/design-system/assets/svg/worlds/pixel/navbar.svg",
+          "nav_indicator": "/design-system/assets/svg/worlds/pixel/nav_indicator.svg",
+          "slider": "/design-system/assets/svg/worlds/pixel/slider.svg",
+          "pager": "/design-system/assets/svg/worlds/pixel/pager.svg",
+          "divider": "/design-system/assets/svg/worlds/pixel/divider.svg",
+          "card_frame": "/design-system/assets/svg/worlds/pixel/card_frame.svg",
+          "loader": "/design-system/assets/svg/worlds/pixel/loader.svg"
+        },
+        "slices": {
+          "button": {
+            "left": 44,
+            "right": 44
+          },
+          "button_ghost": {
+            "left": 44,
+            "right": 44
+          },
+          "navbar": {
+            "top": 16
+          },
+          "card_frame": {
+            "all": 40
+          }
+        },
+        "label_slots": {
+          "button": {
+            "x": 52,
+            "w": 216
+          },
+          "navbar_tabs": 5
+        },
+        "icons": {
+          "home": {
+            "icon": "/design-system/assets/svg/worlds/pixel/icons/home.svg",
+            "active_icon": "/design-system/assets/svg/worlds/pixel/icons/home_active.svg"
+          },
+          "discover": {
+            "icon": "/design-system/assets/svg/worlds/pixel/icons/discover.svg",
+            "active_icon": "/design-system/assets/svg/worlds/pixel/icons/discover_active.svg"
+          },
+          "videos": {
+            "icon": "/design-system/assets/svg/worlds/pixel/icons/videos.svg",
+            "active_icon": "/design-system/assets/svg/worlds/pixel/icons/videos_active.svg"
+          },
+          "elite": {
+            "icon": "/design-system/assets/svg/worlds/pixel/icons/elite.svg",
+            "active_icon": "/design-system/assets/svg/worlds/pixel/icons/elite_active.svg"
+          },
+          "bag": {
+            "icon": "/design-system/assets/svg/worlds/pixel/icons/bag.svg",
+            "active_icon": "/design-system/assets/svg/worlds/pixel/icons/bag_active.svg"
+          }
+        },
+        "tab_labels": [
+          "START",
+          "MAP",
+          "TV",
+          "VIP",
+          "BAG"
+        ],
+        "motion_preset": "pixel_step",
+        "palette": {
+          "background": "#120B2E",
+          "surface": "#1D1347",
+          "text_primary": "#FFFFFF",
+          "text_secondary": "#C9C2F5",
+          "accent": "#FFD23F",
+          "secondary_accent": "#FF3D81",
+          "border": "#3A2C7A",
+          "mode": "dark"
+        },
+        "typography": {
+          "display_font": "pixel",
+          "body_font": "clean_sans",
+          "heading_scale": 0.86,
+          "letter_spacing_eyebrow": 1.2,
+          "pixel_text": true,
+          "font_roles": {
+            "heading": "pixel",
+            "button": "pixel",
+            "navigation": "pixel",
+            "eyebrow": "pixel",
+            "price": "pixel",
+            "body": "clean_sans"
+          }
+        },
+        "components": {
+          "button": {
+            "primary_variant": "editorial_sharp",
+            "corner_radius_dp": 0,
+            "min_height_dp": 52,
+            "uppercase_labels": true,
+            "show_trailing_arrow": true,
+            "border_width_dp": 3
+          },
+          "search_bar": {
+            "variant": "underlined_editorial",
+            "placeholder": "PRESS START TO SEARCH",
+            "corner_radius_dp": 0,
+            "height_dp": 52,
+            "leading_icon_key": "search",
+            "show_visual_hint_icon": true
+          },
+          "product_card": {
+            "variant": "gallery_bordered",
+            "corner_radius_dp": 0,
+            "show_quick_add": true,
+            "badge_position": "top_right",
+            "price_alignment": "split_row"
+          },
+          "section_header": {
+            "variant": "tracked_mono",
+            "show_eyebrow": true,
+            "show_divider": true
+          },
+          "states": {
+            "empty_title": "NO ITEMS FOUND",
+            "empty_subtitle": "INSERT COIN TO CONTINUE",
+            "error_cta_label": "RETRY",
+            "loading_variant": "minimal_pulse"
+          }
+        },
+        "navigation": {
+          "bottom_bar_variant": "flat_editorial",
+          "bottom_bar_radius_dp": 0
+        },
+        "ambient": [
+          {
+            "asset_key": "pixel_heart",
+            "max_count": 6
+          },
+          {
+            "asset_key": "pixel_coin",
+            "max_count": 3
+          },
+          {
+            "asset_key": "pixel_star_field",
+            "max_count": 8
+          },
+          {
+            "asset_key": "pixel_ghost",
+            "max_count": 2
+          }
+        ],
+        "budget": {
+          "max_svg_kb": 12,
+          "max_ambient_particles": 8,
+          "fps_cap": 30,
+          "animate_properties": [
+            "transform",
+            "opacity"
+          ],
+          "filters": "none",
+          "pause_offscreen": true
+        },
+        "fonts": "Silkscreen",
+        "hero_image": "/design-system/assets/images/pixel-arcade-hero.svg"
+      }
+    },
+    "minimal": {
+      "template": "minimal_studio_grid",
+      "hero_layout": "clean_mono_split",
+      "font_style": "minimal",
+      "button_style": "sharp_minimal",
+      "card_radius_dp": 2,
+      "grid_columns": 2,
+      "section_order": [
+        "world_hero",
+        "vibe_satisfaction",
+        "world_promo_film",
+        "world_subcultures",
+        "world_products",
+        "world_brands"
+      ],
+      "kit": {
+        "version": "1.2.0",
+        "svg_base": "/design-system/assets/svg/worlds/minimal/",
+        "button_skin": "flat_mono",
+        "svg": {
+          "button": "/design-system/assets/svg/worlds/minimal/button.svg",
+          "button_ghost": "/design-system/assets/svg/worlds/minimal/button_ghost.svg",
+          "navbar": "/design-system/assets/svg/worlds/minimal/navbar.svg",
+          "nav_indicator": "/design-system/assets/svg/worlds/minimal/nav_indicator.svg",
+          "slider": "/design-system/assets/svg/worlds/minimal/slider.svg",
+          "pager": "/design-system/assets/svg/worlds/minimal/pager.svg",
+          "divider": "/design-system/assets/svg/worlds/minimal/divider.svg",
+          "card_frame": "/design-system/assets/svg/worlds/minimal/card_frame.svg",
+          "loader": "/design-system/assets/svg/worlds/minimal/loader.svg"
+        },
+        "slices": {
+          "button": {
+            "left": 44,
+            "right": 44
+          },
+          "button_ghost": {
+            "left": 44,
+            "right": 44
+          },
+          "navbar": {
+            "top": 16
+          },
+          "card_frame": {
+            "all": 40
+          }
+        },
+        "label_slots": {
+          "button": {
+            "x": 52,
+            "w": 216
+          },
+          "navbar_tabs": 5
+        },
+        "icons": {
+          "home": {
+            "icon": "/design-system/assets/svg/worlds/minimal/icons/home.svg",
+            "active_icon": "/design-system/assets/svg/worlds/minimal/icons/home_active.svg"
+          },
+          "discover": {
+            "icon": "/design-system/assets/svg/worlds/minimal/icons/discover.svg",
+            "active_icon": "/design-system/assets/svg/worlds/minimal/icons/discover_active.svg"
+          },
+          "videos": {
+            "icon": "/design-system/assets/svg/worlds/minimal/icons/videos.svg",
+            "active_icon": "/design-system/assets/svg/worlds/minimal/icons/videos_active.svg"
+          },
+          "elite": {
+            "icon": "/design-system/assets/svg/worlds/minimal/icons/elite.svg",
+            "active_icon": "/design-system/assets/svg/worlds/minimal/icons/elite_active.svg"
+          },
+          "bag": {
+            "icon": "/design-system/assets/svg/worlds/minimal/icons/bag.svg",
+            "active_icon": "/design-system/assets/svg/worlds/minimal/icons/bag_active.svg"
+          }
+        },
+        "tab_labels": [
+          "Home",
+          "Browse",
+          "Film",
+          "Luxe",
+          "Bag"
+        ],
+        "motion_preset": "hairline_fade",
+        "palette": {
+          "background": "#FAFAFA",
+          "surface": "#FFFFFF",
+          "text_primary": "#09090B",
+          "text_secondary": "#52525B",
+          "accent": "#52525B",
+          "secondary_accent": "#A1A1AA",
+          "border": "#E4E4E7",
+          "mode": "light"
+        },
+        "typography": {
+          "display_font": "minimal",
+          "body_font": "clean_sans",
+          "heading_scale": 1.0,
+          "letter_spacing_eyebrow": 2.4,
+          "pixel_text": false
+        },
+        "components": {
+          "button": {
+            "primary_variant": "editorial_sharp",
+            "corner_radius_dp": 0,
+            "min_height_dp": 52,
+            "uppercase_labels": false,
+            "show_trailing_arrow": true,
+            "border_width_dp": 1
+          },
+          "search_bar": {
+            "variant": "underlined_editorial",
+            "placeholder": "Search",
+            "corner_radius_dp": 0,
+            "height_dp": 52,
+            "leading_icon_key": "search",
+            "show_visual_hint_icon": true
+          },
+          "product_card": {
+            "variant": "gallery_bordered",
+            "corner_radius_dp": 2,
+            "show_quick_add": true,
+            "badge_position": "top_right",
+            "price_alignment": "split_row"
+          },
+          "section_header": {
+            "variant": "tracked_mono",
+            "show_eyebrow": true,
+            "show_divider": true
+          },
+          "states": {
+            "empty_title": "Nothing Found",
+            "empty_subtitle": "Clear filters to continue.",
+            "error_cta_label": "Retry",
+            "loading_variant": "minimal_pulse"
+          }
+        },
+        "navigation": {
+          "bottom_bar_variant": "flat_editorial",
+          "bottom_bar_radius_dp": 0
+        },
+        "ambient": [],
+        "budget": {
+          "max_svg_kb": 12,
+          "max_ambient_particles": 8,
+          "fps_cap": 30,
+          "animate_properties": [
+            "transform",
+            "opacity"
+          ],
+          "filters": "none",
+          "pause_offscreen": true
+        },
+        "fonts": "Didact Gothic"
+      }
+    },
+    "grunge": {
+      "template": "grunge_zine_collage",
+      "hero_layout": "torn_poster_split",
+      "font_style": "futuristic",
+      "button_style": "street_block",
+      "card_radius_dp": 4,
+      "grid_columns": 2,
+      "section_order": [
+        "world_hero",
+        "vibe_satisfaction",
+        "world_promo_film",
+        "world_subcultures",
+        "world_products",
+        "world_brands"
+      ],
+      "kit": {
+        "version": "1.2.0",
+        "svg_base": "/design-system/assets/svg/worlds/grunge/",
+        "button_skin": "torn_paper",
+        "svg": {
+          "button": "/design-system/assets/svg/worlds/grunge/button.svg",
+          "button_ghost": "/design-system/assets/svg/worlds/grunge/button_ghost.svg",
+          "navbar": "/design-system/assets/svg/worlds/grunge/navbar.svg",
+          "nav_indicator": "/design-system/assets/svg/worlds/grunge/nav_indicator.svg",
+          "slider": "/design-system/assets/svg/worlds/grunge/slider.svg",
+          "pager": "/design-system/assets/svg/worlds/grunge/pager.svg",
+          "divider": "/design-system/assets/svg/worlds/grunge/divider.svg",
+          "card_frame": "/design-system/assets/svg/worlds/grunge/card_frame.svg",
+          "loader": "/design-system/assets/svg/worlds/grunge/loader.svg"
+        },
+        "slices": {
+          "button": {
+            "left": 44,
+            "right": 44
+          },
+          "button_ghost": {
+            "left": 44,
+            "right": 44
+          },
+          "navbar": {
+            "top": 16
+          },
+          "card_frame": {
+            "all": 40
+          }
+        },
+        "label_slots": {
+          "button": {
+            "x": 52,
+            "w": 216
+          },
+          "navbar_tabs": 5
+        },
+        "icons": {
+          "home": {
+            "icon": "/design-system/assets/svg/worlds/grunge/icons/home.svg",
+            "active_icon": "/design-system/assets/svg/worlds/grunge/icons/home_active.svg"
+          },
+          "discover": {
+            "icon": "/design-system/assets/svg/worlds/grunge/icons/discover.svg",
+            "active_icon": "/design-system/assets/svg/worlds/grunge/icons/discover_active.svg"
+          },
+          "videos": {
+            "icon": "/design-system/assets/svg/worlds/grunge/icons/videos.svg",
+            "active_icon": "/design-system/assets/svg/worlds/grunge/icons/videos_active.svg"
+          },
+          "elite": {
+            "icon": "/design-system/assets/svg/worlds/grunge/icons/elite.svg",
+            "active_icon": "/design-system/assets/svg/worlds/grunge/icons/elite_active.svg"
+          },
+          "bag": {
+            "icon": "/design-system/assets/svg/worlds/grunge/icons/bag.svg",
+            "active_icon": "/design-system/assets/svg/worlds/grunge/icons/bag_active.svg"
+          }
+        },
+        "tab_labels": [
+          "Zine",
+          "Dig",
+          "Tapes",
+          "Stash",
+          "Bag"
+        ],
+        "motion_preset": "grunge_stutter",
+        "palette": {
+          "background": "#181512",
+          "surface": "#221E1A",
+          "text_primary": "#F4F4F5",
+          "text_secondary": "#D6D3D1",
+          "accent": "#D97706",
+          "secondary_accent": "#A8A29E",
+          "border": "#44403C",
+          "mode": "dark"
+        },
+        "typography": {
+          "display_font": "futuristic",
+          "body_font": "clean_sans",
+          "heading_scale": 1.0,
+          "letter_spacing_eyebrow": 2.4,
+          "pixel_text": false
+        },
+        "components": {
+          "button": {
+            "primary_variant": "editorial_sharp",
+            "corner_radius_dp": 2,
+            "min_height_dp": 52,
+            "uppercase_labels": true,
+            "show_trailing_arrow": false,
+            "border_width_dp": 1
+          },
+          "search_bar": {
+            "variant": "underlined_editorial",
+            "placeholder": "dig through the archive",
+            "corner_radius_dp": 2,
+            "height_dp": 52,
+            "leading_icon_key": "search",
+            "show_visual_hint_icon": true
+          },
+          "product_card": {
+            "variant": "gallery_bordered",
+            "corner_radius_dp": 4,
+            "show_quick_add": true,
+            "badge_position": "top_right",
+            "price_alignment": "split_row"
+          },
+          "section_header": {
+            "variant": "tracked_mono",
+            "show_eyebrow": true,
+            "show_divider": true
+          },
+          "states": {
+            "empty_title": "Crate Is Empty",
+            "empty_subtitle": "Dig through another stack.",
+            "error_cta_label": "Dig Again",
+            "loading_variant": "minimal_pulse"
+          }
+        },
+        "navigation": {
+          "bottom_bar_variant": "flat_editorial",
+          "bottom_bar_radius_dp": 0
+        },
+        "ambient": [
+          {
+            "asset_key": "grunge_grid",
+            "max_count": 1
+          }
+        ],
+        "budget": {
+          "max_svg_kb": 12,
+          "max_ambient_particles": 8,
+          "fps_cap": 30,
+          "animate_properties": [
+            "transform",
+            "opacity"
+          ],
+          "filters": "none",
+          "pause_offscreen": true
+        },
+        "fonts": "Space Grotesk"
+      }
+    },
+    "old-money": {
+      "template": "old_money_club",
+      "hero_layout": "crest_framed_portrait",
+      "font_style": "editorial_serif",
+      "button_style": "atelier_outline",
+      "card_radius_dp": 6,
+      "grid_columns": 2,
+      "section_order": [
+        "world_hero",
+        "vibe_satisfaction",
+        "world_promo_film",
+        "world_subcultures",
+        "world_products",
+        "world_brands"
+      ],
+      "kit": {
+        "version": "1.2.0",
+        "svg_base": "/design-system/assets/svg/worlds/old-money/",
+        "button_skin": "ticket_crest",
+        "svg": {
+          "button": "/design-system/assets/svg/worlds/old-money/button.svg",
+          "button_ghost": "/design-system/assets/svg/worlds/old-money/button_ghost.svg",
+          "navbar": "/design-system/assets/svg/worlds/old-money/navbar.svg",
+          "nav_indicator": "/design-system/assets/svg/worlds/old-money/nav_indicator.svg",
+          "slider": "/design-system/assets/svg/worlds/old-money/slider.svg",
+          "pager": "/design-system/assets/svg/worlds/old-money/pager.svg",
+          "divider": "/design-system/assets/svg/worlds/old-money/divider.svg",
+          "card_frame": "/design-system/assets/svg/worlds/old-money/card_frame.svg",
+          "loader": "/design-system/assets/svg/worlds/old-money/loader.svg"
+        },
+        "slices": {
+          "button": {
+            "left": 44,
+            "right": 44
+          },
+          "button_ghost": {
+            "left": 44,
+            "right": 44
+          },
+          "navbar": {
+            "top": 16
+          },
+          "card_frame": {
+            "all": 40
+          }
+        },
+        "label_slots": {
+          "button": {
+            "x": 52,
+            "w": 216
+          },
+          "navbar_tabs": 5
+        },
+        "icons": {
+          "home": {
+            "icon": "/design-system/assets/svg/worlds/old-money/icons/home.svg",
+            "active_icon": "/design-system/assets/svg/worlds/old-money/icons/home_active.svg"
+          },
+          "discover": {
+            "icon": "/design-system/assets/svg/worlds/old-money/icons/discover.svg",
+            "active_icon": "/design-system/assets/svg/worlds/old-money/icons/discover_active.svg"
+          },
+          "videos": {
+            "icon": "/design-system/assets/svg/worlds/old-money/icons/videos.svg",
+            "active_icon": "/design-system/assets/svg/worlds/old-money/icons/videos_active.svg"
+          },
+          "elite": {
+            "icon": "/design-system/assets/svg/worlds/old-money/icons/elite.svg",
+            "active_icon": "/design-system/assets/svg/worlds/old-money/icons/elite_active.svg"
+          },
+          "bag": {
+            "icon": "/design-system/assets/svg/worlds/old-money/icons/bag.svg",
+            "active_icon": "/design-system/assets/svg/worlds/old-money/icons/bag_active.svg"
+          }
+        },
+        "tab_labels": [
+          "Club",
+          "Explore",
+          "Film",
+          "Heirloom",
+          "Valise"
+        ],
+        "motion_preset": "hairline_fade",
+        "palette": {
+          "background": "#F4F1EA",
+          "surface": "#FFFFFF",
+          "text_primary": "#14261C",
+          "text_secondary": "#4A5D52",
+          "accent": "#14261C",
+          "secondary_accent": "#3F624D",
+          "border": "#DDD6C8",
+          "mode": "light"
+        },
+        "typography": {
+          "display_font": "editorial_serif",
+          "body_font": "minimal",
+          "heading_scale": 1.0,
+          "letter_spacing_eyebrow": 2.4,
+          "pixel_text": false
+        },
+        "components": {
+          "button": {
+            "primary_variant": "editorial_sharp",
+            "corner_radius_dp": 4,
+            "min_height_dp": 52,
+            "uppercase_labels": false,
+            "show_trailing_arrow": false,
+            "border_width_dp": 1
+          },
+          "search_bar": {
+            "variant": "underlined_editorial",
+            "placeholder": "Search the collection",
+            "corner_radius_dp": 4,
+            "height_dp": 52,
+            "leading_icon_key": "search",
+            "show_visual_hint_icon": true
+          },
+          "product_card": {
+            "variant": "editorial_portrait",
+            "corner_radius_dp": 6,
+            "show_quick_add": true,
+            "badge_position": "top_right",
+            "price_alignment": "split_row"
+          },
+          "section_header": {
+            "variant": "magazine_serif",
+            "show_eyebrow": true,
+            "show_divider": true
+          },
+          "states": {
+            "empty_title": "Nothing In The Cabinet",
+            "empty_subtitle": "Return to the collection.",
+            "error_cta_label": "Try Again",
+            "loading_variant": "minimal_pulse"
+          }
+        },
+        "navigation": {
+          "bottom_bar_variant": "flat_editorial",
+          "bottom_bar_radius_dp": 0
+        },
+        "ambient": [
+          {
+            "asset_key": "oldmoney_laurel",
+            "max_count": 2
+          }
+        ],
+        "budget": {
+          "max_svg_kb": 12,
+          "max_ambient_particles": 8,
+          "fps_cap": 30,
+          "animate_properties": [
+            "transform",
+            "opacity"
+          ],
+          "filters": "none",
+          "pause_offscreen": true
+        },
+        "fonts": "Playfair Display"
+      }
+    },
+    "casual": {
+      "template": "casual_everyday_grid",
+      "hero_layout": "soft_split",
+      "font_style": "clean_sans",
+      "button_style": "editorial_pill",
+      "card_radius_dp": 16,
+      "grid_columns": 2,
+      "section_order": [
+        "world_hero",
+        "vibe_satisfaction",
+        "world_promo_film",
+        "world_subcultures",
+        "world_products",
+        "world_brands"
+      ],
+      "kit": {
+        "version": "1.2.0",
+        "svg_base": "/design-system/assets/svg/worlds/casual/",
+        "button_skin": "soft_pill",
+        "svg": {
+          "button": "/design-system/assets/svg/worlds/casual/button.svg",
+          "button_ghost": "/design-system/assets/svg/worlds/casual/button_ghost.svg",
+          "navbar": "/design-system/assets/svg/worlds/casual/navbar.svg",
+          "nav_indicator": "/design-system/assets/svg/worlds/casual/nav_indicator.svg",
+          "slider": "/design-system/assets/svg/worlds/casual/slider.svg",
+          "pager": "/design-system/assets/svg/worlds/casual/pager.svg",
+          "divider": "/design-system/assets/svg/worlds/casual/divider.svg",
+          "card_frame": "/design-system/assets/svg/worlds/casual/card_frame.svg",
+          "loader": "/design-system/assets/svg/worlds/casual/loader.svg"
+        },
+        "slices": {
+          "button": {
+            "left": 44,
+            "right": 44
+          },
+          "button_ghost": {
+            "left": 44,
+            "right": 44
+          },
+          "navbar": {
+            "top": 16
+          },
+          "card_frame": {
+            "all": 40
+          }
+        },
+        "label_slots": {
+          "button": {
+            "x": 52,
+            "w": 216
+          },
+          "navbar_tabs": 5
+        },
+        "icons": {
+          "home": {
+            "icon": "/design-system/assets/svg/worlds/casual/icons/home.svg",
+            "active_icon": "/design-system/assets/svg/worlds/casual/icons/home_active.svg"
+          },
+          "discover": {
+            "icon": "/design-system/assets/svg/worlds/casual/icons/discover.svg",
+            "active_icon": "/design-system/assets/svg/worlds/casual/icons/discover_active.svg"
+          },
+          "videos": {
+            "icon": "/design-system/assets/svg/worlds/casual/icons/videos.svg",
+            "active_icon": "/design-system/assets/svg/worlds/casual/icons/videos_active.svg"
+          },
+          "elite": {
+            "icon": "/design-system/assets/svg/worlds/casual/icons/elite.svg",
+            "active_icon": "/design-system/assets/svg/worlds/casual/icons/elite_active.svg"
+          },
+          "bag": {
+            "icon": "/design-system/assets/svg/worlds/casual/icons/bag.svg",
+            "active_icon": "/design-system/assets/svg/worlds/casual/icons/bag_active.svg"
+          }
+        },
+        "tab_labels": [
+          "Home",
+          "Explore",
+          "Reels",
+          "Luxe",
+          "Cart"
+        ],
+        "motion_preset": "casual_bounce",
+        "palette": {
+          "background": "#F8FAFC",
+          "surface": "#FFFFFF",
+          "text_primary": "#0F172A",
+          "text_secondary": "#475569",
+          "accent": "#059669",
+          "secondary_accent": "#64748B",
+          "border": "#E2E8F0",
+          "mode": "light"
+        },
+        "typography": {
+          "display_font": "clean_sans",
+          "body_font": "clean_sans",
+          "heading_scale": 1.0,
+          "letter_spacing_eyebrow": 2.4,
+          "pixel_text": false
+        },
+        "components": {
+          "button": {
+            "primary_variant": "pill_luxe",
+            "corner_radius_dp": 999,
+            "min_height_dp": 52,
+            "uppercase_labels": false,
+            "show_trailing_arrow": true,
+            "border_width_dp": 1
+          },
+          "search_bar": {
+            "variant": "pill_elevated",
+            "placeholder": "Search everyday staples",
+            "corner_radius_dp": 999,
+            "height_dp": 52,
+            "leading_icon_key": "search",
+            "show_visual_hint_icon": true
+          },
+          "product_card": {
+            "variant": "editorial_portrait",
+            "corner_radius_dp": 16,
+            "show_quick_add": true,
+            "badge_position": "top_right",
+            "price_alignment": "split_row"
+          },
+          "section_header": {
+            "variant": "magazine_serif",
+            "show_eyebrow": true,
+            "show_divider": true
+          },
+          "states": {
+            "empty_title": "Nothing Here Yet",
+            "empty_subtitle": "Try a different filter.",
+            "error_cta_label": "Try Again",
+            "loading_variant": "minimal_pulse"
+          }
+        },
+        "navigation": {
+          "bottom_bar_variant": "floating_dock",
+          "bottom_bar_radius_dp": 28
+        },
+        "ambient": [
+          {
+            "asset_key": "casual_leaf",
+            "max_count": 4
+          }
+        ],
+        "budget": {
+          "max_svg_kb": 12,
+          "max_ambient_particles": 8,
+          "fps_cap": 30,
+          "animate_properties": [
+            "transform",
+            "opacity"
+          ],
+          "filters": "none",
+          "pause_offscreen": true
+        },
+        "fonts": "Plus Jakarta Sans"
+      }
+    },
+    "party-wear": {
+      "template": "party_after_hours",
+      "hero_layout": "foil_marquee_split",
+      "font_style": "editorial_serif",
+      "button_style": "chrome_bevel",
+      "card_radius_dp": 16,
+      "grid_columns": 2,
+      "section_order": [
+        "world_hero",
+        "vibe_satisfaction",
+        "world_promo_film",
+        "world_subcultures",
+        "world_products",
+        "world_brands"
+      ],
+      "kit": {
+        "version": "1.2.0",
+        "svg_base": "/design-system/assets/svg/worlds/party-wear/",
+        "button_skin": "gold_foil",
+        "svg": {
+          "button": "/design-system/assets/svg/worlds/party-wear/button.svg",
+          "button_ghost": "/design-system/assets/svg/worlds/party-wear/button_ghost.svg",
+          "navbar": "/design-system/assets/svg/worlds/party-wear/navbar.svg",
+          "nav_indicator": "/design-system/assets/svg/worlds/party-wear/nav_indicator.svg",
+          "slider": "/design-system/assets/svg/worlds/party-wear/slider.svg",
+          "pager": "/design-system/assets/svg/worlds/party-wear/pager.svg",
+          "divider": "/design-system/assets/svg/worlds/party-wear/divider.svg",
+          "card_frame": "/design-system/assets/svg/worlds/party-wear/card_frame.svg",
+          "loader": "/design-system/assets/svg/worlds/party-wear/loader.svg"
+        },
+        "slices": {
+          "button": {
+            "left": 44,
+            "right": 44
+          },
+          "button_ghost": {
+            "left": 44,
+            "right": 44
+          },
+          "navbar": {
+            "top": 16
+          },
+          "card_frame": {
+            "all": 40
+          }
+        },
+        "label_slots": {
+          "button": {
+            "x": 52,
+            "w": 216
+          },
+          "navbar_tabs": 5
+        },
+        "icons": {
+          "home": {
+            "icon": "/design-system/assets/svg/worlds/party-wear/icons/home.svg",
+            "active_icon": "/design-system/assets/svg/worlds/party-wear/icons/home_active.svg"
+          },
+          "discover": {
+            "icon": "/design-system/assets/svg/worlds/party-wear/icons/discover.svg",
+            "active_icon": "/design-system/assets/svg/worlds/party-wear/icons/discover_active.svg"
+          },
+          "videos": {
+            "icon": "/design-system/assets/svg/worlds/party-wear/icons/videos.svg",
+            "active_icon": "/design-system/assets/svg/worlds/party-wear/icons/videos_active.svg"
+          },
+          "elite": {
+            "icon": "/design-system/assets/svg/worlds/party-wear/icons/elite.svg",
+            "active_icon": "/design-system/assets/svg/worlds/party-wear/icons/elite_active.svg"
+          },
+          "bag": {
+            "icon": "/design-system/assets/svg/worlds/party-wear/icons/bag.svg",
+            "active_icon": "/design-system/assets/svg/worlds/party-wear/icons/bag_active.svg"
+          }
+        },
+        "tab_labels": [
+          "Tonight",
+          "Explore",
+          "Reels",
+          "VIP",
+          "Clutch"
+        ],
+        "motion_preset": "foil_shimmer",
+        "palette": {
+          "background": "#0D0A14",
+          "surface": "#161122",
+          "text_primary": "#FFFFFF",
+          "text_secondary": "#D4D4D8",
+          "accent": "#D4AF37",
+          "secondary_accent": "#E5E7EB",
+          "border": "#352B4D",
+          "mode": "dark"
+        },
+        "typography": {
+          "display_font": "editorial_serif",
+          "body_font": "minimal",
+          "heading_scale": 1.0,
+          "letter_spacing_eyebrow": 2.4,
+          "pixel_text": false
+        },
+        "components": {
+          "button": {
+            "primary_variant": "pill_luxe",
+            "corner_radius_dp": 999,
+            "min_height_dp": 52,
+            "uppercase_labels": false,
+            "show_trailing_arrow": true,
+            "border_width_dp": 1
+          },
+          "search_bar": {
+            "variant": "pill_elevated",
+            "placeholder": "Search after-hours looks",
+            "corner_radius_dp": 999,
+            "height_dp": 52,
+            "leading_icon_key": "search",
+            "show_visual_hint_icon": true
+          },
+          "product_card": {
+            "variant": "editorial_portrait",
+            "corner_radius_dp": 16,
+            "show_quick_add": true,
+            "badge_position": "top_right",
+            "price_alignment": "split_row"
+          },
+          "section_header": {
+            "variant": "magazine_serif",
+            "show_eyebrow": true,
+            "show_divider": true
+          },
+          "states": {
+            "empty_title": "The Night Is Young",
+            "empty_subtitle": "Nothing matched. Try another look.",
+            "error_cta_label": "Another Round",
+            "loading_variant": "minimal_pulse"
+          }
+        },
+        "navigation": {
+          "bottom_bar_variant": "floating_dock",
+          "bottom_bar_radius_dp": 28
+        },
+        "ambient": [
+          {
+            "asset_key": "party_disco",
+            "max_count": 1
+          },
+          {
+            "asset_key": "party_sparkle",
+            "max_count": 5
+          }
+        ],
+        "budget": {
+          "max_svg_kb": 12,
+          "max_ambient_particles": 8,
+          "fps_cap": 30,
+          "animate_properties": [
+            "transform",
+            "opacity"
+          ],
+          "filters": "none",
+          "pause_offscreen": true
+        },
+        "fonts": "Playfair Display"
+      }
+    }
+  },
+  "occasion_overrides": {
+    "default_activation_days_before": 8,
+    "default_timezone": "Asia/Kolkata",
+    "max_banner_elevation_dp": 4,
+    "preserve_world_layout": true,
+    "max_ambient_particles": 10,
+    "fps_cap": 30,
+    "respect_reduced_motion": true,
+    "occasions": {
+      "diwali-luxe-edit": {
+        "motif": "diya_flame",
+        "motif_secondary": "marigold",
+        "colors": {
+          "primary": "#FFFBEB",
+          "accent": "#F59E0B",
+          "background": "#1F1209",
+          "cta_face": "#B45309"
+        },
+        "svg": {
+          "button": "/design-system/assets/svg/occasions/diwali-luxe-edit/button.svg",
+          "button_ghost": "/design-system/assets/svg/occasions/diwali-luxe-edit/button_ghost.svg",
+          "banner": "/design-system/assets/svg/occasions/diwali-luxe-edit/banner.svg",
+          "divider": "/design-system/assets/svg/occasions/diwali-luxe-edit/divider.svg",
+          "corner": "/design-system/assets/svg/occasions/diwali-luxe-edit/corner.svg"
+        },
+        "motion_preset": "diya_flicker",
+        "overlay_opacity": 0.16,
+        "preserve_world_layout": true
+      },
+      "winter-atelier": {
+        "motif": "snowflake",
+        "motif_secondary": "snowflake",
+        "colors": {
+          "primary": "#E0F2FE",
+          "accent": "#38BDF8",
+          "background": "#0F172A",
+          "cta_face": "#0369A1"
+        },
+        "svg": {
+          "button": "/design-system/assets/svg/occasions/winter-atelier/button.svg",
+          "button_ghost": "/design-system/assets/svg/occasions/winter-atelier/button_ghost.svg",
+          "banner": "/design-system/assets/svg/occasions/winter-atelier/banner.svg",
+          "divider": "/design-system/assets/svg/occasions/winter-atelier/divider.svg",
+          "corner": "/design-system/assets/svg/occasions/winter-atelier/corner.svg"
+        },
+        "motion_preset": "snow_drift",
+        "overlay_opacity": 0.16,
+        "preserve_world_layout": true
+      },
+      "season-editorial-spotlight": {
+        "motif": "confetti",
+        "motif_secondary": "confetti",
+        "colors": {
+          "primary": "#FFFFFF",
+          "accent": "#D4AF37",
+          "background": "#141218",
+          "cta_face": "#8A6D1E"
+        },
+        "svg": {
+          "button": "/design-system/assets/svg/occasions/season-editorial-spotlight/button.svg",
+          "button_ghost": "/design-system/assets/svg/occasions/season-editorial-spotlight/button_ghost.svg",
+          "banner": "/design-system/assets/svg/occasions/season-editorial-spotlight/banner.svg",
+          "divider": "/design-system/assets/svg/occasions/season-editorial-spotlight/divider.svg",
+          "corner": "/design-system/assets/svg/occasions/season-editorial-spotlight/corner.svg"
+        },
+        "motion_preset": "confetti_pop",
+        "overlay_opacity": 0.16,
+        "preserve_world_layout": true
+      },
+      "end-of-season-edit": {
+        "motif": "sale_sticker",
+        "motif_secondary": "sale_sticker",
+        "colors": {
+          "primary": "#EF4444",
+          "accent": "#EF4444",
+          "background": "#181113",
+          "cta_face": "#DC2626"
+        },
+        "svg": {
+          "button": "/design-system/assets/svg/occasions/end-of-season-edit/button.svg",
+          "button_ghost": "/design-system/assets/svg/occasions/end-of-season-edit/button_ghost.svg",
+          "banner": "/design-system/assets/svg/occasions/end-of-season-edit/banner.svg",
+          "divider": "/design-system/assets/svg/occasions/end-of-season-edit/divider.svg",
+          "corner": "/design-system/assets/svg/occasions/end-of-season-edit/corner.svg"
+        },
+        "motion_preset": "street_slam",
+        "overlay_opacity": 0.16,
+        "preserve_world_layout": true
+      },
+      "black-friday-drop": {
+        "motif": "sale_sticker",
+        "motif_secondary": "confetti",
+        "colors": {
+          "primary": "#FACC15",
+          "accent": "#FACC15",
+          "background": "#0A0A0A",
+          "cta_face": "#111111"
+        },
+        "svg": {
+          "button": "/design-system/assets/svg/occasions/black-friday-drop/button.svg",
+          "button_ghost": "/design-system/assets/svg/occasions/black-friday-drop/button_ghost.svg",
+          "banner": "/design-system/assets/svg/occasions/black-friday-drop/banner.svg",
+          "divider": "/design-system/assets/svg/occasions/black-friday-drop/divider.svg",
+          "corner": "/design-system/assets/svg/occasions/black-friday-drop/corner.svg"
+        },
+        "motion_preset": "street_slam",
+        "overlay_opacity": 0.16,
+        "preserve_world_layout": true
+      },
+      "christmas-edit": {
+        "motif": "christmas_tree",
+        "motif_secondary": "holly",
+        "colors": {
+          "primary": "#16A34A",
+          "accent": "#DC2626",
+          "background": "#0F2A1D",
+          "cta_face": "#B91C1C"
+        },
+        "svg": {
+          "button": "/design-system/assets/svg/occasions/christmas-edit/button.svg",
+          "button_ghost": "/design-system/assets/svg/occasions/christmas-edit/button_ghost.svg",
+          "banner": "/design-system/assets/svg/occasions/christmas-edit/banner.svg",
+          "divider": "/design-system/assets/svg/occasions/christmas-edit/divider.svg",
+          "corner": "/design-system/assets/svg/occasions/christmas-edit/corner.svg"
+        },
+        "motion_preset": "snow_drift",
+        "overlay_opacity": 0.16,
+        "preserve_world_layout": true
+      },
+      "new-year-countdown": {
+        "motif": "firework",
+        "motif_secondary": "firework",
+        "colors": {
+          "primary": "#FBBF24",
+          "accent": "#F472B6",
+          "background": "#0B0B1E",
+          "cta_face": "#7C3AED"
+        },
+        "svg": {
+          "button": "/design-system/assets/svg/occasions/new-year-countdown/button.svg",
+          "button_ghost": "/design-system/assets/svg/occasions/new-year-countdown/button_ghost.svg",
+          "banner": "/design-system/assets/svg/occasions/new-year-countdown/banner.svg",
+          "divider": "/design-system/assets/svg/occasions/new-year-countdown/divider.svg",
+          "corner": "/design-system/assets/svg/occasions/new-year-countdown/corner.svg"
+        },
+        "motion_preset": "firework_burst",
+        "overlay_opacity": 0.16,
+        "preserve_world_layout": true
+      },
+      "valentines-edit": {
+        "motif": "heart_arrow",
+        "motif_secondary": "ribbon_bow",
+        "colors": {
+          "primary": "#F43F5E",
+          "accent": "#FB7185",
+          "background": "#2A0A14",
+          "cta_face": "#BE123C"
+        },
+        "svg": {
+          "button": "/design-system/assets/svg/occasions/valentines-edit/button.svg",
+          "button_ghost": "/design-system/assets/svg/occasions/valentines-edit/button_ghost.svg",
+          "banner": "/design-system/assets/svg/occasions/valentines-edit/banner.svg",
+          "divider": "/design-system/assets/svg/occasions/valentines-edit/divider.svg",
+          "corner": "/design-system/assets/svg/occasions/valentines-edit/corner.svg"
+        },
+        "motion_preset": "heart_pulse",
+        "overlay_opacity": 0.16,
+        "preserve_world_layout": true
+      },
+      "holi-colour-edit": {
+        "motif": "holi_splash",
+        "motif_secondary": "holi_splash",
+        "colors": {
+          "primary": "#EC4899",
+          "accent": "#22D3EE",
+          "background": "#FFF7ED",
+          "cta_face": "#EC4899"
+        },
+        "svg": {
+          "button": "/design-system/assets/svg/occasions/holi-colour-edit/button.svg",
+          "button_ghost": "/design-system/assets/svg/occasions/holi-colour-edit/button_ghost.svg",
+          "banner": "/design-system/assets/svg/occasions/holi-colour-edit/banner.svg",
+          "divider": "/design-system/assets/svg/occasions/holi-colour-edit/divider.svg",
+          "corner": "/design-system/assets/svg/occasions/holi-colour-edit/corner.svg"
+        },
+        "motion_preset": "confetti_pop",
+        "overlay_opacity": 0.16,
+        "preserve_world_layout": true
+      },
+      "eid-festive-edit": {
+        "motif": "eid_lantern",
+        "motif_secondary": "crescent_moon",
+        "colors": {
+          "primary": "#FDE68A",
+          "accent": "#34D399",
+          "background": "#052E2B",
+          "cta_face": "#0F766E"
+        },
+        "svg": {
+          "button": "/design-system/assets/svg/occasions/eid-festive-edit/button.svg",
+          "button_ghost": "/design-system/assets/svg/occasions/eid-festive-edit/button_ghost.svg",
+          "banner": "/design-system/assets/svg/occasions/eid-festive-edit/banner.svg",
+          "divider": "/design-system/assets/svg/occasions/eid-festive-edit/divider.svg",
+          "corner": "/design-system/assets/svg/occasions/eid-festive-edit/corner.svg"
+        },
+        "motion_preset": "diya_flicker",
+        "overlay_opacity": 0.16,
+        "preserve_world_layout": true
+      },
+      "halloween-noir": {
+        "motif": "pumpkin",
+        "motif_secondary": "halloween_ghost",
+        "colors": {
+          "primary": "#F97316",
+          "accent": "#A855F7",
+          "background": "#0E0A14",
+          "cta_face": "#C2410C"
+        },
+        "svg": {
+          "button": "/design-system/assets/svg/occasions/halloween-noir/button.svg",
+          "button_ghost": "/design-system/assets/svg/occasions/halloween-noir/button_ghost.svg",
+          "banner": "/design-system/assets/svg/occasions/halloween-noir/banner.svg",
+          "divider": "/design-system/assets/svg/occasions/halloween-noir/divider.svg",
+          "corner": "/design-system/assets/svg/occasions/halloween-noir/corner.svg"
+        },
+        "motion_preset": "goth_flap",
+        "overlay_opacity": 0.16,
+        "preserve_world_layout": true
+      },
+      "wedding-season": {
+        "motif": "wedding_paisley",
+        "motif_secondary": "marigold",
+        "colors": {
+          "primary": "#B45309",
+          "accent": "#E11D48",
+          "background": "#FFF1E6",
+          "cta_face": "#9F1239"
+        },
+        "svg": {
+          "button": "/design-system/assets/svg/occasions/wedding-season/button.svg",
+          "button_ghost": "/design-system/assets/svg/occasions/wedding-season/button_ghost.svg",
+          "banner": "/design-system/assets/svg/occasions/wedding-season/banner.svg",
+          "divider": "/design-system/assets/svg/occasions/wedding-season/divider.svg",
+          "corner": "/design-system/assets/svg/occasions/wedding-season/corner.svg"
+        },
+        "motion_preset": "ribbon_sway",
+        "overlay_opacity": 0.16,
+        "preserve_world_layout": true
+      }
+    }
+  }
+}

@@ -1,0 +1,1175 @@
+# MELVORE — COMPLETE CUSTOMER APP REDESIGN & COMMERCE EXPERIENCE
+
+## PROJECT OBJECTIVE
+
+Transform the existing Melvore Android application into a premium, visually immersive, highly interactive fashion-shopping platform.
+
+The app should combine the speed, simplicity and effortless navigation of modern quick-commerce apps such as Blinkit and Zepto with the editorial fashion experience of premium international fashion platforms.
+
+Do not copy their branding or exact interface. Use their excellent UX principles: immediate discovery, fast search, clear navigation, personalized content, smooth scrolling and minimal friction.
+
+Melvore is a fashion discovery and shopping destination focused on modern, distinctive, expressive and unique clothing, including Y2K, Korean fashion, Gothic, streetwear, oversized fashion, minimal fashion, coquette and other emerging aesthetics.
+
+The experience must make users want to explore, scroll, discover new brands, watch product videos and try different styles.
+
+**MOST IMPORTANT REQUIREMENT: Almost all homepage content, promotional sections, creative assets, animations, festival campaigns, style collections, brand placements, products and editorial layouts must be managed dynamically through the existing PHP/MySQL backend.**
+
+Do not build a static mockup. Build a functional shopping application connected to the live database.
+
+---
+
+# 1. FIRST: INSPECT THE EXISTING PROJECT
+
+Before making changes:
+
+1. Inspect the complete existing Kotlin and Jetpack Compose application.
+2. Understand the existing navigation, authentication, API client, repositories, product models, cart, checkout, order history and payment integrations.
+3. Inspect the current PHP API folder and existing endpoint structure.
+4. Inspect the existing database schema and the new migration named `melvore_customer_app_experience_migration.sql`.
+5. Reuse existing functionality wherever possible.
+6. Do not create duplicate cart, order, product, user, category, brand, review or FAQ systems.
+7. Do not replace working backend functionality with dummy local data.
+8. Do not break existing authentication, Google login, user accounts, addresses, cart, wishlist, checkout, Razorpay, COD or order tracking.
+9. Preserve all existing customer data and historical orders.
+
+The app is a customer-facing production application, not an API testing or developer application.
+
+Do not expose developer settings, API endpoint editing, debugging controls, mock data controls or developer configuration screens to customers.
+
+---
+
+# 2. OVERALL DESIGN LANGUAGE
+
+Create a premium, modern, fashion-editorial design system.
+
+### Default appearance
+
+- Default theme: sophisticated black and dark charcoal.
+- Use white and off-white for contrast.
+- Use metallic silver, chrome, electric blue, occasional gold and carefully selected accent colours.
+- Use elegant typography with strong editorial headings.
+- Use large fashion photography.
+- Use full-width banners and immersive product visuals.
+- Use sharp rectangular layouts and minimal border radii.
+- Avoid excessive rounded cards, pills and generic UI containers.
+- Use premium spacing, intentional alignment and clear visual hierarchy.
+- Avoid making the app look like a generic shopping template.
+
+### Animations
+
+Create a rich but controlled animation system.
+
+Implement:
+
+- Subtle moving light reflections on primary buttons.
+- Metallic shine on selected buttons and promotional elements.
+- Smooth image reveals.
+- Elegant section entrance transitions.
+- Subtle animated gradients.
+- Premium loading skeletons.
+- Smooth horizontal category and brand carousels.
+- Image parallax where appropriate.
+- Animated campaign illustrations.
+- Smooth transitions between product categories.
+- Micro-interactions for wishlist, cart and selection controls.
+
+Animations must be configurable from the database wherever they are content-related.
+
+Use reusable Compose animation components and Lottie/vector assets where appropriate.
+
+Do not use rapid flashing, distracting continuous animations or effects that damage scrolling performance. Respect Android reduced-motion preferences.
+
+---
+
+# 3. TOP NAVIGATION AND HOMEPAGE HEADER
+
+There must be NO hamburger menu or menu button.
+
+The main navigation will be provided through the bottom navigation bar and direct screen interactions.
+
+### Header layout
+
+At the top:
+
+- Left: personalised greeting, such as "Hello, [First Name]".
+- Under it: a short personalised message such as "Ready to discover something new?"
+- Right: profile icon.
+- Keep the header compact and elegant.
+
+### Search bar
+
+Create a full-width, highly visible search bar.
+
+Include:
+
+- Search icon.
+- Placeholder text that can rotate between suggestions:
+  - Search Y2K jackets
+  - Search Korean fashion
+  - Search oversized clothing
+  - Search winter essentials
+  - Search your favourite brands
+- Voice search microphone icon.
+- Clear search control.
+- Recent searches.
+- Trending searches.
+- Search suggestions as the user types.
+
+The search should be fast and intelligent. It must not depend only on exact product-name matching.
+
+Implement server-side relevance ranking, synonym matching, normalized text matching, token matching and suitable partial matching.
+
+Use `app_search_synonyms`, `app_tags`, `app_product_tag_map` and the existing product catalogue.
+
+Voice search must use native Android speech recognition. Convert recognised speech into a normal search query and send it through the same search API. Do not upload or store raw voice recordings.
+
+---
+
+# 4. HERO IMAGE SLIDER AND FESTIVAL EXPERIENCE
+
+The first visual content immediately after the navigation should be a full-width fashion image slider.
+
+### Hero slider
+
+Use the existing `hero_content` table wherever appropriate, or connect it to the new dynamic homepage content structure.
+
+Requirements:
+
+- Full width, edge-to-edge.
+- No outer rounded container.
+- Large premium fashion imagery.
+- Separate desktop/mobile assets if available.
+- Optional title, subtitle, eyebrow and CTA.
+- Do not display empty text elements.
+- Smooth transitions.
+- No unnecessary arrows or slide counters.
+- Autoplay approximately every 7–9 seconds.
+- Pause autoplay when appropriate.
+- All content must be editable from the backend.
+
+### Festival and seasonal creative area
+
+Directly after the search area, create an animated, visually immersive festival/campaign experience.
+
+Examples:
+
+- Diwali.
+- Halloween.
+- Christmas.
+- New Year.
+- Thanksgiving.
+- Valentine's Day.
+- Holi.
+- Eid.
+- Independence Day.
+- Regional festivals.
+- Brand anniversaries.
+- Seasonal fashion launches.
+- Winter and summer campaigns.
+
+The campaign should change automatically based on:
+
+- Campaign start date.
+- Campaign end date.
+- Country.
+- State.
+- City.
+- Pincode, where configured.
+- Campaign priority.
+- Active status.
+
+Use `app_campaigns`, `app_campaign_regions` and `app_campaign_assets`.
+
+Examples of creative treatments:
+
+- Diwali: elegant golden lights, premium festive motion and subtle glowing particles.
+- Halloween: gothic atmosphere, dark textures and controlled atmospheric animation.
+- Christmas: premium winter visuals and subtle snow effects.
+- New Year: metallic typography, light trails and celebratory visuals.
+- Thanksgiving: warm seasonal visual palette.
+
+All images, videos, text, colours, animations and campaign dates must be configurable through the backend.
+
+Do not hardcode festival dates in the Android application.
+
+When no campaign is active, show a clean default fashion discovery banner.
+
+---
+
+# 5. QUICK CATEGORY NAVIGATION
+
+Below the hero and campaign content, create a horizontal category discovery area.
+
+Display image-led or icon-led category tiles that can be swiped horizontally.
+
+Examples:
+
+- Women.
+- Men.
+- Jackets.
+- Tops.
+- Dresses.
+- Bottomwear.
+- Accessories.
+- Korean Fashion.
+- Oversized.
+- New Arrivals.
+- Winterwear.
+- Streetwear.
+
+Include a View All option that opens a dedicated category discovery page.
+
+Load categories from the existing `categories` table and their existing relationships.
+
+Category tiles must be editable, sortable, hideable and configurable through the backend.
+
+---
+
+# 6. PROMOTIONAL DISCOVERY TILES
+
+Create attractive horizontal and vertical promotional areas.
+
+Examples:
+
+- MAXX SAVER.
+- Winter Special.
+- Summer Special.
+- Hot Sales.
+- Up to 90% Off.
+- Budget Finds.
+- New Arrivals.
+- Express Delivery.
+- What's New.
+- For You.
+- Personalised Picks.
+- Premium Selection.
+- Trending Now.
+
+These are dynamic promotional placements, not hardcoded sections.
+
+Use `app_home_sections`, `app_home_section_items`, `app_product_placements` and `app_campaigns`.
+
+Each promotional tile must be able to:
+
+- Display a custom image.
+- Display a title and subtitle.
+- Use a custom theme.
+- Have its own animation.
+- Link to a category, product, brand, collection, video or campaign.
+- Have its own start and end dates.
+- Be enabled or disabled.
+- Be ordered from the admin/backend.
+
+---
+
+# 7. PERSONALIZED FASHION DISCOVERY
+
+Create a prominent "For You" experience.
+
+The app should learn what the user likes using legitimate interaction signals:
+
+- Products viewed.
+- Products added to wishlist.
+- Brands viewed.
+- Categories explored.
+- Purchases.
+- Style preferences.
+- Video engagement.
+- Searches.
+
+Use `app_user_style_signals`, `app_user_brand_activity`, `app_search_logs` and existing user/product interaction data.
+
+Personalized content should include:
+
+- Recommended products.
+- Your favourite styles.
+- Recently viewed brands.
+- Recently viewed products.
+- More from brands you like.
+- Similar products.
+- Trending products in your preferred styles.
+- New arrivals in your favourite categories.
+
+Personalization must work for logged-in users and support session-based discovery for guests.
+
+Do not pretend recommendations are personalised when no usable data exists. Show a useful trending or editorial fallback.
+
+---
+
+# 8. BRANDS DISCOVERY
+
+Create a visually strong "Explore Brands" area.
+
+Display brand logos and names using the existing `brands` table.
+
+Use `brands.logo` as the primary logo source.
+
+Use `app_brand_profiles` for additional editorial brand information.
+
+Each brand should have:
+
+- Logo.
+- Name.
+- Short description.
+- Editorial cover image.
+- Optional brand video.
+- Featured products.
+- New arrivals.
+- Bestsellers.
+- Sponsored products, when applicable.
+
+Create a dedicated brand detail screen with premium editorial design.
+
+Also include:
+
+- Recently viewed brands.
+- Trending brands.
+- Featured brands.
+- Sponsored brands.
+- New brands.
+- Brand discovery page.
+
+The brand order, featured status, images and promotional content must be controlled through the database.
+
+---
+
+# 9. FASHION AESTHETIC WORLDS
+
+This is one of the most important features of Melvore.
+
+Create visually distinct editorial worlds for different fashion aesthetics.
+
+Do not display all categories using the same generic product grid.
+
+Each aesthetic should have its own visual identity and animated design language.
+
+### Y2K Universe
+
+- Chrome and metallic visual language.
+- Futuristic typography.
+- Reflective surfaces.
+- Electric accent colours.
+- Modern Y2K editorial imagery.
+
+### Gothic Edit
+
+- Black and charcoal base.
+- Dark editorial photography.
+- Atmospheric smoke effects.
+- Controlled red or silver accents.
+- Gothic typography and transitions.
+
+### Coquette / Pretty Edit
+
+- Soft colours.
+- Floral visual details.
+- Elegant typography.
+- Soft petal animations.
+- Feminine editorial product imagery.
+
+### Street Culture
+
+- Bold typography.
+- High-contrast photography.
+- Oversized layouts.
+- Urban editorial styling.
+
+### Seoul Select / K-Fashion
+
+- Contemporary Korean-inspired editorial design.
+- Clean compositions.
+- Minimal typography.
+- Stylish fashion photography.
+
+### More style worlds
+
+Support additional styles such as:
+
+- Minimal.
+- Grunge.
+- Punk.
+- Vintage.
+- Indie.
+- Old Money.
+- Athleisure.
+- Casual.
+- Partywear.
+- Avant-garde.
+
+Use `app_style_worlds`, `app_style_world_products`, `app_tags` and `app_product_tag_map`.
+
+Every style world must be editable from the backend, including:
+
+- Name.
+- Description.
+- Images.
+- Videos.
+- Theme.
+- Colours.
+- Animation.
+- Product associations.
+- Category associations.
+- Display order.
+- Active dates.
+
+Create dedicated style landing pages with immersive editorial headers and relevant product collections.
+
+---
+
+# 10. PRODUCT DISCOVERY AND SHOPPING GRID
+
+The main product discovery experience should encourage continuous browsing.
+
+Create a responsive two-column product grid on phones.
+
+Use large, high-quality product images.
+
+Product cards should display:
+
+- Main product image.
+- Product name.
+- Brand name.
+- Current selling price.
+- Original price.
+- Discount percentage, calculated accurately.
+- Rating and review count.
+- Relevant badges.
+- Wishlist button.
+- Optional express-delivery label, only when confirmed by the backend.
+
+Use existing product data from:
+
+- `products`.
+- `product_variations`.
+- `categories`.
+- `brands`.
+
+Use `app_product_media` for additional product images and videos.
+
+### Product sections
+
+Create dynamic product shelves such as:
+
+- Trending Now.
+- Bestsellers.
+- Hot Sales.
+- Budget Finds.
+- New Arrivals.
+- Winter Essentials.
+- Summer Essentials.
+- Sponsored Picks.
+- Your Recent Brands.
+- Recommended For You.
+- Recently Viewed.
+- More Like This.
+
+Products must load from the live database.
+
+Use pagination or cursor-based loading. Do not download the entire catalogue at once.
+
+Avoid duplicate products across consecutive shelves where practical.
+
+### Product detail page
+
+Create a premium product detail experience:
+
+- Large image gallery.
+- Swipeable images.
+- Product videos.
+- Product name and brand.
+- Price and discount.
+- Size selection.
+- Colour selection.
+- Stock availability.
+- Product description.
+- Delivery availability.
+- Product specifications.
+- Reviews.
+- Similar products.
+- More from this brand.
+- Add to cart.
+- Buy now.
+- Wishlist.
+
+Use the existing product variation and cart logic.
+
+Do not invent stock or delivery promises.
+
+---
+
+# 11. PRODUCT VIDEO FEED — REELS EXPERIENCE
+
+Add a Videos icon and dedicated screen to the bottom navigation.
+
+Create a vertically swipeable, full-screen video feed.
+
+The experience should resemble a fashion discovery feed rather than a basic video gallery.
+
+Features:
+
+- Vertical 9:16 videos.
+- Smooth swipe between videos.
+- Poster image before playback.
+- Autoplay only when the video is visible.
+- Pause videos when they leave the viewport.
+- Product information overlay.
+- Brand name and creator information.
+- Like.
+- Save.
+- Share.
+- Product link.
+- Shop This Look.
+- Sponsored label where applicable.
+
+Load videos from `app_product_videos`.
+
+Record engagement through `app_video_events`.
+
+Use efficient video loading, caching and playback lifecycle management. Do not load multiple full videos simultaneously.
+
+The admin/backend must be able to upload or register videos, assign products and brands, edit captions, schedule publication and control ordering.
+
+---
+
+# 12. ELITE PACKS — PREMIUM BLACK EDITORIAL EXPERIENCE
+
+Create a dedicated bottom-navigation destination named **Elite**.
+
+This must feel like a premium fashion magazine and exclusive brand showroom.
+
+### Visual design
+
+- Black as the default background.
+- Minimal border radius, preferably square layouts.
+- Large full-width campaign imagery.
+- High-end typography.
+- Large editorial text.
+- Metallic highlights.
+- Carefully controlled animations.
+- Lavish and chic visual hierarchy.
+- No generic rounded shopping cards.
+
+### Elite landing page
+
+Start with an immersive full-width hero slider containing:
+
+- Large brand/product imagery.
+- Brand names.
+- Editorial headline.
+- Supporting text.
+- CTA.
+- Optional background video.
+- Optional animated creative assets.
+
+Below the hero, create multiple editorial sections:
+
+- Featured Luxury.
+- Elite Brands.
+- Designer Selection.
+- Exclusive Collections.
+- Premium Streetwear.
+- Curated Fashion.
+- Sponsored Brand Showcase.
+- Editor's Picks.
+- Premium Product Videos.
+
+### Dedicated Elite pages
+
+Create:
+
+1. Elite home.
+2. Elite products.
+3. Elite brands.
+4. Featured sponsored products.
+5. Individual brand showcase.
+6. Individual elite collection details.
+
+Use `app_elite_packs` and `app_elite_pack_items`.
+
+Every hero image, video, headline, colour, animation, CTA and content item must be database-managed.
+
+Elite content must not be permanently hardcoded in the app.
+
+---
+
+# 13. ADVANCED SEARCH
+
+Create a dedicated search experience.
+
+The search system must support:
+
+- Partial product-name matching.
+- Brand matching.
+- Category matching.
+- Synonym matching.
+- Style-tag matching.
+- Typo-tolerant matching where feasible.
+- Multi-word queries.
+- Relevant ranking.
+- Recent searches.
+- Trending searches.
+- Search suggestions.
+- Search filters.
+- Price filters.
+- Brand filters.
+- Category filters.
+- Size and colour filters.
+
+Example: a search for "black oversized winter jacket" should be able to find relevant products even when the product name does not contain that exact phrase.
+
+Use `app_search_synonyms`, `app_tags`, `app_product_tag_map` and the existing catalogue.
+
+Voice and typed search must use the same API endpoint.
+
+Never rely only on local filtering of the currently loaded products.
+
+---
+
+# 14. REVIEWS AND RATINGS
+
+Use the existing `reviews` table.
+
+Allow eligible customers to:
+
+- Submit a rating.
+- Write a review title.
+- Write a review.
+- Upload review photos.
+- View verified purchase labels.
+- Mark reviews helpful.
+
+Use `app_review_media` and `app_review_votes`.
+
+Use `app_review_otp_requests` for the review-verification OTP workflow where required.
+
+Important:
+
+- Only allow reviews tied to valid purchased order items.
+- Verify ownership on the backend.
+- Never trust product IDs or user IDs sent by the client without authorization.
+- Never store plaintext OTP values.
+- Apply OTP expiry, attempt limits and resend throttling.
+- Keep existing review approval controls.
+
+---
+
+# 15. FAQ SOLVER AND SELF-SERVICE CUSTOMER SUPPORT
+
+Create a dedicated Help & Support experience.
+
+The goal is to solve as many customer problems as possible without requiring a customer-service agent.
+
+Create a polished, easy-to-understand support centre.
+
+### Common support topics
+
+- My order has not been delivered.
+- My order is delayed.
+- Product received damaged.
+- Wrong product received.
+- Missing item in package.
+- Warranty claim.
+- Return or exchange.
+- Cancellation.
+- Refund status.
+- Payment issue.
+- Account issue.
+- Other issue.
+
+### Guided problem solver
+
+Each topic should open a guided flow.
+
+Example: Product not delivered.
+
+1. Ask the user to select an order.
+2. Fetch the actual order status.
+3. Check the tracking information.
+4. Explain the current delivery status.
+5. Provide the appropriate next action.
+6. If unresolved, offer ticket creation.
+
+Example: Damaged product.
+
+1. Select the order.
+2. Select the affected product.
+3. Explain the issue.
+4. Allow image upload.
+5. Validate order eligibility.
+6. Show the actual return/replacement/warranty policy.
+7. Create a support ticket when necessary.
+
+Use:
+
+- Existing `faqs`.
+- Existing `support_tickets`.
+- Existing `ticket_replies`.
+- `app_help_topics`.
+- `app_help_flows`.
+- `app_help_flow_nodes`.
+- `app_help_flow_options`.
+- `app_help_flow_sessions`.
+
+The guided help flow must be configurable through the backend.
+
+Do not falsely claim a refund, replacement, warranty approval or cancellation has been completed. Only report an action as completed after the backend confirms it.
+
+Provide a human support escalation option when self-service cannot solve the issue.
+
+---
+
+# 16. BOTTOM NAVIGATION
+
+Create a clean fixed bottom navigation bar with five destinations:
+
+1. Home.
+2. Discover.
+3. Videos.
+4. Elite.
+5. Bag.
+
+Do not add a hamburger menu.
+
+Use elegant icons and clear labels.
+
+The Profile screen is opened using the top-right profile icon.
+
+The Discover destination should provide categories, style worlds and brand discovery.
+
+The Bag destination should show the existing customer cart.
+
+Keep navigation transitions smooth and preserve screen state where appropriate.
+
+---
+
+# 17. DATABASE STRUCTURE — USE THE EXISTING MIGRATION
+
+The database migration `melvore_customer_app_experience_migration.sql` creates the following tables.
+
+Use these exact table names and structures. Do not invent alternative tables when these already cover the requirement.
+
+### Homepage and content management
+
+- `app_home_sections`
+- `app_home_section_items`
+
+### Festival campaigns and regional targeting
+
+- `app_campaigns`
+- `app_campaign_regions`
+- `app_campaign_assets`
+
+### Style discovery
+
+- `app_style_worlds`
+- `app_style_world_products`
+
+### Product and brand presentation
+
+- `app_product_media`
+- `app_brand_profiles`
+
+### Product tags and intelligent search
+
+- `app_tags`
+- `app_product_tag_map`
+- `app_search_synonyms`
+- `app_search_logs`
+
+### Sponsored and promotional product placement
+
+- `app_product_placements`
+
+### Product video feed
+
+- `app_product_videos`
+- `app_video_events`
+
+### Elite Packs
+
+- `app_elite_packs`
+- `app_elite_pack_items`
+
+### Personalization
+
+- `app_user_style_signals`
+- `app_user_brand_activity`
+
+### Customer help solver
+
+- `app_help_topics`
+- `app_help_flows`
+- `app_help_flow_nodes`
+- `app_help_flow_options`
+- `app_help_flow_sessions`
+
+### Reviews
+
+- `app_review_media`
+- `app_review_votes`
+- `app_review_otp_requests`
+
+### Delivery serviceability
+
+- `app_delivery_serviceability_cache`
+
+### Reuse these existing tables
+
+- `users`
+- `user_addresses`
+- `products`
+- `product_variations`
+- `categories`
+- `brands`
+- `collections`
+- `hero_content`
+- `reviews`
+- `faqs`
+- `orders`
+- `order_items`
+- `wishlist`
+- `carts` or the existing cart implementation
+- `support_tickets`
+- `ticket_replies`
+- `payments`
+
+Do not duplicate these existing systems.
+
+Do not modify or delete historical orders or payments.
+
+Razorpay and COD remain the supported payment methods. Do not reintroduce Cashfree.
+
+---
+
+# 18. PHP API DEVELOPMENT — REQUIRED
+
+Create the required PHP API files inside the existing PHP backend/API project.
+
+First inspect the existing API folder and naming conventions.
+
+Reuse existing database connection, authentication middleware, response helpers and security conventions.
+
+Do not create a second database connection system if one already exists.
+
+Use prepared statements and proper input validation.
+
+All responses must use a consistent JSON format, for example:
+
+{
+  "success": true,
+  "message": "Success",
+  "data": {}
+}
+
+### Required API modules
+
+Create or extend endpoints for:
+
+**Home**
+- Fetch homepage sections.
+- Fetch homepage section items.
+- Fetch hero slider.
+- Fetch active campaigns.
+- Fetch regional campaign eligibility.
+- Fetch promotional placements.
+
+**Categories**
+- Fetch active categories.
+- Fetch category details.
+- Fetch category products.
+
+**Brands**
+- Fetch brand directory.
+- Fetch featured brands.
+- Fetch sponsored brands.
+- Fetch brand details.
+- Fetch brand products.
+- Record brand views.
+
+**Products**
+- Product listing.
+- Product details.
+- Product media.
+- Product recommendations.
+- Similar products.
+- Sponsored products.
+- Budget products.
+- Seasonal products.
+- Recently viewed products.
+
+**Search**
+- Search suggestions.
+- Intelligent search.
+- Search filters.
+- Recent searches.
+- Trending searches.
+- Search analytics.
+
+**Style worlds**
+- Fetch style worlds.
+- Fetch style world details.
+- Fetch products belonging to a style.
+- Record user style preferences.
+
+**Videos**
+- Fetch video feed.
+- Fetch video details.
+- Record views.
+- Record likes.
+- Record saves.
+- Record shares.
+- Fetch related products.
+
+**Elite**
+- Fetch Elite landing page.
+- Fetch Elite packs.
+- Fetch pack details.
+- Fetch pack products.
+- Fetch sponsored brand showcase.
+
+**Personalization**
+- Fetch For You recommendations.
+- Fetch recently viewed brands.
+- Fetch personalised product sections.
+- Record customer interaction signals.
+
+**Help**
+- Fetch help topics.
+- Fetch help flow.
+- Fetch flow nodes and options.
+- Save help flow progress.
+- Check order status.
+- Create support ticket.
+- Fetch existing ticket details.
+
+**Reviews**
+- Request review OTP.
+- Verify review OTP.
+- Submit review.
+- Upload review media.
+- Fetch product reviews.
+- Mark review helpful.
+
+### API implementation requirements
+
+- Keep existing working endpoint URLs compatible.
+- Use pagination for large lists.
+- Use server-side filtering.
+- Use prepared statements.
+- Validate authenticated ownership.
+- Enforce rate limits for OTP and search-sensitive operations.
+- Validate media upload types and sizes.
+- Do not expose secrets.
+- Do not expose internal SQL errors to customers.
+- Use proper HTTP status codes.
+- Add indexes only where appropriate.
+- Do not trust client-submitted prices, discounts, stock or order status.
+- Never use demo products as live API responses.
+
+If the existing API project is not included in the current workspace, create the complete PHP files in the expected directory structure and provide their full contents and installation instructions. Do not claim that server files have been deployed unless they actually have been.
+
+---
+
+# 19. API DATA AND APP SETTINGS
+
+The app is now a customer application.
+
+Remove from customer settings:
+
+- API base URL editor.
+- API testing screen.
+- Developer mode.
+- Mock data selection.
+- Debug endpoint controls.
+- Backend configuration inputs.
+
+API configuration must come from the existing secure build configuration.
+
+Keep customer settings focused on:
+
+- Profile.
+- Addresses.
+- Orders.
+- Wishlist.
+- Notifications.
+- Preferences.
+- Help.
+- Legal information.
+- Logout.
+
+Do not expose API credentials or payment secrets in the application.
+
+---
+
+# 20. ADMIN-CONTROLLED CREATIVE CONTENT
+
+Build the Android app to consume remote content configuration.
+
+The backend must control:
+
+- Homepage section order.
+- Homepage section visibility.
+- Banner images.
+- Mobile banner images.
+- Campaign schedules.
+- Festival dates.
+- Regional targeting.
+- Animation type.
+- Animation duration.
+- Colour themes.
+- Button styles.
+- Style-world themes.
+- Brand highlights.
+- Sponsored products.
+- Video feeds.
+- Elite content.
+- Promotional tiles.
+- Category order.
+- Product placements.
+
+Use JSON configuration fields only for flexible presentation properties that do not need relational database columns.
+
+Never download and execute arbitrary scripts from the database.
+
+Use a defined allowlist of animation keys and layouts supported by the Android application.
+
+If an unknown animation key is returned, use a clean static fallback.
+
+---
+
+# 21. PERFORMANCE AND USER EXPERIENCE
+
+The application must feel fast.
+
+Implement:
+
+- Efficient image loading.
+- Image caching.
+- Video caching where appropriate.
+- Lazy loading.
+- Paginated product grids.
+- Skeleton loading.
+- Proper error states.
+- Retry controls.
+- Offline-friendly cached catalogue where feasible.
+- Debounced search requests.
+- Cancellation of obsolete search requests.
+- Efficient Compose state management.
+- No unnecessary API calls.
+- No unnecessary full-screen reloads.
+
+Prioritise product images and first-screen content.
+
+Avoid downloading all homepage media at once.
+
+Use optimised image sizes and responsive image variants.
+
+---
+
+# 22. SECURITY AND CUSTOMER PRIVACY
+
+- Keep authentication secure.
+- Validate ownership of cart, orders, reviews and tickets.
+- Do not expose another user's information.
+- Do not store plaintext OTP values.
+- Do not log sensitive credentials.
+- Do not request location unnecessarily.
+- Use the selected delivery pincode or user-approved location for regional campaigns.
+- Provide a default nationwide campaign fallback.
+- Do not make precise location access mandatory for shopping.
+- Never trust product prices or payment amounts received from the app.
+
+---
+
+# 23. IMPLEMENTATION ORDER
+
+Implement this in phases without breaking existing features.
+
+### Phase 1 — Core UI
+
+- Redesign navigation.
+- Greeting and profile header.
+- Hero slider.
+- Search.
+- Festival campaign area.
+- Category carousel.
+- Dynamic homepage sections.
+- Product grids.
+
+### Phase 2 — Discovery
+
+- Brands.
+- Style worlds.
+- Sponsored products.
+- Personalization.
+- Search improvements.
+- Recently viewed brands.
+
+### Phase 3 — Rich media
+
+- Reels-style video feed.
+- Product video integration.
+- Elite Packs.
+- Editorial brand pages.
+
+### Phase 4 — Customer experience
+
+- Product reviews.
+- OTP verification.
+- FAQ solver.
+- Guided support.
+- Ticket creation and tracking.
+
+### Phase 5 — Backend integration and testing
+
+- Build PHP APIs.
+- Connect the Android repositories.
+- Test real database responses.
+- Test logged-in and guest states.
+- Test pagination.
+- Test campaign scheduling.
+- Test regional targeting.
+- Test product and brand relationships.
+- Test Razorpay and COD.
+- Test checkout and order history.
+- Test video playback and scrolling.
+- Test app installation and release build.
+
+---
+
+# 24. FINAL QUALITY REQUIREMENTS
+
+The final application must:
+
+1. Look like a premium international fashion-shopping application.
+2. Be fast and easy to understand.
+3. Encourage continuous product discovery.
+4. Showcase product photography prominently.
+5. Have distinctive animated style experiences.
+6. Have a proper full-screen video discovery feature.
+7. Have a truly premium Elite section.
+8. Provide useful self-service customer support.
+9. Use real products and brands from the database.
+10. Be dynamically controlled by PHP/MySQL.
+11. Preserve all existing working shopping functionality.
+12. Have no customer-facing developer/API settings.
+13. Have no hamburger menu.
+14. Use Razorpay and COD only.
+15. Compile successfully without breaking existing Android functionality.
+
+Do not stop after generating static UI screens.
+
+Complete the actual data models, API integration, navigation, loading states, error handling and backend files.
+
+At the end, provide:
+
+- Summary of modified Android files.
+- List of newly created PHP API files.
+- API endpoint documentation.
+- Database tables used.
+- Any additional SQL changes, if genuinely required.
+- Any server-side configuration required.
+- Build and installation instructions.
+- A list of features that are fully working versus awaiting server configuration.
+
+**Final design direction: Melvore should feel like a fashion universe users enjoy exploring, not just an app where they search for a product and leave.**

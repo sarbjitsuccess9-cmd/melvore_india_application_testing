@@ -1,0 +1,43 @@
+# Node / Vite / React Preview
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+
+# Environment files (never commit real secrets)
+.env*
+!.env.example
+!php_api/.env.example
+
+# Flutter & Dart
+flutter_app/.dart_tool/
+flutter_app/.flutter-plugins
+flutter_app/.flutter-plugins-dependencies
+flutter_app/.packages
+flutter_app/build/
+flutter_app/.idea/
+flutter_app/*.iml
+flutter_app/ios/Pods/
+flutter_app/ios/.symlinks/
+flutter_app/ios/Flutter/Flutter.framework
+flutter_app/ios/Flutter/Flutter.podspec
+
+# Android build artifacts & release signing secrets
+flutter_app/android/.gradle/
+flutter_app/android/build/
+flutter_app/android/app/build/
+flutter_app/android/local.properties
+flutter_app/android/key.properties
+!flutter_app/android/key.properties.example
+*.jks
+*.keystore
+*.apk
+*.aab
+
+# PHP API runtime directories
+php_api/storage/
+php_api/logs/
+php_api/uploads/
+php_api/vendor/

@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://melvore.co.in/schemas/design_manifest.schema.json",
+  "title": "Melvore Central Remote Design Manifest",
+  "description": "Strict strongly-typed manifest schema governing Melvore remote storefront design, tokens, navigation, component variants, page compositions, and world layouts without app binary updates.",
+  "type": "object",
+  "required": [
+    "manifest_id",
+    "slot",
+    "design_version",
+    "schema_version",
+    "min_app_schema_version",
+    "tokens",
+    "navigation",
+    "components",
+    "pages",
+    "worlds"
+  ],
+  "properties": {
+    "manifest_id": { "type": "string", "minLength": 2, "maxLength": 80 },
+    "slot": { "type": "string", "enum": ["default", "live"] },
+    "design_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(-[a-zA-Z0-9._-]+)?$" },
+    "schema_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "min_app_schema_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "release_notes": { "type": "string" },
+    "published_at": { "type": "string" },
+    "checksum_sha256": { "type": "string" },
+    "tokens": {
+      "type": "object",
+      "required": ["colors", "typography", "spacing", "radii", "motion"],
+      "properties": {
+        "colors": {
+          "type": "object",
+          "required": ["mode", "background", "surface", "primary", "accent", "text_primary", "text_secondary", "border"],
+          "properties": {
+            "mode": { "type": "string", "enum": ["light", "dark"] },
+            "background": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+            "surface": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+            "surface_elevated": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+            "surface_variant": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+            "primary": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+            "on_primary": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+            "accent": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+            "secondary_accent": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+            "text_primary": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+            "text_secondary": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+            "border": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+            "badge_bg": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+            "badge_text": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+            "sale_accent": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+            "success_accent": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" }
+          }
+        },
+        "typography": {
+          "type": "object",
+          "required": ["display_font", "body_font"],
+          "properties": {
+            "display_font": { "type": "string" },
+            "body_font": { "type": "string" },
+            "heading_scale": { "type": "number", "minimum": 0.8, "maximum": 1.4 },
+            "body_scale": { "type": "number", "minimum": 0.85, "maximum": 1.3 },
+            "letter_spacing_eyebrow": { "type": "number", "minimum": 0.0, "maximum": 4.0 }
+          }
+        },
+        "spacing": {
+          "type": "object",
+          "properties": {
+            "screen_horizontal_dp": { "type": "integer", "minimum": 8, "maximum": 32 },
+            "section_gap_dp": { "type": "integer", "minimum": 12, "maximum": 48 },
+            "card_padding_dp": { "type": "integer", "minimum": 6, "maximum": 24 },
+            "grid_gutter_dp": { "type": "integer", "minimum": 6, "maximum": 24 }
+          }
+        },
+        "radii": {
+          "type": "object",
+          "properties": {
+            "card_dp": { "type": "integer", "minimum": 0, "maximum": 32 },
+            "button_dp": { "type": "integer", "minimum": 0, "maximum": 999 },
+            "chip_dp": { "type": "integer", "minimum": 0, "maximum": 999 },
+            "search_bar_dp": { "type": "integer", "minimum": 0, "maximum": 999 },
+            "hero_dp": { "type": "integer", "minimum": 0, "maximum": 32 },
+            "sheet_dp": { "type": "integer", "minimum": 0, "maximum": 32 },
+            "border_width_dp": { "type": "integer", "minimum": 0, "maximum": 4 }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "properties": {
+            "intensity": { "type": "string", "enum": ["none", "subtle", "expressive"] },
+            "hero_parallax": { "type": "boolean" },
+            "card_entrance": { "type": "string" },
+            "carousel_interval_ms": { "type": "integer", "minimum": 2000, "maximum": 12000 }
+          }
+        }
+      }
+    },
+    "navigation": {
+      "type": "object",
+      "required": ["top_bar_style", "bottom_bar_variant", "tabs"],
+      "properties": {
+        "top_bar_style": { "type": "string" },
+        "top_bar_title": { "type": "string" },
+        "top_bar_subtitle": { "type": "string" },
+        "show_search_icon": { "type": "boolean" },
+        "show_bag_badge": { "type": "boolean" },
+        "bottom_bar_variant": { "type": "string" },
+        "bottom_bar_radius_dp": { "type": "integer" },
+        "bottom_bar_elevation_dp": { "type": "integer" },
+        "tabs": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "required": ["route", "label", "icon_key", "visible", "order"],
+            "properties": {
+              "route": { "type": "string" },
+              "label": { "type": "string" },
+              "icon_key": { "type": "string" },
+              "active_icon_key": { "type": "string" },
+              "visible": { "type": "boolean" },
+              "order": { "type": "integer" },
+              "badge_text": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "type": "object",
+      "required": ["button", "search_bar", "product_card", "category_strip", "section_header", "states"]
+    },
+    "pages": {
+      "type": "object",
+      "required": ["home", "style_worlds", "categories", "search", "product_details", "cart"]
+    },
+    "worlds": { "type": "object" },
+    "occasion_overrides": { "type": "object" }
+  }
+}

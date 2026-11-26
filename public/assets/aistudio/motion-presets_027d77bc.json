@@ -1,0 +1,162 @@
+{
+  "motion_presets": [
+    {
+      "key": "none",
+      "duration_ms": 0,
+      "stagger_ms": 0,
+      "parallax_enabled": false
+    },
+    {
+      "key": "subtle",
+      "duration_ms": 320,
+      "stagger_ms": 40,
+      "parallax_enabled": true
+    },
+    {
+      "key": "expressive",
+      "duration_ms": 460,
+      "stagger_ms": 60,
+      "parallax_enabled": true
+    },
+    {
+      "key": "fade_slide",
+      "duration_ms": 360,
+      "stagger_ms": 45,
+      "parallax_enabled": true
+    },
+    {
+      "key": "editorial_lift",
+      "duration_ms": 440,
+      "stagger_ms": 55,
+      "parallax_enabled": true
+    },
+    {
+      "key": "pixel_step",
+      "duration_ms": 400,
+      "stagger_ms": 50,
+      "parallax_enabled": false,
+      "easing": "steps(4,end)",
+      "loop": false,
+      "note": "Stepped frames: buttons hop 2dp, coin bobs, sparkle blinks. No tweening."
+    },
+    {
+      "key": "goth_flap",
+      "duration_ms": 420,
+      "stagger_ms": 60,
+      "parallax_enabled": true,
+      "easing": "cubic-bezier(.4,0,.2,1)",
+      "loop": true,
+      "note": "Bat wings scaleY 1 -> .84 -> 1 (1.1s). Arch navbar fades in."
+    },
+    {
+      "key": "chrome_shine",
+      "duration_ms": 480,
+      "stagger_ms": 55,
+      "parallax_enabled": true,
+      "easing": "cubic-bezier(.22,1,.36,1)",
+      "loop": true,
+      "note": "Specular band sweeps the pill every 3.2s; sparkles twinkle out of phase."
+    },
+    {
+      "key": "ribbon_sway",
+      "duration_ms": 520,
+      "stagger_ms": 60,
+      "parallax_enabled": true,
+      "easing": "cubic-bezier(.45,.05,.55,.95)",
+      "loop": true,
+      "note": "Bow rotates +/-8deg, hearts pulse 1.25x."
+    },
+    {
+      "key": "street_slam",
+      "duration_ms": 220,
+      "stagger_ms": 35,
+      "parallax_enabled": false,
+      "easing": "cubic-bezier(.2,1.4,.4,1)",
+      "loop": false,
+      "note": "Blocks slam in with overshoot; hard shadow jitters 2dp."
+    },
+    {
+      "key": "hairline_fade",
+      "duration_ms": 300,
+      "stagger_ms": 40,
+      "parallax_enabled": true,
+      "easing": "cubic-bezier(.4,0,.2,1)",
+      "loop": false,
+      "note": "Opacity + 6dp lift only. Lines draw left to right."
+    },
+    {
+      "key": "foil_shimmer",
+      "duration_ms": 460,
+      "stagger_ms": 55,
+      "parallax_enabled": true,
+      "easing": "cubic-bezier(.22,1,.36,1)",
+      "loop": true,
+      "note": "Gold sweep every 2.6s; marquee bulbs chase."
+    },
+    {
+      "key": "casual_bounce",
+      "duration_ms": 360,
+      "stagger_ms": 45,
+      "parallax_enabled": false,
+      "easing": "spring(dampingRatio=.6,stiffness=400)",
+      "loop": false,
+      "note": "Soft spring on press and entrance; three-dot loader bounces."
+    },
+    {
+      "key": "grunge_stutter",
+      "duration_ms": 260,
+      "stagger_ms": 40,
+      "parallax_enabled": false,
+      "easing": "steps(3,end)",
+      "loop": false,
+      "note": "Choppy 3-step entrance; tape and X marks flicker."
+    },
+    {
+      "key": "diya_flicker",
+      "duration_ms": 1600,
+      "stagger_ms": 0,
+      "parallax_enabled": false,
+      "easing": "linear",
+      "loop": true,
+      "note": "Flame opacity 1 -> .82 -> 1 -> .9."
+    },
+    {
+      "key": "snow_drift",
+      "duration_ms": 5200,
+      "stagger_ms": 300,
+      "parallax_enabled": true,
+      "easing": "linear",
+      "loop": true,
+      "note": "Slow fall + sway; cap particles at 10."
+    },
+    {
+      "key": "firework_burst",
+      "duration_ms": 700,
+      "stagger_ms": 120,
+      "parallax_enabled": false,
+      "easing": "cubic-bezier(.1,.8,.2,1)",
+      "loop": true,
+      "note": "Radial scale-in then fade; rays alternate colour."
+    },
+    {
+      "key": "confetti_pop",
+      "duration_ms": 600,
+      "stagger_ms": 30,
+      "parallax_enabled": false,
+      "easing": "cubic-bezier(.2,1.2,.4,1)",
+      "loop": false,
+      "note": "One-shot pop on banner reveal."
+    },
+    {
+      "key": "heart_pulse",
+      "duration_ms": 1200,
+      "stagger_ms": 0,
+      "parallax_enabled": false,
+      "easing": "ease-in-out",
+      "loop": true,
+      "note": "Scale 1 -> 1.25 -> 1."
+    }
+  ],
+  "version": "1.2.0",
+  "reduced_motion_rule": "When reducedMotion or tokens.motion.intensity == \"none\": duration_ms = 0, loop = false, ambient particles = 0."
+}

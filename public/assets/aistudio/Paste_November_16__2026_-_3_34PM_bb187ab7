@@ -1,0 +1,1425 @@
+# MELVORE ANDROID — FULL VISUAL TRANSFORMATION & FUNCTIONAL REPAIR
+## Premium Fashion Marketplace | Editorial Design | Cinematic Animations | Fully Working Videos | Complete Luxe Experience
+
+You are taking over the existing Melvore Android application as a senior Android engineer, luxury fashion creative director, motion designer, UX architect and backend integration specialist.
+
+Your task is to transform the EXISTING Android application into a visually exceptional, image-rich, premium fashion shopping application.
+
+This is not a request to create another basic shopping application.
+
+The current project already contains significant functionality, API integration, database models, navigation, merchandising components and business logic. The problem is that the actual visual presentation is not delivering the intended design quality.
+
+**I want you to improve the actual application, not just write a design plan. Modify the existing Kotlin and Jetpack Compose files, build the project, test the screens and fix the missing functionality.**
+
+The final result must closely follow the attached Myntra, Blinkit, Zepto and premium fashion references in visual richness, content density, image presentation, editorial layouts, animations and shopping experience.
+
+The app must feel like a professionally art-directed fashion marketplace, not a generic Material 3 template.
+
+---
+
+# PART 1 — UNDERSTAND THE EXISTING PROJECT
+
+The supplied project is `melvore_application (3).zip`.
+
+It is an Android application built using:
+- Kotlin.
+- Jetpack Compose.
+- Material 3.
+- Navigation Compose.
+- Retrofit.
+- OkHttp.
+- Kotlin Serialization.
+- Coil.
+- Media3 ExoPlayer.
+- Razorpay Checkout.
+- Android Credentials / Google Sign-In.
+
+Important existing files:
+
+### Homepage
+- `HomeScreen.kt`
+- `HomeMerchandisingSections.kt`
+
+### Discovery
+- `DiscoverScreen.kt`
+- `ShopAndCategoriesScreens.kt`
+- `StyleWorldScreen.kt`
+- `BrandDetailScreen.kt`
+- `SearchExperienceModal.kt`
+
+### Videos
+- `VideosScreen.kt`
+
+### Luxe / Elite
+- `EliteScreen.kt`
+- `ElitePackDetailScreen.kt`
+
+### Product shopping
+- `ProductDetailsScreen.kt`
+- `BagScreen.kt`
+- `CheckoutScreen.kt`
+
+### Shared design
+- `MelvoreComponents.kt`
+- `MelvoreAnimations.kt`
+- `MelvoreSkeleton.kt`
+- `Overlays.kt`
+- `Theme.kt`
+
+### Navigation and application
+- `MainActivity.kt`
+- `MelvoreRoutes.kt`
+
+### Data and backend
+- `MelvoreRepository.kt`
+- `DiscoveryRepository.kt`
+- `MelvoreViewModel.kt`
+- `DiscoveryViewModelDelegate.kt`
+- `MelvoreApiService.kt`
+- `DiscoveryApiService.kt`
+- `MelvoreApiClient.kt`
+- `MelvoreApiDtos.kt`
+- `DiscoveryDtos.kt`
+- `DiscoveryMappers.kt`
+- `MelvoreModels.kt`
+- `DiscoveryModels.kt`
+
+### PHP backend included in the ZIP
+- `php_api/api/home/feed.php`
+- `php_api/api/categories/`
+- `php_api/api/brands/`
+- `php_api/api/products/`
+- `php_api/api/search/`
+- `php_api/api/styles/`
+- `php_api/api/videos/`
+- `php_api/api/elite/`
+- `php_api/api/personalization/`
+- `php_api/api/reviews/`
+- `php_api/api/help/`
+
+Do not replace the existing application architecture.
+
+Do not create a second application.
+
+Do not discard working business logic.
+
+Do not rewrite the API layer without first understanding it.
+
+The existing live API base is:
+
+`https://app.melvore.co.in/`
+
+The existing database is the single source of truth.
+
+Use existing endpoints first. Create missing PHP endpoints only when necessary.
+
+---
+
+# PART 2 — THE MOST IMPORTANT DESIGN REQUIREMENT
+
+## Stop making the application look like a basic shopping template.
+
+The current output is too plain.
+
+It lacks:
+- Strong editorial art direction.
+- Large and dramatic fashion photography.
+- Visually distinctive layouts.
+- Layered campaign compositions.
+- Rich image-led category presentation.
+- Sophisticated product merchandising.
+- Premium transitions.
+- Distinct visual identities for different fashion styles.
+- Cinematic Luxe presentation.
+- Proper video-first discovery.
+- Strong hierarchy and visual rhythm.
+
+The next implementation must not simply use white backgrounds, black text, rounded rectangles and ordinary product grids.
+
+**Every major section needs its own visual layout and visual personality.**
+
+Use the screenshots as concrete visual references.
+
+The goal is to reproduce the visual experience and browsing structure, not merely the wording of the sections.
+
+## Reference interpretation
+
+### Blinkit / Zepto references
+Use their:
+- Compact navigation.
+- Search placement.
+- Immediately visible category rail.
+- Horizontally scrollable category navigation.
+- Dense visual discovery.
+- Quick campaign access.
+- Strong promotional modules.
+- Fast shopping interactions.
+
+### Myntra references
+Use their:
+- Large campaign imagery.
+- Image-led categories.
+- Brand discovery.
+- High-density merchandising.
+- Fashion editorial stories.
+- Seasonal promotions.
+- Multiple collection formats.
+- Visually different shopping destinations.
+- Rich content between product grids.
+
+### Premium fashion references
+Use their:
+- Full-bleed editorial imagery.
+- High-fashion photography.
+- Dramatic campaign titles.
+- Large typographic statements.
+- Cinematic colour grading.
+- Premium image crops.
+- Elegant page transitions.
+- Carefully art-directed collections.
+
+Do not copy other brands' logos or proprietary campaign artwork.
+
+Create an original Melvore identity using these visual principles.
+
+---
+
+# PART 3 — GLOBAL DESIGN SYSTEM
+
+## Standard storefront must be LIGHT
+
+The normal shopping experience must always use a light theme.
+
+Use:
+- Pure white.
+- Warm off-white.
+- Soft ivory.
+- Black.
+- Charcoal.
+- Neutral grey.
+- Champagne.
+- Muted metallic details.
+- Selective blue and green accents where appropriate.
+
+The standard storefront should feel premium, clean, modern and fashion-focused.
+
+Do not use a black background across the entire app.
+
+Do not make all cards identical.
+
+Do not make every section a rounded Material 3 card.
+
+Do not use excessive borders.
+
+Use visual hierarchy through:
+- Photography.
+- Typography.
+- Scale.
+- Layout.
+- Spacing.
+- Colour.
+- Layering.
+- Motion.
+
+## Luxe is DARK ONLY
+
+The dark theme is reserved for Luxe/Elite pages.
+
+Luxe must have:
+- Near-black background.
+- White typography.
+- Champagne gold.
+- Metallic silver details.
+- Cinematic fashion imagery.
+- Minimal editorial controls.
+- Full-width hero imagery.
+- Premium serif headlines.
+- Strong image-to-text compositions.
+
+The normal Home, Discover, Products, Cart, Checkout and Profile pages must remain light.
+
+The existing `MainActivity.kt` already scopes the theme using `isLuxeRoute`. Preserve and improve this route-based behaviour. Do not introduce global dark-mode changes.
+
+---
+
+# PART 4 — HOMEPAGE: REBUILD THE VISUAL EXPERIENCE
+
+The homepage must become a complete fashion discovery experience.
+
+Do not reduce the homepage to three or four sections.
+
+Build a rich, continuously curated fashion marketplace with approximately 12–16 meaningful visual modules when active content is available.
+
+Each module should look different.
+
+## A. Header
+
+Create a premium compact header.
+
+Include:
+- Melvore wordmark.
+- Greeting where customer information exists.
+- Delivery location selector.
+- Profile icon.
+- Wishlist icon.
+- Notification icon where functional.
+- Bag/cart icon with live count.
+
+Design:
+- White background.
+- Black icons.
+- Compact height.
+- Premium typography.
+- Carefully aligned icons.
+- Subtle scroll behaviour.
+
+Do not make the header excessively large.
+
+## B. Search bar
+
+Place search directly below the header.
+
+Design it as a prominent horizontal search container.
+
+Include:
+- Search icon.
+- Dynamic rotating search phrases.
+- Voice search.
+- Camera search only if genuinely implemented.
+- Recent search suggestions.
+- Trending search suggestions.
+
+Suggested rotating phrases:
+- Search "Leather Jackets"
+- Search "Oversized T-Shirts"
+- Search "Korean Fashion"
+- Search "Co-Ord Sets"
+- Search "Winter Collection"
+- Search "Statement Pieces"
+- Search "Streetwear"
+- Search "Dresses"
+
+Animate the search placeholder smoothly.
+
+Do not create fake interactive icons.
+
+## C. Category rail — immediately below search
+
+This section is mandatory and must be visibly rendered.
+
+The existing `HomeScreen.kt` already has `HomeCategoryNavigationStrip` directly after `SearchTriggerBar`. Do not create a duplicate rail elsewhere.
+
+Improve its actual visual quality and visibility.
+
+Categories:
+- All.
+- Men.
+- Women.
+- Jackets.
+- Co-ords.
+- Dresses.
+- Shirts.
+- T-Shirts.
+- Jeans.
+- Bottomwear.
+- Accessories.
+- New Arrivals.
+- Sale.
+
+Design:
+- Horizontally scrollable.
+- Image-led icons or compact image circles.
+- Labels below.
+- Active underline or selected indicator.
+- Smooth animated selection.
+- Proper touch targets.
+
+The customer must see this rail before the hero banner without scrolling.
+
+If the rail is not visible, inspect the actual screen rendering, layout padding, scroll position and top-bar height. Do not assume the existing source code means the feature is visually working.
+
+## D. Main hero campaign slider
+
+This must be one of the most visually impressive homepage components.
+
+Use large, premium fashion photography.
+
+Do not use a small image inside a white card.
+
+Use a large editorial image that occupies most of the available screen width.
+
+Each campaign slide should have:
+- Full-bleed or near-full-bleed image.
+- Headline positioned over the image.
+- Small editorial subtitle.
+- Shop Now CTA.
+- Subtle dark gradient for text readability.
+- Pagination dots.
+- Swipe interaction.
+- Smooth crossfade or slide transition.
+
+Campaign examples:
+- THE WINTER COLLECTION.
+- THE LEATHER EDIT.
+- NEW SEASON. NEW RULES.
+- SEOUL STREETWEAR.
+- AFTER DARK.
+- THE STATEMENT COLLECTION.
+- THE ART OF LAYERING.
+
+Create an editorial feel.
+
+The image must be the primary visual element, not the text.
+
+Use appropriate mobile crops.
+
+Use database-provided hero images first.
+
+## E. Campaign visual treatment
+
+Campaigns should not all look identical.
+
+Support:
+- Full-width image banners.
+- Portrait fashion editorials.
+- Wide landscape promotions.
+- Split-screen campaign cards.
+- Layered text over imagery.
+- Cinematic video campaigns where available.
+- Small campaign tiles beside a larger spotlight.
+
+Add tasteful animation:
+- Image scale from 1.02 to 1.0.
+- Text fade and slide.
+- Staggered content entry.
+- Gentle parallax where performance allows.
+
+## F. Brand discovery
+
+Build a premium horizontal brand rail.
+
+Use:
+- Real brand logos.
+- Brand photography.
+- Brand descriptions.
+- Featured label badges.
+- Sponsored badges only when actually sponsored.
+
+Do not display only plain text brand names.
+
+Make the brand identity visually recognisable.
+
+## G. Large editorial fashion campaigns
+
+Build several distinctive image-led sections.
+
+Examples:
+1. The Winter Collection.
+2. The Leather Edit.
+3. Streetwear Stories.
+4. Korean Fashion.
+5. The Weekend Wardrobe.
+6. Statement Jackets.
+7. After Dark.
+8. Everyday Essentials.
+9. New Season.
+10. Minimal Style.
+
+Use a combination of:
+- Full-width portrait campaigns.
+- Two-column editorial layouts.
+- Large left/right asymmetrical cards.
+- Overlapping text labels.
+- Horizontal fashion carousels.
+- Mixed portrait and landscape imagery.
+
+Each section must have its own layout.
+
+Do not repeat the same rounded card design for every section.
+
+## H. Style Worlds
+
+Create highly visual fashion destinations.
+
+Required:
+- Y2K.
+- Goth.
+- Coquette.
+- Streetwear.
+- K-Fashion.
+- Quiet Luxury.
+- Minimal.
+- Grunge.
+- Old Money.
+- Casual.
+- Party Wear.
+
+Each Style World must have:
+- Its own cover image.
+- Its own typography treatment.
+- Its own accent palette.
+- Its own editorial introduction.
+- Curated products.
+- A distinct layout.
+- A dedicated detail page.
+
+Examples:
+
+**Y2K**
+- Silver, chrome, pink, black.
+- Futuristic typography.
+- Flash photography.
+- Metallic visual details.
+
+**Goth**
+- Black, charcoal, deep burgundy.
+- Dramatic lighting.
+- Gothic editorial typography.
+- High-contrast imagery.
+
+**Coquette**
+- Soft blush.
+- Cream.
+- Delicate typography.
+- Feminine editorial imagery.
+- Soft motion.
+
+**Streetwear**
+- Bold typography.
+- Urban photography.
+- Asymmetric layouts.
+- Strong monochrome compositions.
+
+**K-Fashion**
+- Minimal neutral colours.
+- Korean editorial photography.
+- Clean typography.
+- Modern layered styling.
+
+Do not make all style worlds identical cards with different titles.
+
+## I. For You
+
+Build a visual personalised shopping section.
+
+Include:
+- Picked for You.
+- Based on Your Browsing.
+- Your Favourite Brands.
+- Similar to Your Wishlist.
+- Your Style.
+- Trending in Your Categories.
+
+Use genuine user activity where available.
+
+Do not fabricate personalisation.
+
+## J. Product merchandising
+
+Use several distinct merchandising formats.
+
+Required:
+- New Arrivals.
+- Bestsellers.
+- Trending Now.
+- Most Wishlisted.
+- Signature Jackets.
+- Under ₹999.
+- Under ₹1,999.
+- Seasonal Picks.
+- Limited Drops.
+- Sponsored Products.
+- Recently Viewed.
+- Recommended for You.
+
+Use:
+- Horizontal product rails.
+- Two-column grids.
+- Large editorial product showcases.
+- Featured product spotlights.
+- Mixed product-and-editorial sections.
+
+Product cards must have:
+- Large clear image.
+- Brand.
+- Product name.
+- Sale price.
+- Original price.
+- Real discount.
+- Rating where available.
+- Wishlist action.
+- Quick add.
+- Size indicators when appropriate.
+
+Make product images large enough to showcase the actual clothing.
+
+Do not shrink product images inside oversized empty cards.
+
+## K. Editorial journal
+
+Add fashion inspiration modules:
+- How to Style a Leather Jacket.
+- Korean Streetwear.
+- Winter Layering.
+- Minimal Wardrobe.
+- Statement Looks.
+
+Use actual blog content and images.
+
+## L. Video discovery preview
+
+Add a visually striking video rail to the homepage.
+
+Use vertical portrait thumbnails.
+
+Each preview should show:
+- Fashion video image.
+- Play icon.
+- Brand or creator.
+- Short title.
+
+Tapping should open the Videos destination.
+
+## M. Luxe entry card
+
+Create a premium black editorial card.
+
+Use:
+- Large fashion image.
+- Gold typography.
+- Editorial headline.
+- ENTER LUXE CTA.
+
+This is the only major dark module on the regular homepage.
+
+---
+
+# PART 5 — ANIMATIONS: MAKE THE APP FEEL ALIVE
+
+The existing project contains `MelvoreAnimations.kt` and animation components. Audit them and extend them.
+
+Do not merely add a fade animation to every section.
+
+Create a coherent motion language.
+
+### Homepage
+- Hero image crossfade.
+- Text reveal.
+- Campaign slide transitions.
+- Category selection animation.
+- Product card entrance.
+- Staggered editorial section reveal.
+- Subtle image zoom.
+- Smooth carousel movement.
+
+### Product cards
+- Gentle press scale.
+- Wishlist heart animation.
+- Add-to-bag feedback.
+- Image crossfade for variants where supported.
+
+### Style Worlds
+- Editorial page transitions.
+- Slow image zoom.
+- Typography reveal.
+- Background accent transitions.
+
+### Luxe
+- Slow cinematic image reveals.
+- Metallic shimmer on selected details.
+- Elegant title transitions.
+- Smooth horizontal editorial transitions.
+- Refined CTA animation.
+
+### Video feed
+- Smooth vertical paging.
+- Animated like feedback.
+- Product detail overlay.
+- Subtle creator information entrance.
+
+Use performant Compose animations.
+
+Avoid:
+- Continuous unnecessary animations.
+- Flashing.
+- Excessive bouncing.
+- Heavy blur across the whole screen.
+- Animations that interfere with scrolling.
+
+Respect reduced-motion accessibility settings.
+
+---
+
+# PART 6 — DISCOVER SCREEN
+
+The Discover screen must look like a fashion magazine and shopping directory combined.
+
+Include:
+- Large editorial title.
+- Search entry.
+- Featured categories.
+- Brand discovery.
+- Trending Style Worlds.
+- Featured collections.
+- New Drops.
+- Sponsored brand campaigns.
+- Product discovery.
+
+Use varied image layouts.
+
+Do not make it a simple list of brand names and white cards.
+
+Build dedicated editorial components for:
+- Brand tiles.
+- Style tiles.
+- Collection cards.
+- Featured campaign banners.
+
+---
+
+# PART 7 — VIDEOS: FIX THE ACTUAL FUNCTIONALITY
+
+This is a critical repair.
+
+The current `VideosScreen.kt` uses Media3 ExoPlayer and `VerticalPager`, but the existing implementation is not sufficient for a reliable production video experience.
+
+The current screen:
+- Fetches the feed on initial composition.
+- Reads `videoUrl`.
+- Creates an ExoPlayer instance.
+- Plays the selected URL.
+- Records a view event.
+- Releases the player when disposed.
+
+However, the current player implementation only handles `onRenderedFirstFrame()` explicitly. It does not provide a complete player-error and recovery experience.
+
+I also found no actual offline video-download implementation in the supplied project.
+
+Do not simply redesign the existing screen and leave these issues unresolved.
+
+## A. Video feed design
+
+Create a true fashion Reels experience.
+
+Full-screen vertical video.
+
+Use:
+- Full-screen 9:16 video.
+- Vertical swipe navigation.
+- Overlay gradient.
+- Brand/creator information.
+- Caption.
+- Product association.
+- Like.
+- Save.
+- Share.
+- Shop This Look.
+- Add to Bag.
+- Mute/unmute.
+- Play/pause.
+
+Controls should be elegant and readable.
+
+Use native Media3 playback.
+
+## B. Video playback repair
+
+Audit the entire video data path:
+
+`VideosScreen.kt`
+→ `DiscoveryViewModelDelegate.kt`
+→ `DiscoveryRepository.kt`
+→ `DiscoveryApiService.kt`
+→ `php_api/api/videos/feed.php`
+→ `app_product_videos`
+
+Verify:
+- Feed endpoint returns actual rows.
+- Video table exists.
+- Videos are active.
+- Publish date is valid.
+- Expiry date has not passed.
+- Video URL is non-empty.
+- Poster URL is valid.
+- Video URL is absolute HTTPS.
+- Video URL is reachable.
+- Server returns the correct content type.
+- Byte-range requests are supported where required.
+- Redirects are handled.
+- Media codec is Android-compatible.
+- Network access is permitted.
+- No HTML error page is returned instead of video bytes.
+
+Do not use a fake URL.
+
+Do not silently ignore player errors.
+
+Implement Media3 Player.Listener handling for:
+- Playback errors.
+- Buffering.
+- Ready state.
+- First frame.
+- End of media.
+- Network interruptions.
+
+Show:
+- Loading indicator.
+- Poster image while buffering.
+- Retry button.
+- Clear error state.
+- Retry after network recovery.
+
+If one video fails, the customer must still be able to swipe to the next video.
+
+## C. Video feed pagination
+
+The existing `DiscoveryUiState` contains `videosPage`, but verify that pagination is actually implemented end to end.
+
+Implement:
+- Initial feed.
+- Page 2 loading.
+- Next-page loading near the end of the pager.
+- Duplicate prevention.
+- Empty-state handling.
+- Refresh.
+- Retry.
+- No repeated requests for the same page.
+
+## D. Video downloads / loading
+
+First determine whether the intended feature is:
+1. Reliable online video loading/playback, or
+2. Offline video downloads.
+
+The current project does not contain an actual download implementation.
+
+If offline downloads are supported by the content rights and server:
+
+- Add an explicit download action.
+- Use Android DownloadManager or Media3 DownloadService.
+- Support resumable downloads where supported.
+- Store downloads in app-private storage.
+- Show download progress.
+- Show success and failure.
+- Prevent duplicate downloads.
+- Allow removing downloaded files.
+- Provide an offline video library.
+- Respect storage limitations.
+- Never download protected or unauthorised content.
+- Do not use public media URLs to bypass content restrictions.
+
+If offline download is not part of the product requirement, do not add a fake download button. Instead, make online playback reliable.
+
+## E. Video backend
+
+Inspect:
+`php_api/api/videos/feed.php`
+`php_api/api/videos/details.php`
+`php_api/api/videos/event.php`
+
+Use existing endpoints.
+
+The feed must provide real video data.
+
+If the database has no published videos, create a separate SQL seed template that references real hosted video assets. Do not invent non-existent video URLs.
+
+If a video URL is invalid, return a useful error and log the problem.
+
+If the video table is missing, report the missing migration rather than presenting a misleading empty feed.
+
+## F. Video testing
+
+Test at least:
+- Valid MP4.
+- Invalid URL.
+- Expired URL.
+- Slow connection.
+- Wi-Fi to mobile data switch.
+- App background/resume.
+- Video swipe.
+- Video retry.
+- Video event recording.
+- Empty feed.
+- Multiple pages.
+
+The video screen is not complete until real videos play reliably on an Android device.
+
+---
+
+# PART 8 — LUXE / ELITE: BUILD THE ACTUAL EXPERIENCE
+
+This is another critical requirement.
+
+The current Luxe screen has a dark background and a collection of sections, but this alone is not a proper luxury shopping experience.
+
+Do not make Luxe just a black product catalogue.
+
+It must feel like a separate luxury fashion destination.
+
+## A. Luxe visual identity
+
+Use:
+- Deep black.
+- Obsidian.
+- Warm champagne gold.
+- White.
+- Muted silver.
+- High-end serif typography.
+- Cinematic fashion imagery.
+- Premium editorial spacing.
+
+Use the supplied fonts where appropriate:
+- Cinzel.
+- Playfair Display.
+- Jost.
+- Space Grotesk.
+
+Do not use the same typography hierarchy as the normal storefront.
+
+## B. Luxe hero
+
+Create a large cinematic hero occupying most of the first screen.
+
+Include:
+- Full-bleed campaign image or video.
+- MELVORE LUXE.
+- Large editorial title.
+- Small subtitle.
+- Enter Collection CTA.
+- Subtle dark gradient.
+- Elegant pagination if multiple hero campaigns exist.
+
+Do not put the hero inside a small card.
+
+## C. Luxe editorial collections
+
+Create distinct editorial sections:
+
+1. THE LUXE EDIT.
+2. DESIGNER SPOTLIGHT.
+3. LEATHER ATELIER.
+4. STATEMENT OUTERWEAR.
+5. PREMIUM ESSENTIALS.
+6. EVENING EDIT.
+7. EXCLUSIVE COLLECTIONS.
+8. THE AFTER DARK ARCHIVE.
+9. SIGNATURE SILHOUETTES.
+10. CURATED FOR THE CONNOISSEUR.
+
+Each must have a different layout.
+
+Use:
+- Full-width fashion campaigns.
+- Large portrait imagery.
+- Split editorial layouts.
+- Horizontal designer showcases.
+- Featured product stories.
+- Cinematic video banners.
+- Premium product rails.
+
+## D. Luxe pack pages
+
+Every Luxe pack must open a full destination page.
+
+Each page must contain:
+- Large hero.
+- Collection introduction.
+- Curated brands.
+- Editorial story.
+- Products.
+- Product links.
+- Working add-to-bag.
+- Related collections.
+
+Do not create empty pack detail pages.
+
+Do not display generic placeholder collections.
+
+## E. Luxe API and database
+
+Audit:
+- `EliteScreen.kt`
+- `ElitePackDetailScreen.kt`
+- `DiscoveryRepository.kt`
+- `DiscoveryApiService.kt`
+- `php_api/api/elite/home.php`
+- `php_api/api/elite/pack.php`
+
+Verify the real database contains:
+- Active Luxe packs.
+- Hero images.
+- Mobile images.
+- Pack descriptions.
+- Active pack items.
+- Product associations.
+- Brand associations.
+- Correct display order.
+
+The existing PHP endpoint has a fallback that creates a basic Luxe collection from active products when no packs are seeded. This is only a fallback, not the final design.
+
+Create or provide SQL for:
+- Multiple active Luxe packs.
+- Multiple pack items.
+- Real active product associations.
+- Campaign images.
+- Correct display order.
+
+Do not invent product IDs.
+
+Resolve product IDs and brand IDs from the existing database.
+
+If real campaign images are not available, clearly identify the required assets.
+
+## F. Luxe animations
+
+Implement:
+- Slow hero zoom.
+- Gold text shimmer.
+- Smooth editorial transitions.
+- Image reveals.
+- Refined CTA movement.
+- Elegant collection page transitions.
+
+The experience should feel like entering a luxury fashion showroom.
+
+---
+
+# PART 9 — PRODUCT LISTING AND DETAILS
+
+Product listings must look visually premium.
+
+Use:
+- Large image grids.
+- Proper image ratios.
+- Strong product presentation.
+- Clear pricing.
+- Minimal visual clutter.
+- Filters.
+- Sorting.
+- Wishlist.
+- Quick Add.
+
+Product details must include:
+- Large image gallery.
+- Multiple product images.
+- Variants.
+- Sizes.
+- Colours.
+- Price.
+- Discount.
+- Delivery check.
+- Add to Bag.
+- Buy Now.
+- Reviews.
+- Similar products.
+- Material and care details.
+
+Do not alter existing pricing or inventory logic.
+
+Use real product data.
+
+---
+
+# PART 10 — BOTTOM NAVIGATION AND TOP BAR
+
+Use the existing five main destinations:
+
+1. Home.
+2. Discover.
+3. Videos.
+4. Elite.
+5. Bag.
+
+Redesign the bottom navigation to be more premium.
+
+Use:
+- Carefully drawn icons.
+- Clear labels.
+- Animated selected indicator.
+- Subtle elevation.
+- Premium white background in normal pages.
+- Dark styling inside Luxe.
+- Correct cart count.
+- Proper bottom safe-area spacing.
+
+The normal app must remain light.
+
+Luxe pages must use their own dark navigation appearance.
+
+No hamburger menu.
+
+Profile should remain accessible from the top bar.
+
+---
+
+# PART 11 — LIQUID GLASS STYLE FOR ANDROID
+
+This is an Android app, so do not blindly copy Apple's iOS-only APIs.
+
+Create a visually similar **Android-native glass material** using Compose.
+
+Use:
+- Translucent surfaces.
+- Subtle blur where performant.
+- Fine light borders.
+- Gentle highlights.
+- Layered elevation.
+- Background-aware contrast.
+- Small animated interaction feedback.
+
+Apply this selectively to:
+- Floating bottom navigation.
+- Floating action controls.
+- Search overlays.
+- Filter sheets.
+- Video action controls.
+- Important floating buttons.
+- Quick cart controls.
+
+Do not make every card glass.
+
+Do not sacrifice text readability.
+
+Use sensible fallbacks on devices where blur effects are expensive.
+
+Keep the main product and campaign imagery clear.
+
+---
+
+# PART 12 — IMAGES AND ASSET ART DIRECTION
+
+The existing project contains several drawable images, including:
+- `img_hero_atelier.jpg`
+- `img_hero_look.jpg`
+- `img_hero_seoul.jpg`
+- `img_villain_jacket.jpg`
+- `img_biker_jacket.jpg`
+- `img_studded_jacket.jpg`
+- `img_white_cropped.jpg`
+- `img_hybrid_jacket.jpg`
+- `img_loungewear.jpg`
+
+Use these assets intelligently.
+
+Do not place the same image in every section.
+
+Do not show tiny images with huge blank spaces around them.
+
+Do not use stretched or distorted imagery.
+
+Use the correct content scale and image aspect ratio.
+
+For database images:
+- Verify the URL.
+- Verify the image loads.
+- Use correct crop behaviour.
+- Use placeholders only during loading or when genuinely unavailable.
+- Cache images.
+- Avoid layout shifts.
+
+Where new campaign artwork is needed, prepare an asset list with:
+- Campaign name.
+- Image dimensions.
+- Aspect ratio.
+- Subject.
+- Visual direction.
+- Text placement.
+
+Do not pretend placeholder imagery is final production artwork.
+
+---
+
+# PART 13 — DATABASE AND API INTEGRATION
+
+Keep the existing production backend.
+
+Existing base URL:
+`https://app.melvore.co.in/`
+
+Use the existing PHP APIs for:
+- Homepage.
+- Categories.
+- Brands.
+- Products.
+- Search.
+- Style Worlds.
+- Videos.
+- Elite.
+- Personalisation.
+- Delivery.
+- Reviews.
+- Help and support.
+
+Do not introduce a second database.
+
+Do not replace existing customer accounts.
+
+Do not hardcode product lists.
+
+Check whether the required app merchandising migration has actually been installed.
+
+The supplied ZIP contains a companion indexes SQL file, but verify the full schema separately.
+
+If required tables are missing:
+- Create a separate additive SQL migration.
+- Do not drop existing tables.
+- Do not alter historical orders or payment records.
+- Provide a separate sample-content seed SQL.
+- Use actual product and brand IDs from the live database.
+- Do not assume all content is already populated.
+
+## Sample content needed
+
+Create enough database-driven content to demonstrate the full visual experience.
+
+Examples:
+- At least 3 hero campaign records.
+- At least 8 editorial homepage sections.
+- At least 10 category shortcuts where matching categories exist.
+- At least 6 style worlds.
+- Multiple active Luxe packs.
+- Multiple Luxe pack items.
+- At least 6 featured brand entries where valid brands exist.
+- Real video records where valid hosted videos exist.
+- Search suggestions and synonyms.
+- Editorial campaign assets.
+
+These are targets for content setup, not permission to create fake products or fake brand records.
+
+---
+
+# PART 14 — ANIMATION AND COMPONENT LIBRARY
+
+Create a reusable set of premium components.
+
+Examples:
+- `EditorialHeroSlider`
+- `FashionCampaignCard`
+- `AsymmetricCampaignGrid`
+- `PremiumCategoryRail`
+- `BrandEditorialTile`
+- `StyleWorldHero`
+- `ProductEditorialCard`
+- `ProductMerchandisingShelf`
+- `PremiumProductGrid`
+- `CampaignTicker`
+- `LuxeHeroExperience`
+- `LuxeCollectionShowcase`
+- `VideoReelPlayer`
+- `GlassBottomNavigation`
+- `AnimatedWishlistButton`
+- `PremiumQuickAddButton`
+
+Every component should be reusable and configurable.
+
+Create different visual variants rather than repeating the same component style.
+
+Keep existing shared components where useful, but do not let their current simple styling limit the new design.
+
+---
+
+# PART 15 — DO NOT HIDE THE DESIGN BEHIND EMPTY DATA
+
+A major problem is that many homepage sections are conditional.
+
+For example:
+- Brands are hidden when the brand list is empty.
+- Video previews are hidden when the video list is empty.
+- Campaign sections are hidden when no campaign exists.
+- Style Worlds depend on database content.
+- Elite depends on active packs or fallback products.
+
+This can make a technically correct app appear nearly empty.
+
+Implement clear diagnostics.
+
+For each missing module:
+- Identify the API request.
+- Identify the returned data.
+- Identify why the section is hidden.
+- Identify whether the table is missing.
+- Identify whether the table has no active records.
+- Identify whether image URLs are invalid.
+- Identify whether the UI mapping is failing.
+
+Do not silently hide every empty section during development.
+
+In debug builds, show a useful diagnostic state.
+
+In production, gracefully hide unavailable modules and preserve a well-designed fallback layout.
+
+Never display fake products or fake ratings.
+
+---
+
+# PART 16 — ACTUAL IMPLEMENTATION, NOT JUST A DESIGN DOCUMENT
+
+Modify the existing project.
+
+At minimum, inspect and update these files as required:
+
+- `HomeScreen.kt`
+- `HomeMerchandisingSections.kt`
+- `DiscoverScreen.kt`
+- `StyleWorldScreen.kt`
+- `BrandDetailScreen.kt`
+- `VideosScreen.kt`
+- `EliteScreen.kt`
+- `ElitePackDetailScreen.kt`
+- `MelvoreComponents.kt`
+- `MelvoreAnimations.kt`
+- `Theme.kt`
+- `MainActivity.kt`
+- `DiscoveryRepository.kt`
+- `DiscoveryApiService.kt`
+- `DiscoveryViewModelDelegate.kt`
+- `DiscoveryModels.kt`
+- `DiscoveryDtos.kt`
+- `DiscoveryMappers.kt`
+
+Also inspect:
+- PHP video endpoints.
+- PHP Elite endpoints.
+- SQL schema.
+- API configuration.
+
+Do not merely create a separate demo screen.
+
+Do not replace the existing working screens with static mockups.
+
+Do not leave buttons without actions.
+
+Do not leave animations unused.
+
+Do not leave database-backed content disconnected.
+
+---
+
+# PART 17 — TESTING
+
+Build the actual Android project.
+
+Verify:
+- Gradle sync.
+- Kotlin compilation.
+- Compose compilation.
+- Navigation.
+- Theme switching.
+- API requests.
+- Image loading.
+- Video playback.
+- Video retry.
+- Elite API.
+- Elite pack navigation.
+- Product navigation.
+- Cart.
+- Wishlist.
+- Checkout.
+- Razorpay.
+- COD.
+
+Test on:
+- Small Android screens.
+- Standard Android phones.
+- Larger phones.
+- Different densities.
+- Slow networks.
+
+Verify that the category rail is visible directly under search.
+
+Verify that Home is light.
+
+Verify that Luxe alone is dark.
+
+Verify that the video screen plays actual hosted video.
+
+Verify that the Elite screen contains real editorial content and products.
+
+---
+
+# PART 18 — FINAL ACCEPTANCE CHECKLIST
+
+Do not call the project finished until these requirements are met.
+
+### Design
+- [ ] Homepage visually resembles the supplied rich fashion references.
+- [ ] Search appears directly below header.
+- [ ] Category rail is immediately below search.
+- [ ] Hero is large and image-led.
+- [ ] Editorial campaigns use varied layouts.
+- [ ] Brand discovery is visually rich.
+- [ ] Style Worlds have distinct personalities.
+- [ ] Product sections have varied merchandising layouts.
+- [ ] Homepage is not a plain list of cards.
+- [ ] Animations are actually visible and functional.
+- [ ] Normal storefront is light.
+- [ ] Luxe alone is dark.
+
+### Videos
+- [ ] Video feed returns real records.
+- [ ] Video URLs are valid.
+- [ ] Videos play.
+- [ ] Player errors are handled.
+- [ ] Retry works.
+- [ ] Pagination works.
+- [ ] Like and save work.
+- [ ] Product association works.
+- [ ] Share works.
+- [ ] Offline downloads are implemented only if supported and required.
+
+### Luxe
+- [ ] Luxe hero is full-width and cinematic.
+- [ ] Luxe has multiple editorial sections.
+- [ ] Luxe packs are database-driven.
+- [ ] Pack details open.
+- [ ] Products open.
+- [ ] Add to Bag works.
+- [ ] Luxe does not look like a simple black product listing.
+
+### Backend
+- [ ] Existing APIs are reused.
+- [ ] Missing APIs are implemented.
+- [ ] Missing SQL migrations are supplied.
+- [ ] Sample content is supplied.
+- [ ] Real product IDs are used.
+- [ ] Real video assets are used.
+- [ ] Errors are logged.
+- [ ] Existing payment and order data is preserved.
+
+### Build
+- [ ] Android project compiles.
+- [ ] APK builds.
+- [ ] APK installs.
+- [ ] Main screens tested on a real or virtual Android device.
+
+---
+
+# FINAL CREATIVE DIRECTION
+
+I want the finished application to feel like a combination of:
+
+- Myntra's rich fashion merchandising.
+- Blinkit's easy navigation.
+- Premium fashion editorial websites.
+- A high-end streetwear marketplace.
+- A luxury digital showroom.
+
+I do NOT want:
+- A plain white app with basic black text.
+- Generic Material 3 cards.
+- Identical layouts repeated down the homepage.
+- Tiny images.
+- Empty spaces caused by missing content.
+- A dark theme applied to the entire app.
+- A black page with only a few product cards for Luxe.
+- A video tab that shows a blank screen or endless loading.
+- Buttons that do nothing.
+- Static animations that never actually play.
+
+**The visual quality is as important as the backend functionality.**
+
+Do not simplify the designs to make implementation easier.
+
+Preserve the functionality already built, but completely elevate the visual experience.
+
+Implement the redesign, compile the Android app, test the video and Luxe flows, and return the updated project with a clear report of what is genuinely working.

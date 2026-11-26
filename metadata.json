@@ -1,0 +1,6 @@
+{
+  "name": "Melvore",
+  "description": "Melvore India mobile shopping experience for curated outerwear, streetwear, and comfort loungewear.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

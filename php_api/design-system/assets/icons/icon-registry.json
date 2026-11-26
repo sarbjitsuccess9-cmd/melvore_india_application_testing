@@ -1,0 +1,27 @@
+{
+  "icon_registry_version": "1.0.0",
+  "icons": [
+    { "key": "home", "label": "Home Outlined", "material_mapping": "Icons.Outlined.Home" },
+    { "key": "home_filled", "label": "Home Filled", "material_mapping": "Icons.Filled.Home" },
+    { "key": "explore", "label": "Explore Outlined", "material_mapping": "Icons.Outlined.Explore" },
+    { "key": "explore_filled", "label": "Explore Filled", "material_mapping": "Icons.Filled.Explore" },
+    { "key": "compass", "label": "Compass", "material_mapping": "Icons.Outlined.TravelExplore" },
+    { "key": "compass_filled", "label": "Compass Filled", "material_mapping": "Icons.Filled.TravelExplore" },
+    { "key": "sparkle", "label": "Editorial Sparkle", "material_mapping": "Icons.Outlined.AutoAwesome" },
+    { "key": "sparkle_filled", "label": "Editorial Sparkle Filled", "material_mapping": "Icons.Filled.AutoAwesome" },
+    { "key": "play", "label": "Reels Play", "material_mapping": "Icons.Outlined.PlayCircle" },
+    { "key": "play_filled", "label": "Reels Play Filled", "material_mapping": "Icons.Filled.PlayCircle" },
+    { "key": "reel", "label": "Film Reel", "material_mapping": "Icons.Outlined.Movie" },
+    { "key": "reel_filled", "label": "Film Reel Filled", "material_mapping": "Icons.Filled.Movie" },
+    { "key": "diamond", "label": "Luxe Diamond", "material_mapping": "Icons.Outlined.Diamond" },
+    { "key": "diamond_filled", "label": "Luxe Diamond Filled", "material_mapping": "Icons.Filled.Diamond" },
+    { "key": "crown", "label": "Atelier Crown", "material_mapping": "Icons.Outlined.WorkspacePremium" },
+    { "key": "crown_filled", "label": "Atelier Crown Filled", "material_mapping": "Icons.Filled.WorkspacePremium" },
+    { "key": "bag", "label": "Shopping Bag", "material_mapping": "Icons.Outlined.ShoppingBag" },
+    { "key": "bag_filled", "label": "Shopping Bag Filled", "material_mapping": "Icons.Filled.ShoppingBag" },
+    { "key": "tote", "label": "Atelier Tote", "material_mapping": "Icons.Outlined.LocalMall" },
+    { "key": "tote_filled", "label": "Atelier Tote Filled", "material_mapping": "Icons.Filled.LocalMall" },
+    { "key": "search", "label": "Search", "material_mapping": "Icons.Outlined.Search" },
+    { "key": "heart", "label": "Wishlist", "material_mapping": "Icons.Outlined.FavoriteBorder" }
+  ]
+}
